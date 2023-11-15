@@ -62,7 +62,7 @@ const CreateBlog = () => {
       const formDataWithId = {
         ...formData,
         image: filePreview,
-      };
+      };git
 
       const response = await fetch(
         "https://8a54-197-248-176-94.ngrok-free.app/api/v1/admin/createblog",

@@ -14,7 +14,7 @@ function LoginForm() {
     event.preventDefault();
 
     try {
-      const response = await fetch('https://mmust-jowa.onrender.com/api/v1/auth/login', {
+      const response = await fetch('https://8a54-197-248-176-94.ngrok-free.app/api/v1/auth/login', {
         method: 'POST',
         headers:
         {"Content-Type": "application/json"},
