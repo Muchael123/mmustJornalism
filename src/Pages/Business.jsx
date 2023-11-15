@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Component/Navbar'
-import Footer from '../Component/Footer'
-import { useParams } from 'react-router-dom'; 
 import BlogCard from '../Component/BlogCard';
 
 function Business  () {
-  const { id } = useParams();
+  const id = 3;
   const [newsData, setNewsData] = useState([]);
 
   useEffect(() => {
@@ -33,11 +31,12 @@ function Business  () {
       
       {newsData.map((item, id) => (
           <BlogCard
-            key={id}
-            title={item.title}
-            slug={item.slug}
-            published_on={formatToLocalTime(item.published_on)}
-            image={item.image}
+          key={id}
+          id={item.id}
+          title={item.title}
+          slug={item.slug}
+          published_on={formatToLocalTime(item.published_on)}
+          image={item.image_id}
           />
         ))}
         </div>

@@ -97,7 +97,7 @@ export default function Footer() {
             className="flex-grow w-full mt-5 h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
           />
           <input 
-            type="submit"                                     
+            type="submit" 
             value="Send Email" 
             className='mt-5 inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 border-2 cursor-pointer hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'/> 
           {/* <button

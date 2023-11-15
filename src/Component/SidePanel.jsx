@@ -1,13 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import BlogCard from '../Component/BlogCard';
-
-
 
 const SidePanel = () => {
   return (
-        <div className=''>
-      <ul className='mt-[50%]'>
+    <>
+         
+      <div >
+        <div>
+
+        
+      <ul className=''>
+        <h5 className='mb-1 text-xl bold font-semibold text-gray-400'>CATEGORIES</h5>
+        <li className='text-gray-400 hover:cursor-pointer hover:underline hover:decoration-blue-400'> News  </li><hr className="w-full my-2 border-gray-300" />
+        <li className='text-gray-400 hover:cursor-pointer hover:underline hover:decoration-blue-400'>Sports</li><hr className="w-full my-2 border-gray-300" />
+        <li className='text-gray-400 hover:cursor-pointer hover:underline hover:decoration-blue-400'>Business</li><hr className="w-full my-2 border-gray-300" />
+        <li className='text-gray-400 hover:cursor-pointer hover:underline hover:decoration-blue-400'>Entertaiment</li> <hr className="w-full my-2 border-gray-300" />
+
+      </ul>
+      <ul className='mt-5'>
         <h5 className='mb-1 text-xl bold font-semibold text-gray-400'>LATEST POST</h5>
         <div className="flex flex-col justify-center w-9/12">
           <div className="flex">
@@ -71,6 +80,9 @@ const SidePanel = () => {
 
       </ul>
       </div>
+      </div>
+    
+    </>
   )
 }
 

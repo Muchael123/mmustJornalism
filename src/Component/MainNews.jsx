@@ -1,12 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function MainNews (props){
-    const image = props.image
-    const title = props.title
-    const slug = props.slug
-    const published_on = props.published_on
+  const { title, image, slug, published_on, author, id } = props; // Destructure id from props
+
+  const url = `/Blog/${id}`; // Use id in the URL
+
+  localStorage.setItem('id', props.key);
 
   return (
+  <div>
+    <Link to={url}>
     <div className='flex flex-row  max-[475px]:flex-col max-[475px]:w-11/12   w-9/12 mx-auto justify-start rounded-md  h-[360px] 
     max-[475px]:h-[420px] max-[475px]:gap-1 gap-5  mt-10 py-5  shadow-xl  px-2 max-[475px]:py-2 '>
         <div className='w-1/2 max-[475px]:w-full max-[475px]:h-1/2 max-[475px]:gap-2  '>
@@ -18,6 +22,8 @@ function MainNews (props){
             <div className='border-none  px-1 text-black '>{slug}</div>
            </div>
     </div>
+    </Link>
+  </div>
   )
 }
 

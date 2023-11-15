@@ -14,7 +14,6 @@ function Dashboard  ()  {
         const response = await fetch('https://mmust-jowa.onrender.com/api/v1/admin/news/latest', {
           method: 'GET',
           headers: {
-            mode: 'cors',
             'Content-Type': 'application/json',
             'Authorization': `Bearer ` + localStorage.getItem('accessToken'),
           },
@@ -31,7 +30,6 @@ function Dashboard  ()  {
         const commentsResponse = await fetch('https://mmust-jowa.onrender.com/api/v1/admin/total/comments', {
           method: 'GET',
           headers: {
-            mode: 'cors',
             'Content-Type': 'application/json',
             'Authorization': `Bearer ` + localStorage.getItem('accessToken'),
           },
@@ -47,7 +45,6 @@ function Dashboard  ()  {
         const blogsResponse = await fetch('https://mmust-jowa.onrender.com/api/v1/admin/total/blogs', {
           method: 'GET',
           headers: {
-            mode: 'cors',
             'Content-Type': 'application/json',
             'Authorization': `Bearer ` + localStorage.getItem('accessToken'),
           },
@@ -146,7 +143,7 @@ function Dashboard  ()  {
               </div>
               <p className="mb-2  font-bold">Categories</p>
               <h6 className="text-3xl font-bold text-deep-purple-accent-400">
-            144K
+            4
           </h6>
             </div>
           </div>

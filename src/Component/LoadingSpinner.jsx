@@ -1,14 +1,16 @@
 import React from 'react'
-
+import Lottie from "lottie-react";
+import Loader from "../../public/Loader.json";
 const LoadingSpinner = () => {
   return (
-    <div className='w-screen h-screen items-center justify-center flex'>
-        <div className=' w-20 h-20'>
-        <img src="/src/images/ZKZx.gif" alt="" />
-        </div>
-       
+
+    <div className="w-screen h-screen items-center justify-center flex">
+      <div style={{ width: "400px", height: "400px" }}>
+        <Lottie animationData={Loader} loop={true} />
+      </div>
+
     </div>
-  )
+  );
 }
 
 export default LoadingSpinner

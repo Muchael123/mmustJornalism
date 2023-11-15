@@ -6,9 +6,9 @@ import './App.css';
 
 // Import your components as needed
 import Homepage from './Pages/Homepage';
-import Blog from './Pages/Blog';
 import LoginForm from './Pages/Login';
 import Admin from './Pages/Admin';
+import Blog from './Pages/Blog';
 import RegistrationForm from './Pages/Signin';
 import News from './Pages/News';
 import Entertainment from './Pages/Entertainment';

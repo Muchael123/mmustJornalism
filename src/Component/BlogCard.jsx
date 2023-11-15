@@ -5,6 +5,7 @@ function BlogCard(props) {
   const { title, image, slug, published_on, author, id } = props; // Destructure id from props
 
   const url = `/Blog/${id}`; // Use id in the URL
+  localStorage.setItem('id', props.key);
 
   return (
     <div>

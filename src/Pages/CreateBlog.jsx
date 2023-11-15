@@ -5,7 +5,7 @@ const CreateBlog = () => {
     title: '',
     slug: '',
     body: '',
-    image_id: '',
+    image: {},
     category: 'News', // Default category
   });
 
@@ -62,18 +62,20 @@ const CreateBlog = () => {
         // Append the file id to the form data
         const formDataWithId = {
           ...formData,
-          image_id: fileId,
+          image: filePreview,
         };
 
-      const response = await fetch('https://mmust-jowa.onrender.com/api/v1/admin/createblog', {
-        method: 'POST',
-        headers: {
-          "Content-type": "application/json",
-          'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
-                },
-        body: JSON.stringify(formDataWithId), // You need to convert your JSON data to FormData
-        
-      });
+      const response = await fetch(
+        "https://mmust-jowa.onrender.com/api/v1/admin/createblog",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("accessToken"),
+          },
+          body: JSON.stringify(formDataWithId), // You need to convert your JSON data to FormData
+        }
+      );
   
       if (response.ok) {
         console.log('Blog post created successfully');
@@ -264,7 +266,7 @@ const CreateBlog = () => {
                 <input
                   id="file-upload"
                   onChange={handleChange}
-                  name="image_id"
+                  name="image"
                   type="file"
                   // value={formData.image_id}
                   className="sr-only"
