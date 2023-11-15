@@ -7,7 +7,7 @@ function AdminNewsCard (props){
     const slug = props.slug
     // const slug = props.slug
   return (
-    <div className='overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm'>
+    <div className='overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm '>
     
         <img  className='object-cover w-full h-64' src={image} alt="" />
         <div className="p-5 border border-t-0">
