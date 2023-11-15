@@ -11,8 +11,9 @@ function MiniNews(props) {
         ease: "linear",
          duration: .5,
         }}
-    className='hidden md:block border-t-2 hover:border-none border-gray-300 text-gray-700'>
-        <h1 className='hover:text-orange-500 hover:cursor-pointer font-mono font-bold text-[16px] py-6'>{title}</h1>
+    className='relative hover:text-purple-800 hover:cursor-pointer hidden pl-3 py-6 md:block border-y-2 hover:border-none border-gray-300 text-gray-700'>
+        <h1 className=' font-mono font-bold text-[16px] '>{title}</h1>
+        <p className='absolute text-sm font-light right-0'>{date}</p>
     </motion.div>
   )
 }
