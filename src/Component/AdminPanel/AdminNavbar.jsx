@@ -87,7 +87,10 @@ const AdminNavbar = ({ onclick }) => {
         >
           <path fill="currentColor" d="m7 10l5 5l5-5H7Z" />
         </svg> */}
-        <p className="text-[30px] text-white font-extrabold">
+        <p
+          className="text-[30px] text-white font-extrabold"
+          onClick={handleLogOut}
+        >
           {" "}
           <RiLoginBoxFill />
         </p>

@@ -165,12 +165,14 @@ function Dashboard  ()  {
         <div className='relative col-span-3  lg:py-0.5 py-2.5 z-[4]'>
   
         {latestNews.map((item,) => (
+          // console.log(item.id),
           <AdminBlogs
             key={item.id}
             title={item.title}
             total_comments={item.total_comments}
             published_on={formatToLocalTime(item.published_on)}
             image={item.image_id}
+            id={item.id}
           />
         ))}
         
