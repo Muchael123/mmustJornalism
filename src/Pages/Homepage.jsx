@@ -6,6 +6,7 @@ import NewsCard from '../Component/NewsCard'
 import Navbar from '../Component/Navbar'
 import Footer from '../Component/Footer'
 import LoadingSpinner from '../Component/LoadingSpinner';
+import MiniNews from '../Component/MiniNews';
 
 function Homepage() {
   const [newsData, setNewsData] = useState([]);
@@ -73,9 +74,10 @@ function Homepage() {
       <Navbar/>
       </div >
 
-      <h1 className='w-screen mt-20 flex text-2xl font-bold  justify-center -mb-8'>LATEST NEWS</h1>
+      <h1 className='w-screen mt-20 flex text-2xl font-bold  justify-center mb-2 lg:mb-4'>LATEST NEWS</h1>
 
-      {latestData.map((item, index) => (
+     <div className='flex flex-row justify-around  shadow-md px-2 w-full'>
+       {latestData.map((item, index) => (
           <MainNews
             key={index}
             title={item.title}
@@ -84,6 +86,17 @@ function Homepage() {
             image={item.image_id}
           />
         ))}
+        <div className='md:flex-2 hidden'>
+        </div>
+        {latestData.map((item, index) => (
+          <MiniNews
+          key={index}
+          title={item.title}
+          published_on={formatToLocalTime(item.published_on)}
+         />))
+          }
+         
+     </div>
       <div className='w-9/12 mx-auto mt-10 grid grid-cols-3 gap-2 max-[475px]:grid-cols-1 max-[475px]:w-11/12 '>
     
       

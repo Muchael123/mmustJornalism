@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TiThMenu } from "react-icons/ti";
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion'; 
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +12,14 @@ const Navbar = () => {
 
   return (
 
-    <div className="w-full text-white flex flex-row bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 justify-between items-center fixed top-0 left-0 mb-10 md:px-20 lg:px-40 max-[768px]:px-10">
+    <motion.div
+    initial = {{y: -100, opacity:0}}
+    animate = {{y:0, opacity:1}}
+    transition={{
+        ease: "linear",
+         duration: .6,
+        }}
+     className="w-full text-white flex flex-row bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 justify-between items-center fixed top-0 left-0 mb-10 md:px-20 lg:px-40 max-[768px]:px-10">
       <div className='z-50'>
         <Link to="/">
           <img className="w-20 h-20 object-cover  cursor-pointer" src="/src/images/logo.png" alt="" />
@@ -40,10 +48,10 @@ const Navbar = () => {
           </li>
         </ul>
         <div className={`min-[768px]:hidden cursor-pointer z-50`} onClick={toggleMenu}>
-          <TiThMenu />
+          <TiThMenu/>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

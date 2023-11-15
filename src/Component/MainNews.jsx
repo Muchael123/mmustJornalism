@@ -1,23 +1,32 @@
 import React from 'react'
-
+import {motion} from 'framer-motion'
+import MiniNews from './MiniNews'
 function MainNews (props){
-    const image = props.image
+    const image = 'https://images.citizen.digital/112568/conversions/Screenshot_20231114_113322_X-thumbnail.webp'
     const title = props.title
-    const slug = props.slug
+    const slug = "Whitman noted that her sister had invited Dr. Harsh, a neurosurgeon by profession now, to her wedding but owing to a familial engagement, the good doctor did not grace the event.Recognizing his mistak"
     const published_on = props.published_on
 
   return (
-    <div className='flex flex-row  max-[475px]:flex-col max-[475px]:w-11/12   w-9/12 mx-auto justify-start rounded-md  h-[360px] 
-    max-[475px]:h-[420px] max-[475px]:gap-1 gap-5  mt-10 py-5  shadow-xl  px-2 max-[475px]:py-2 '>
-        <div className='w-1/2 max-[475px]:w-full max-[475px]:h-1/2 max-[475px]:gap-2  '>
-           <img className='w-full h-80 max-[475px]:h-full max-[475px]:object-cover rounded-md object-contain' src={image} alt="" /></div>
-        <div className='w-1/2 max-[475px]:w-full max-[475px]:h-1/2 max-[475px]:gap-2   '>
-        <h1 className='  '>{published_on}</h1>
-
-            <h1 className='  font-bold text-2xl hover:text-orange-500 w-full  flex r cursor-pointer'>{title}</h1>
-            <div className='border-none  px-1 text-black '>{slug}</div>
-           </div>
-    </div>
+    <motion.div
+     initial = {{x: -100, opacity:0}}
+    animate = {{x:0, opacity:1}}
+    transition={{
+        ease: "linear",
+         duration: .5,
+        }}
+     className='w-[full] flex flex-col md:flex-row m-6 bg-red-200 md:w-[60%]'>
+      <div className='flex md:flex-row justify-center md:justify-between lx-2'>
+        <img src={image} alt="Logo" className='h-[100%] md:flex-3 rounded-lg mx-5'/>
+       
+      </div>
+       <div className='m-5 md:w-[50%] w-[100]  flex-2 '>
+            <h1 className='text-[24px] font-courier font-bold text-center'>{title}</h1>
+             <p>{slug}</p>
+             <p className='text-right font-light text-[12px] bottom-0'>{published_on}</p>
+        </div>
+        </motion.div>
+        
   )
 }
 
