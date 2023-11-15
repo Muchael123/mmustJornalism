@@ -35,7 +35,7 @@ function LoginForm() {
         localStorage.setItem('accessToken', access_token);
         localStorage.setItem('User', user);
 
-       
+      
 
         // Store the access token in local storage (you can also use cookies)
 
