@@ -77,4 +77,3 @@ const CreateBlog = () => {
   if (!isAuthenticated) {
     return <p>You do not have permission to create a blog. Please log in.</p>;
   }
-}

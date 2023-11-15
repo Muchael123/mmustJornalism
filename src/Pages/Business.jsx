@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Component/Navbar'
-import Footer from '../Component/Footer'
-
 import BlogCard from '../Component/BlogCard';
 
 function Business  () {

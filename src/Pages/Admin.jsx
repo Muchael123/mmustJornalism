@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import AdminNavbar from '../Component/AdminNavbar';
-import Dashboard from '../Component/Dashboard';
-import ProfilePage from '../Component/ProfilePage';
+import React, {  useState,useEffect} from 'react';
+import AdminNavbar from '../Component/AdminPanel/AdminNavbar';
+import Dashboard from '../Component/AdminPanel/Dashboard';
 import AdminSidebar from '../Component/AdminSidebar';
 import CreateBlog from './CreateBlog';
+import ProfilePage from '../Component/AdminPanel/ProfilePage'
+import AdminNews from '../Component/AdminPanel/AdminNews';
+import AdminBusiness from '../Component/AdminPanel/AdminBusiness';
+import AdminEntertainment from '../Component/AdminPanel/AdminEntertainment';
+import AdminSports from '../Component/AdminPanel/AdminSports';
 
 function Admin() {
   const [selectedItem, setSelectedItem] = useState('Dashboard'); // Default selected item
@@ -47,7 +51,12 @@ function Admin() {
               {/* Render content based on the selected item */}
               {selectedItem === 'Dashboard' && <Dashboard />}
               {selectedItem === 'Add Blog' && <CreateBlog />}
-              {selectedItem === 'Profile Settings' && <ProfilePage/> }
+              {selectedItem === 'Profile Settings' && <ProfilePage />}
+              {selectedItem === 'News' && <AdminNews />}
+              {selectedItem === 'Sports' && <AdminSports />}
+              {selectedItem === 'Business' && <AdminBusiness />}
+              {selectedItem === 'Entertainment' && <AdminEntertainment />}
+              {/* {selectedItem === 'Profile Settings' && <SidePanel />} */}
             </div>
           </div>
         </div>

@@ -86,15 +86,23 @@ function Homepage() {
             image={item.image_id}
           />
         ))}
-        <div className='md:flex-2 hidden'>
-        </div>
-        {latestData.map((item, index) => (
+        <div className='flex flex-col pt-12 flex-1'>
+          {latestData.map((item, index) => (
           <MiniNews
           key={index}
           title={item.title}
           published_on={formatToLocalTime(item.published_on)}
          />))
           }
+          {latestData.map((item, index) => (
+          <MiniNews
+          key={index}
+          title={item.title}
+          published_on={formatToLocalTime(item.published_on)}
+         />))
+          }
+        </div>
+          
          
      </div>
       <div className='w-9/12 mx-auto mt-10 grid grid-cols-3 gap-2 max-[475px]:grid-cols-1 max-[475px]:w-11/12 '>
