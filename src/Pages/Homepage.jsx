@@ -8,6 +8,7 @@ import Footer from '../Component/Footer'
 import LoadingSpinner from '../Component/LoadingSpinner';
 
 function Homepage() {
+  const id = 3;
   const [newsData, setNewsData] = useState([]);
   const [latestData, setLatestData] = useState([]);
   const [businessData, setBusinessData] = useState([]);
@@ -59,7 +60,7 @@ function Homepage() {
     };
 
     fetchData();
-  }, []);
+  }, [id]);
 
   const formatToLocalTime = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false,  };
@@ -74,34 +75,37 @@ function Homepage() {
 
       <h1 className='w-screen mt-20 flex text-2xl font-bold  justify-center -mb-8'>LATEST NEWS</h1>
 
-      {latestData.map((item, index) => (
+      {latestData.map((item, id) => (
           <MainNews
-            key={index}
-            title={item.title}
-            slug={item.slug}
-            published_on={formatToLocalTime(item.published_on)}
-            image={item.image_id}
+          key={id}
+          id={item.id}
+          title={item.title}
+          slug={item.slug}
+          published_on={formatToLocalTime(item.published_on)}
+          image={item.image_id}
           />
         ))}
       <div className='w-9/12 mx-auto mt-10 grid grid-cols-3 gap-2 max-[475px]:grid-cols-1 max-[475px]:w-11/12 '>
     
       
-      {newsData.map((item, index) => (
+      {newsData.map((item, id) => (
           <NewsCard
-            key={index}
-            title={item.title}
-            slug={item.slug}
-            published_on={formatToLocalTime(item.published_on)}
-            image={item.image_id}
+          key={id}
+          id={item.id}
+          title={item.title}
+          slug={item.slug}
+          published_on={formatToLocalTime(item.published_on)}
+          image={item.image_id}
           />
         ))}
       
          
 
      
-      {businessData.map((item, index) => (
+      {businessData.map((item, id) => (
           <NewsCard
-          key={index}
+          key={id}
+          id={item.id}
           title={item.title}
           slug={item.slug}
           published_on={formatToLocalTime(item.published_on)}
@@ -120,13 +124,14 @@ function Homepage() {
       
     </div>
     <div className='w-full flex'>
-      {newsData.map((item, index) => (
+      {newsData.map((item, id) => (
           <NewsCard
-            key={index}
-            title={item.title}
-            slug={item.slug}
-            published_on={formatToLocalTime(item.published_on)}
-            image={item.image_id}
+          key={id}
+          id={item.id}
+          title={item.title}
+          slug={item.slug}
+          published_on={formatToLocalTime(item.published_on)}
+          image={item.image_id}
           />
         ))}
       </div>
@@ -138,13 +143,14 @@ function Homepage() {
     </div>
 
     <div className='w-full flex'>
-      {sportsData.map((item, index) => (
+      {sportsData.map((item, id) => (
           <NewsCard
-            key={index}
-            title={item.title}
-            slug={item.slug}
-            published_on={formatToLocalTime(item.published_on)}
-            image={item.image_id}
+          key={id}
+          id={item.id}
+          title={item.title}
+          slug={item.slug}
+          published_on={formatToLocalTime(item.published_on)}
+          image={item.image_id}
           />
         ))}
       </div>
@@ -155,13 +161,14 @@ function Homepage() {
       
     </div>
     <div className='w-full flex'>
-      {moreBusinessData.map((item, index) => (
+      {moreBusinessData.map((item, id) => (
           <NewsCard
-            key={index}
-            title={item.title}
-            slug={item.slug}
-            published_on={formatToLocalTime(item.published_on)}
-            image={item.image_id}
+          key={id}
+          id={item.id}
+          title={item.title}
+          slug={item.slug}
+          published_on={formatToLocalTime(item.published_on)}
+          image={item.image_id}
           />
         ))}
       </div>
@@ -172,13 +179,14 @@ function Homepage() {
       
     </div>
     <div className='w-full flex'>
-      {entertainmentData.map((item, index) => (
+      {entertainmentData.map((item, id) => (
           <NewsCard
-            key={index}
-            title={item.title}
-            slug={item.slug}
-            published_on={formatToLocalTime(item.published_on)}
-            image={item.image_id}
+          key={id}
+          id={item.id}
+          title={item.title}
+          slug={item.slug}
+          published_on={formatToLocalTime(item.published_on)}
+          image={item.image_id}
           />
         ))}
       </div>
