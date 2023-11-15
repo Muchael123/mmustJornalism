@@ -8,6 +8,7 @@ import './App.css';
 import Homepage from './Pages/Homepage';
 import LoginForm from './Pages/Login';
 import Admin from './Pages/Admin';
+import Blog from './Pages/Blog';
 import RegistrationForm from './Pages/Signin';
 import News from './Pages/News';
 import Entertainment from './Pages/Entertainment';
@@ -30,6 +31,7 @@ class App extends React.Component {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signin" element={<RegistrationForm />} />
           <Route path="/CreateBlog" element={<CreateBlog />} />
+          <Route path="/Blog/:id" element={<Blog />} />
         </Routes>
       </Router>
     );
