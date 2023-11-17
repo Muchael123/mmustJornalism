@@ -65,7 +65,7 @@ const CreateBlog = () => {
       };git
 
       const response = await fetch(
-        "https://8a54-197-248-176-94.ngrok-free.app/api/v1/admin/createblog",
+        "https://c469-197-248-176-94.ngrok-free.app/api/v1/admin/createblog",
         {
           method: "POST",
           headers: {
