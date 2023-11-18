@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useRef } from "react";
+import toast from "react-hot-toast";
 
 const CreateBlog = () => {
   const [img, setImg] = useState();
@@ -62,7 +63,7 @@ const CreateBlog = () => {
       const formDataWithId = {
         ...formData,
         image: filePreview,
-      };git
+      };
 
       const response = await fetch(
         "https://mmust-jowa.onrender.com/api/v1/admin/createblog",
@@ -83,6 +84,7 @@ const CreateBlog = () => {
       // });
 
       if (response?.ok) {
+        toast.success("Blog post created successfully");
         console.log("Blog post created successfully");
         // console.log(formDataWithId);
 
@@ -94,9 +96,11 @@ const CreateBlog = () => {
         console.log(imageResponse);
         setImg(imageResponse.image_path);
       } else {
+        toast.error("Failed to create blog post");
         console.error("Failed to create blog post");
       }
     } catch (error) {
+      toast.error("An error occurred");
       console.error("An error occurred:", error);
     }
   };
