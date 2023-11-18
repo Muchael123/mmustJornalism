@@ -6,7 +6,7 @@ const AdminNavbar = ({ onclick }) => {
   const name = localStorage.getItem("User");
   const firstName = name ? name.split(" ")[0] : "";
   const handleLogOut = () => {
-    console.log('log out')
+    console.log("log out");
     localStorage.removeItem("accessToken");
     localStorage.removeItem("User");
     window.location.href = "/Login";
@@ -21,13 +21,13 @@ const AdminNavbar = ({ onclick }) => {
         />
 
         <div className="flex text-2xl font-bold justify-between items-center">
-          <h1 className="w-[100px] md:w-[700px] mr-12 md:mr-10">
+          <h1 className="w-[150px] md:w-[700px] mr-12 md:mr-10">
             <span className="hidden md:block">
               MMUST JOURNALISM STUDENTS ASSOCIATION
             </span>
             <span className="block md:hidden text-[22px] md:mr-3">M-JOSA</span>
           </h1>
-          <button onClick={onclick}>
+          <button onClick={onclick} className=" mr-[-10px]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="35"
@@ -46,24 +46,7 @@ const AdminNavbar = ({ onclick }) => {
         </div>
       </div>
       <div className=" flex md:gap-2 justify-center items-center ">
-        <div className="border-r mr-2 px-2 ">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-          >
-            <g fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 19v-9a6 6 0 0 1 6-6v0a6 6 0 0 1 6 6v9M6 19h12M6 19H4m14 0h2m-9 3h2"
-              />
-              <circle cx="12" cy="3" r="1" />
-            </g>
-          </svg>
-        </div>
-        <p className="w-[60px] md:w-[80px] flex gap-[2px] items-center text-[12px]  flex-col md:flex-row justify-center ">
+        <p className="hidden w-[60px] md:w-[80px] md:flex gap-[2px] items-center text-[12px]  flex-col md:flex-row justify-center ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -77,29 +60,19 @@ const AdminNavbar = ({ onclick }) => {
           </svg>
           Hi, {firstName}{" "}
         </p>
-        {/* <svg
-          className=""
-          // onClick={toggleDropdown}
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          <path fill="currentColor" d="m7 10l5 5l5-5H7Z" />
-        </svg> */}
-        <p
-          className="text-[30px] text-white font-extrabold"
+
+        <button
           onClick={handleLogOut}
+          className="flex mr-2 md:ml-4 md:mr-[-40px]   outline-none border-none bg-blue-500 px-4 py-2 rounded-lg hover:bg-blue-600 transition-all ease-in-out duration-300"
         >
-          {" "}
-          <RiLoginBoxFill />
-        </p>
-        {/* <button
-          onClick={handleLogOut}
-          className="mr-2 md:ml-4 md:mr-[-40px] rounded-sm  outline-none border-none bg-blue-500 px-4 py-1"
-        >
-          logout
-        </button> */}
+          <p
+            className="flex items-center text-[14px] text-white font-bold gap-2"
+            onClick={handleLogOut}
+          >
+            <span> Logout </span>
+            <RiLoginBoxFill />
+          </p>
+        </button>
       </div>
     </div>
   );

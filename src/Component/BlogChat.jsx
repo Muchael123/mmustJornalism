@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../Component/Navbar';
+import Navbar from './Navbar';
 import { IoMdTime } from "react-icons/io";
 
 
