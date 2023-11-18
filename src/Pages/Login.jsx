@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import toast, { Toaster } from "react-hot-toast";
 function LoginForm() {
  
   const [formData, setFormData] = useState({
@@ -24,6 +24,7 @@ function LoginForm() {
       );
 
       if (response.status === 200) {
+        toast.success("login successful..");
         // Login was successful
         const data = await response.json();
         console.log(data)
@@ -49,12 +50,14 @@ function LoginForm() {
 
       }else if (response.status === 401) {
         // Handle authentication failure (e.g., display an error message)
+        toast.error("Login failed");
         console.error('Login failed');
       } else {
         // Handle other status codes as needed
         console.error('Unexpected status code:', response.status);
       }
     } catch (error) {
+      toast.error("An error occurred");
       console.error('An error occurred:', error);
     }
   };
@@ -69,43 +72,56 @@ function LoginForm() {
   };
 
   return (
-<div className='w-screen flex items-center justify-center h-screen mx-auto '>
-    <form className='w-96  h-2/3 flex flex-col  justify-center gap-5 px-5 shadow-lg rounded-lg ' onSubmit={handleSubmit}>
-    
-      <div>
-        <label className='text-gray-500' htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className='bg-transparent  border-b-2 outline-none   px-2  w-full'
-          autoComplete='false'
+    <div className="w-screen flex items-center justify-center h-screen mx-auto ">
+      <Toaster position="top-center" reverseOrder={false} />
+      <form
+        className="w-96  h-2/3 flex flex-col  justify-center gap-5 px-5 shadow-lg rounded-lg "
+        onSubmit={handleSubmit}
+      >
+        <div>
+          <label className="text-gray-500" htmlFor="email">
+            Email:
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="bg-transparent  border-b-2 outline-none   px-2  w-full"
+            autoComplete="false"
+          />
+        </div>
+        <div>
+          <label className="text-gray-500" htmlFor="password">
+            Password:
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            className="bg-transparent  border-b-2 outline-none   px-2  w-full"
+            autoComplete="false"
+          />
+        </div>
 
-        />
-      </div>
-      <div>
-        <label className='text-gray-500'htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          className='bg-transparent  border-b-2 outline-none   px-2  w-full'
-          autoComplete='false'
-
-        />
-      </div>
-      
-      
-      <button className='bg-gradient-to-r  from-indigo-500 via-purple-500 to-pink-500 p-2 rounded-3xl text-white mt-2' type="submit">Sign In</button>
-      <div className='flex w-full justify-between px-2 text-xs'>
-        <p>Don't have an account?</p>
-        <Link to='/signin'><p className='text-blue-700 hover:underline cursor-pointer duration-200'>Sign Up</p></Link>
-      </div>
-    </form>
+        <button
+          className="bg-gradient-to-r  from-indigo-500 via-purple-500 to-pink-500 p-2 rounded-3xl text-white mt-2"
+          type="submit"
+        >
+          Sign In
+        </button>
+        <div className="flex w-full justify-between px-2 text-xs">
+          <p>Don't have an account?</p>
+          <Link to="/signin">
+            <p className="text-blue-700 hover:underline cursor-pointer duration-200">
+              Sign Up
+            </p>
+          </Link>
+        </div>
+      </form>
     </div>
   );
 }
