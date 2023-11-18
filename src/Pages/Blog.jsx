@@ -2,11 +2,12 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../Component/Navbar';
 import SidePanel from '../Component/SidePanel';
-import Content from '../Component/Blog';
+import Content from '../Component/BlogChat';
 import { useParams } from 'react-router-dom';
 import Footer from '../Component/Footer';
 
 function Blog() {
+  const log  = console.log;
   const { id } = useParams(); // Destructure id from useParams
   const [newsData, setNewsData] = useState({});
 
@@ -18,6 +19,7 @@ function Blog() {
       .then((data) => {
         if (typeof data === 'object' && !Array.isArray(data)) {
           setNewsData(data);
+          log(data);
         } else {
           console.error('API response is not an object:', data);
         }
@@ -49,7 +51,7 @@ function Blog() {
         </div>
         
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
