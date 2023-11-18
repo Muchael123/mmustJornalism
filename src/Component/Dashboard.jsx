@@ -1,24 +1,21 @@
-import React, { useState, useEffect } from "react";
-import ThreeDots from "./ThreeDots";
-import AdminBlogs from "./AdminBlogs";
+import React,{ useState, useEffect } from 'react';
+import ThreeDots from './ThreeDots';
+import AdminBlogs from './AdminBlogs';
 
-function Dashboard() {
+function Dashboard  ()  {
   const [latestNews, setLatestNews] = useState([]);
 
   useEffect(() => {
     const fetchLatestNews = async () => {
       try {
-        const response = await fetch(
-          "https://mmust-jowa.onrender.com/api/v1/admin/news/latest",
-          {
-            method: "GET",
-            headers: {
-              mode: "cors",
-              "Content-Type": "application/json",
-              Authorization: `Bearer ` + localStorage.getItem("accessToken"),
-            },
-          }
-        );
+        const response = await fetch('https://mmust-jowa.onrender.com/api/v1/admin/news/latest', {
+          method: 'GET',
+          headers: {
+            mode: 'cors',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ` + localStorage.getItem('accessToken'),
+          },
+        });
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -27,24 +24,17 @@ function Dashboard() {
         const data = await response.json();
         setLatestNews(data);
       } catch (error) {
-        console.error("Error fetching latest news:", error);
+        console.error('Error fetching latest news:', error);
       }
     };
 
     fetchLatestNews();
   }, []);
 
-  console.log(latestNews);
+  console.log(latestNews)
 
   const formatToLocalTime = (dateString) => {
-    const options = {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      hour: "numeric",
-      minute: "numeric",
-      hour12: false,
-    };
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false, };
     return new Date(dateString).toLocaleString(undefined, options);
   };
   return (
