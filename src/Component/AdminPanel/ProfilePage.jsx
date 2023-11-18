@@ -12,7 +12,7 @@ const ProfilePage = () => {
         <div className='mt-4 py-3 '>
           <p className='text-gray-400'>Profile picture change</p> 
           <div className='flex items-center gap-4'>
-          <img class="w-20 h-20 rounded-full p-2 " src="/src/images/testpic.jpg" alt="" width="384" height="512"/>
+          <img className="w-[100px] h-[100px] object-cover object-center rounded-full p-2 " src="/src/images/testpic.jpg" alt="" width="384" height="512"/>
            <div className='gap-6 flex text-sm'>
            <button className='bg-slate-200 w-fit px-4 py-1.5 rounded-sm  '>
         <p>Change </p>

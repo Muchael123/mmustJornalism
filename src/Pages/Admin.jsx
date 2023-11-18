@@ -40,6 +40,7 @@ function Admin() {
   // Render the component only if the user is authenticated
   return authenticated ? (
     <div className="w-full overflow-x-hidden flex items-center">
+      
       <div className="relative">
         <AdminNavbar onclick={handleSideBar} />
       </div>
