@@ -3,6 +3,7 @@ import Navbar from '../Component/Navbar'
 import BlogCard from '../Component/BlogCard';
 
 function Entertainment  () {
+  const id = 3;
   const [newsData, setNewsData] = useState([]);
 
   useEffect(() => {
@@ -11,7 +12,7 @@ function Entertainment  () {
       .then((response) => response.json())
       .then((data) => setNewsData(data))
       .catch((error) => console.error('Error fetching news data:', error));
-  }, []);
+  }, [id]);
   const formatToLocalTime = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false, };
     return new Date(dateString).toLocaleString(undefined, options);
@@ -30,11 +31,12 @@ function Entertainment  () {
       {newsData.map((item, index) => (
         
           <BlogCard
-            key={index}
-            title={item.title}
-            slug={item.slug}
-            published_on={formatToLocalTime(item.published_on)}
-            image={item.image_id}
+          key={id}
+          id={item.id}
+          title={item.title}
+          slug={item.slug}
+          published_on={formatToLocalTime(item.published_on)}
+          image={item.image_id}
           />
         ))}
        

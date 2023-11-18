@@ -1,13 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function NewsCard (props){
-    const image = props.image
-    const title = props.title
-    const published_on = props.published_on
-    const slug = props.slug
+  const { title, image, slug, published_on, author, id } = props; // Destructure id from props
+
+  const url = `/Blog/${id}`; // Use id in the URL
+  localStorage.setItem('id', props.key);
     // const slug = props.slug
   return (
-    <div className=' shadow-lg h-[360px] w-full  rounded-lg p-2 cursor-pointer object-contain'>
+    <div>
+      <Link to={url}>
+      <div className=' shadow-lg h-[360px] w-full  rounded-lg p-2 cursor-pointer object-contain'>
         <div>
             <img  className='w-full rounded-md h-[189px]' src={image} alt="" />
         </div>
@@ -18,8 +21,9 @@ function NewsCard (props){
         </div>
         <div className=' font-bold cursor-pointer hover:text-orange-400 ease-in-out duration-150'>{title}</div>
         <div className='border-none  px-1 text-black '>{slug}</div>
-
-    </div>
+      </div>
+      </Link>
+      </div>
   )
 }
 
