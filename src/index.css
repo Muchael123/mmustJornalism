@@ -6,3 +6,17 @@
     /* background: #000 !important; */
     transition: all 0.5s ease-in-out ;
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbary-button {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  height: 10px;
+  background: rgb(142, 109, 166);
+}
+::-webkit-scrollbar-track {
+  background: #aaa;
+}

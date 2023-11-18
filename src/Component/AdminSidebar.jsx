@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 
 const AdminSidebar = ({ onItemClick, open }) => {
+  const name = localStorage.getItem("User");
+  const firstName = name ? name.split(" ")[0] : "";
   const handleItemClick = (item) => {
     if (onItemClick) {
       onItemClick(item);
@@ -22,7 +24,26 @@ const AdminSidebar = ({ onItemClick, open }) => {
       >
         <ul className="flex flex-col justify-center -ml-5 items-start text-lg px-10 mt-3 text-left ">
           <li
-            className="py-1 flex items-center gap-3 cursor-pointer"
+            onClick={() => handleItemClick("Profile Settings")}
+            className="flex py-1  w-full justify-start text-left items-center gap-3 cursor-pointer mt-6 md:hidden"
+          >
+            <p className="w-[60px] md:w-[80px] flex gap-[2px] items-center text-[12px]  flex-col md:flex-row justify-start text-left cursor-pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  fill="currentColor"
+                  d="M229.19 213c-15.81-27.32-40.63-46.49-69.47-54.62a70 70 0 1 0-63.44 0C67.44 166.5 42.62 185.67 26.81 213a6 6 0 1 0 10.38 6c19.21-33.19 53.15-53 90.81-53s71.6 19.81 90.81 53a6 6 0 1 0 10.38-6ZM70 96a58 58 0 1 1 58 58a58.07 58.07 0 0 1-58-58Z"
+                />
+              </svg>
+              Hi, {firstName}{" "}
+            </p>
+          </li>
+          <li
+            className="py-1 flex items-center gap-3 cursor-pointer mt-[20px]"
             onClick={() => handleItemClick("Dashboard")}
           >
             <svg
@@ -89,23 +110,6 @@ const AdminSidebar = ({ onItemClick, open }) => {
               />
             </svg>
             Add Blog
-          </li>
-          <li
-            className="py-1 flex items-center gap-3 cursor-pointer"
-            onClick={() => handleItemClick("Profile Settings")}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 256 256"
-            >
-              <path
-                fill="currentColor"
-                d="M107.19 159a56 56 0 1 0-46.38 0a91.83 91.83 0 0 0-53.93 38.81a4 4 0 1 0 6.7 4.37a84 84 0 0 1 140.84 0a4 4 0 1 0 6.7-4.37A91.83 91.83 0 0 0 107.19 159ZM36 108a48 48 0 1 1 48 48a48.05 48.05 0 0 1-48-48Zm212 95.35a4 4 0 0 1-5.53-1.17A83.81 83.81 0 0 0 172 164a4 4 0 0 1 0-8a48 48 0 1 0-17.82-92.58a4 4 0 1 1-3-7.43a56 56 0 0 1 44 103a91.83 91.83 0 0 1 53.93 38.86a4 4 0 0 1-1.11 5.5Z"
-              />
-            </svg>
-            Profile
           </li>
         </ul>
       </div>
