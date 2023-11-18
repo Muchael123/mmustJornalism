@@ -32,6 +32,7 @@ function LoginForm() {
         // Login was successful
         const data = await response.json();
         console.log(data);
+        console.log(data);
 
         const access_token = data.success.access_token;
         const user = data.success.User;
@@ -39,6 +40,11 @@ function LoginForm() {
         console.log(access_token);
         console.log(user);
 
+        console.log(access_token);
+        console.log(user);
+
+        localStorage.setItem("accessToken", access_token);
+        localStorage.setItem("User", user);
         localStorage.setItem("accessToken", access_token);
         localStorage.setItem("User", user);
 
@@ -46,6 +52,8 @@ function LoginForm() {
 
         // Redirect the user to a protected page or perform other actions
         // Replace 'protected-page' with the actual URL of the protected page
+        window.location.href = "/Admin";
+      } else if (response.status === 401) {
         window.location.href = "/Admin";
       } else if (response.status === 401) {
         // Handle authentication failure (e.g., display an error message)
@@ -132,5 +140,6 @@ function LoginForm() {
       </div>
     </>
   );
-}
+export default LoginForm;
+
 export default LoginForm;

@@ -38,6 +38,9 @@ const Navbar = () => {
           } md:flex flex-row w-full h-full gap-10`}
         >
           <li className="active:text-purple-600 hover:text-purple-600">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="active:text-purple-600 hover:text-purple-600">
             <Link to="/News">News</Link>
           </li>
           <li className="active:text-purple-600 hover:text-purple-600">
