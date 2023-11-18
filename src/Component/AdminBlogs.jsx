@@ -12,7 +12,6 @@ function AdminBlogs(props) {
     try {
       const response = await fetch(
         `https://mmust-jowa.onrender.com/api/v1/admin/news/latest/delete/${props.id}`,
-        `https://mmust-jowa.onrender.com/api/v1/admin/news/latest/delete/${props.id}`,
         {
           method: "DELETE",
           headers: {
