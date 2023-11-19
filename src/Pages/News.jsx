@@ -10,14 +10,15 @@ function News  () {
   const id = 3;
   const [newsData, setNewsData] = useState([]);
   const [newsOther, setNewsOther] = useState([]);
+  const url = `https://mmust-jowa.onrender.com/api/v1/user/news`
 
  useEffect(() => {
   // Fetch news data from the API
-  fetch('https://mmust-jowa.onrender.com/api/v1/user/news')
+  fetch({url})
     .then((response) => response.json())
     .then((data) => {
       const valuesArray = Object.values(data);
-      setNewsOther(data); // Convert object values to an array
+      setNewsOther(data.slice(0)); // Convert object values to an array
       if (valuesArray && valuesArray.length > 0) {
         setNewsData(valuesArray[0]);
        
@@ -45,6 +46,7 @@ function News  () {
         <div className='p-5 flex flex-row w-[100vw] '>   
           <MainCatNews
             id={newsData.id}
+            url = {url}
             title={newsData.title}
             slug={newsData.slug}
             published_on={formatToLocalTime(newsData.published_on)}

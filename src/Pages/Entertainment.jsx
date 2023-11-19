@@ -4,8 +4,8 @@ import BlogCard from '../Component/BlogCard';
 import MainCatNews from '../Component/Category/MainCatNews';
 
 function Entertainment  () {
-  const id = 3;
   const [newsData, setNewsData] = useState([]);
+  const category = 'Entertainment';
   const [newsOther, setNewsOther] = useState([]);
 
  useEffect(() => {
@@ -40,6 +40,7 @@ function Entertainment  () {
               id={newsData.id}
               title={newsData.title}
               slug={newsData.slug}
+               category = {category}
               published_on={formatToLocalTime(newsData.published_on)}
               image={newsData.image_id}
               otherNews = {newsOther}

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
-import MainNews from '../Component/MainNews'
-import NewsCard from '../Component/NewsCard'
+import MainNews from '../Component/homePage/MainNews'
+import NewsCard from '../Component/homePage/NewsCard'
 import Navbar from '../Component/Navbar'
 import Footer from '../Component/Footer'
 import LoadingSpinner from '../Component/LoadingSpinner';
+import Heading from '../Component/homePage/Heading';
+import { motion } from 'framer-motion';
 
 function Homepage() {
-  const id = 3;
+  const [latestCatNews, setLatestCatNews] = useState([]);
   const [newsData, setNewsData] = useState([]);
   const [latestData, setLatestData] = useState([]);
   const [businessData, setBusinessData] = useState([]);
@@ -31,21 +32,25 @@ function Homepage() {
         const sportsResponse = await fetch('https://mmust-jowa.onrender.com/api/v1/user/sports');
         const sportsData = await sportsResponse.json();
         setSportsData(sportsData.slice(0, 3));
+        
 
         // Fetch entertainment data
         const entertainmentResponse = await fetch('https://mmust-jowa.onrender.com/api/v1/user/entertainment');
         const entertainmentData = await entertainmentResponse.json();
         setEntertainmentData(entertainmentData.slice(0, 3));
-
+    
         // Fetch news data
         const newsResponse = await fetch('https://mmust-jowa.onrender.com/api/v1/user/news');
         const newsData = await newsResponse.json();
         setNewsData(newsData.slice(1, 3));
+       
+          
 
         // Fetch business data
         const businessResponse = await fetch('https://mmust-jowa.onrender.com/api/v1/user/business');
         const businessData = await businessResponse.json();
         setBusinessData(businessData.slice(0, 1));
+        
 
         // Fetch more business data
         const moreBusinessResponse = await fetch('https://mmust-jowa.onrender.com/api/v1/user/business');
@@ -60,7 +65,8 @@ function Homepage() {
     };
 
     fetchData();
-  }, [id]);
+  }, []);
+
 
   const formatToLocalTime = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false,  };
@@ -73,11 +79,20 @@ function Homepage() {
       <Navbar/>
       </div >
 
-      <h1 className='w-screen mt-20 flex text-2xl font-bold  justify-center -mb-8'>LATEST NEWS</h1>
+       <motion.div
+    initial = {{x: -100, opacity:0}}
+    animate = {{x: 0, opacity:1}}
+     transition={{
+            ease: 'linear',
+            duration: 1,
+          }}
+    >
+        <h1 className='w-screen bg- mt-20 flex text-2xl font-bold justify-center text-[26px] justify-left -mb-8 underline decoration-gray-400'>Main News</h1>
+    </motion.div>
 
-      {latestData.map((item, id) => (
+      {latestData.map((item, key) => (
           <MainNews
-          key={id}
+          key={item.id}
           id={item.id}
           title={item.title}
           slug={item.slug}
@@ -85,120 +100,67 @@ function Homepage() {
           image={item.image_id}
           />
         ))}
-      <div className='w-9/12 mx-auto mt-10 grid grid-cols-3 gap-2 max-[475px]:grid-cols-1 max-[475px]:w-11/12 '>
-    
-      
-      {newsData.map((item, id) => (
+         <Heading title = {"Business News"} category = "business"/>
+      <div className='flex justify-even my-5 flex-col md:flex-row snap-mandatory snap-center'>
+        {/* <Businesss News /> */}
+        {businessData.map((item, key) => (
           <NewsCard
-          key={id}
+          key={item.id}
           id={item.id}
           title={item.title}
           slug={item.slug}
           published_on={formatToLocalTime(item.published_on)}
           image={item.image_id}
           />
-        ))}
-      
-         
-
-     
-      {businessData.map((item, id) => (
+        ))} </div>
+        {/* Entertainment News */}
+        <Heading title = {"Entertainment News"} category = "entertainment"/>
+         <div className='flex justify-even my-5 flex-col md:flex-row snap-mandatory snap-center'>
+        {entertainmentData.map((item, key) => (
           <NewsCard
-          key={id}
+          key={item.id}
           id={item.id}
           title={item.title}
           slug={item.slug}
           published_on={formatToLocalTime(item.published_on)}
           image={item.image_id}
           />
-        ))}
-
-      
+          
+        ))} </div>
+        {/* SportsNews */}
+        <Heading title = {"Sport News"} category = "sports"/>
+         <div className='flex justify-even my-5 flex-col md:flex-row snap-mandatory snap-center'>
+        {sportsData.map((item, key) => (
+          <NewsCard
+          key={item.id}
+          id={item.id}
+          title={item.title}
+          slug={item.slug}
+          published_on={formatToLocalTime(item.published_on)}
+          image={item.image_id}
+          />
+        ))}</div>
+        {/* News */}
         
-   </div>
-   <div className='w-9/12 mx-auto mt-10   '>
-    
-    <div className='w-full flex justify-between mt-10  '>
-      <h1 className='font-bold  text-lg mb-1'>NEWS</h1>
-      <p className=' cursor-pointer hover:text-orange-500 ease-in-out hover:underline duration-150'><Link to="/News">VIEW MORE</Link></p>
-      
-    </div>
-    <div className='w-full flex'>
-      {newsData.map((item, id) => (
+        <Heading title = {"Other News"} category = "news"/>
+         <div className='flex justify-even my-5 flex-col md:flex-row snap-mandatory snap-center'>
+        {newsData.map((item, key) => (
           <NewsCard
-          key={id}
+          key={item.id}
           id={item.id}
           title={item.title}
           slug={item.slug}
           published_on={formatToLocalTime(item.published_on)}
           image={item.image_id}
           />
-        ))}
-      </div>
-
-      <div className='w-full flex justify-between mt-10  '>
-      <h1 className='font-bold  text-lg mb-1'>SPORTS</h1>
-      <p className=' cursor-pointer hover:text-orange-500 ease-in-out hover:underline duration-150'><Link to="/Sports">VIEW MORE</Link></p>
-      
-    </div>
-
-    <div className='w-full flex'>
-      {sportsData.map((item, id) => (
-          <NewsCard
-          key={id}
-          id={item.id}
-          title={item.title}
-          slug={item.slug}
-          published_on={formatToLocalTime(item.published_on)}
-          image={item.image_id}
-          />
-        ))}
-      </div>
-
-      <div className='w-full flex justify-between mt-10  '>
-      <h1 className='font-bold  text-lg mb-1'>BUSINESS</h1>
-      <p className=' cursor-pointer hover:text-orange-500 ease-in-out hover:underline duration-150'><Link to="/Business">VIEW MORE</Link></p>
-      
-    </div>
-    <div className='w-full flex'>
-      {moreBusinessData.map((item, id) => (
-          <NewsCard
-          key={id}
-          id={item.id}
-          title={item.title}
-          slug={item.slug}
-          published_on={formatToLocalTime(item.published_on)}
-          image={item.image_id}
-          />
-        ))}
-      </div>
-
-      <div className='w-full flex justify-between mt-10  '>
-      <h1 className='font-bold  text-lg mb-1'>ENTERTAINMENT</h1>
-      <p className=' cursor-pointer hover:text-orange-500 ease-in-out hover:underline duration-150'><Link to="/Entertainment">VIEW MORE</Link></p>
-      
-    </div>
-    <div className='w-full flex'>
-      {entertainmentData.map((item, id) => (
-          <NewsCard
-          key={id}
-          id={item.id}
-          title={item.title}
-          slug={item.slug}
-          published_on={formatToLocalTime(item.published_on)}
-          image={item.image_id}
-          />
-        ))}
-      </div>
-    
-   </div>
- 
+        ))}</div>
+        <Footer />
     </div> 
 
     
   ):  (
     <LoadingSpinner />
   );
-}
 
+  }
 export default Homepage;

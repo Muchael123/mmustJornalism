@@ -11,8 +11,9 @@ function MainCatNews(props) {
     const id = props.id;
     const newsOther = props.otherNews
     const title = props.title;
+    const link = props.link;
     const body = props.slug;
-    const url = `/Blog/${id}`;
+    const postUrl = `blog/${id}`;
     const published_on = props.published_on;
     const image = props.image;
   return (
@@ -22,7 +23,7 @@ function MainCatNews(props) {
            <img src={image} alt={title} className='rounded-lg h- :w-[60%] max-h-[250px] object-cover  mr-5'/>
            <div>
             <div className='my-4'>
-                <Link to={url}>
+                <Link to={postUrl}>
                 <h1 className=' lg:text-[26px] text-[24px] font-sans font-bold hover:underline decoration-blue-700'>{title}</h1></Link>
 
             </div>

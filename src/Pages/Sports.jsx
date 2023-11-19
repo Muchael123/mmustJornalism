@@ -5,6 +5,7 @@ import MainCatNews from '../Component/Category/MainCatNews';
 
 function Sports  () {
   const id = 3;
+  const category = 'Sports';
   const [newsData, setNewsData] = useState([]);
   const [newsOther, setNewsOther] = useState([]);
 
@@ -39,6 +40,7 @@ function Sports  () {
           <MainCatNews
             id={newsData.id}
             title={newsData.title}
+             category = {category}
             slug={newsData.slug}
             published_on={formatToLocalTime(newsData.published_on)}
             image={newsData.image_id}
