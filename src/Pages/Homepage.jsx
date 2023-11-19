@@ -83,6 +83,7 @@ function Homepage() {
           slug={item.slug}
           published_on={formatToLocalTime(item.published_on)}
           image={item.image_id}
+          category={'News'}
           />
         ))}
       <div className='w-9/12 mx-auto mt-10 grid grid-cols-3 gap-2 max-[475px]:grid-cols-1 max-[475px]:w-11/12 '>
@@ -96,6 +97,7 @@ function Homepage() {
           slug={item.slug}
           published_on={formatToLocalTime(item.published_on)}
           image={item.image_id}
+          category={'News'}
           />
         ))}
       
@@ -110,6 +112,7 @@ function Homepage() {
           slug={item.slug}
           published_on={formatToLocalTime(item.published_on)}
           image={item.image_id}
+          category={'Business'}
           />
         ))}
 
@@ -132,6 +135,7 @@ function Homepage() {
           slug={item.slug}
           published_on={formatToLocalTime(item.published_on)}
           image={item.image_id}
+          category={'News'}
           />
         ))}
       </div>
@@ -151,6 +155,7 @@ function Homepage() {
           slug={item.slug}
           published_on={formatToLocalTime(item.published_on)}
           image={item.image_id}
+          category={'Sports'}
           />
         ))}
       </div>
@@ -169,6 +174,7 @@ function Homepage() {
           slug={item.slug}
           published_on={formatToLocalTime(item.published_on)}
           image={item.image_id}
+          category={'Business'}
           />
         ))}
       </div>
@@ -187,6 +193,7 @@ function Homepage() {
           slug={item.slug}
           published_on={formatToLocalTime(item.published_on)}
           image={item.image_id}
+          category={'Entertainment'}
           />
         ))}
       </div>

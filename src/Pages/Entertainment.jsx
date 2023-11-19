@@ -43,6 +43,7 @@ function Entertainment  () {
               published_on={formatToLocalTime(newsData.published_on)}
               image={newsData.image_id}
               otherNews = {newsOther}
+              category = {'Entertainment'}
             />
           </div>
         </div>  

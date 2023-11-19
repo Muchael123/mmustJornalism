@@ -4,12 +4,13 @@ import { IoMdTime } from "react-icons/io";
 
 
 function Content(props) {
-    const id = props.key
+    const id = props.id
     const title = props.title
     const image = props.image
     const body = props.body
     const published_on = props.published_on
     const author = props.author
+    const category = props.category
   return (
     <div>
         <Navbar/>
