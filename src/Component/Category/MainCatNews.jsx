@@ -9,10 +9,11 @@ import { Link } from 'react-router-dom';
 
 function MainCatNews(props) {
     const id = props.id;
+    const category = props.category;
     const newsOther = props.otherNews
     const title = props.title;
     const body = props.slug;
-    const url = `/Blog/${id}`;
+    const url = `/Blog/${category}/${id}`;
     const published_on = props.published_on;
     const image = props.image;
   return (
@@ -38,11 +39,12 @@ function MainCatNews(props) {
         <div className='flex-1 p-5  bg-[#f5f5f5]'>
             <div className='t-5 bg-green min-h-[70px]'>
             </div>
-                    {newsOther.map((item, index) => (
+                    {newsOther.map((item, id) => (
           <OtherCategories
             key={item.id}
             id={item.id}
-            title={item.title} // Ensure 'title' prop is passed
+            title={item.title} 
+            category={category}// Ensure 'title' prop is passed
           />
       ))}
         </div>

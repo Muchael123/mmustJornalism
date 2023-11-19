@@ -50,6 +50,7 @@ function News  () {
             published_on={formatToLocalTime(newsData.published_on)}
             image={newsData.image_id}
             otherNews = {newsOther}
+            category = {'News'}
           />
         </div>
       </div>   

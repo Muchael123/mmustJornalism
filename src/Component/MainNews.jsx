@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 function MainNews (props){
-  const { title, image, slug, published_on, author, id } = props; // Destructure id from props
+  const { title, image, slug, published_on, author, id,category } = props; // Destructure id from props
 
-  const url = `/Blog/${id}`; // Use id in the URL
+  const url = `/Blog/${category}/${id}`; // Use id in the URL
 
   localStorage.setItem('id', props.key);
 

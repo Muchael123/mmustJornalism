@@ -4,8 +4,9 @@ import MiniNews from './MiniNews'
 import { Link } from 'react-router-dom'
 
 function MainNews (props){
-    const BlogUrl = "#";
+    const url = `/Blog/${category}/${id}`;
     const image = props.image
+    const category= props.category
     const title = props.title
     const slug = props.slug
     const published_on = props.published_on
@@ -25,7 +26,7 @@ function MainNews (props){
       </div>
        <div className='relative m-5 md:w-[50%] w-[100]  flex-2 pr-3'>
             
-            <Link to={BlogUrl}>
+            <Link to={url}>
              <h1 className='hover:text-purple-900 text-[18px] font-courier font-bold text-center'>{title}</h1>
             </Link>
              <p className='mb-6 ml-4'>{slug}</p>
