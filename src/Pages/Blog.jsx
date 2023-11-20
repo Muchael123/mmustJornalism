@@ -24,6 +24,7 @@ function Blog() {
       })
       .catch((error) => console.error(`Error fetching ${category} data:`, error));
   }, [id,category]);
+  console.log(newsData);
 
   return (
     <div>

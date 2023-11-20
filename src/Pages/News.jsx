@@ -2,27 +2,32 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../Component/Navbar'
 import Footer from '../Component/Footer'
 import MainCatNews from '../Component/Category/MainCatNews.jsx'
-import OtherCategories from '../Component/Category/OtherCategories.jsx';
+import OtherCatNews from '../Component/Category/OtherCatNews.jsx';
+import NewsCard from '../Component/homePage/NewsCard.jsx';
 
 
 function News  () {
  
   const [newsData, setNewsData] = useState([]);
+  const [sideNews, setSideNews] = useState([]);
   const [newsOther, setNewsOther] = useState([]);
 
  useEffect(() => {
   // Fetch news data from the API
-  fetch('https://mmust-jowa.onrender.com/api/v1/user/news')
+fetch('https://mmust-jowa.onrender.com/api/v1/user/news')
     .then((response) => response.json())
     .then((data) => {
-      const valuesArray = Object.values(data);
-      setNewsOther(data); // Convert object values to an array
-      if (valuesArray && valuesArray.length > 0) {
-        setNewsData(valuesArray[0]);
-       
-      }
+        const valuesArray = Object.values(data);
+        console.log(Array.isArray(valuesArray));
+        setNewsOther(valuesArray.slice(3));
+        setSideNews(valuesArray.slice(1, 3));
+        if (valuesArray && valuesArray.length > 0) {
+            setNewsData(valuesArray[0]);
+        }
     })
-    .catch((error) => console.error('Error fetching news data:', error));
+    .catch((error) => {
+        console.error('Error fetching news data:', error);
+    });
 }, []);
   console.log("other news:",newsOther);
  
@@ -33,12 +38,50 @@ function News  () {
   };
 
   return (
-    <div className='flex flex-col justify-between'>
+    <div className='flex flex-col'>
       <Navbar />
-      <div className=''>
-        <h1></h1>
+      <h1 className='my-12 py-12 text-[24px] font-bold text-center tracking-wider'>Main News</h1>
+      <div className='flex '>
+      <div>
+         <div className='flex justify-center  flex-row px-7 divide-x- gap-12'> 
+            
+          <MainCatNews
+          id={newsData.id}
+          title={newsData.title}
+          slug={newsData.slug}
+          category = {"News"}
+          published_on={formatToLocalTime(newsData.published_on)}
+          image={newsData.image_id}
+          />
+            
+            <div className='p-4 justify-center  rounded-lg border-gray-300 bg-slate-100 hidden md:block'>
+              {sideNews.map((item, key) => (
+                <OtherCatNews
+                key={item.key}
+                id={item.id}
+                title={item.title}
+                category = {"News"}
+                published_on={formatToLocalTime(item.published_on)}
+                />
+              ))}
+              </div>
+          </div>
       </div>
-      {/* <Footer/> */}
+       
+      </div>
+      <h1 className='my-12 py-12 text-[24px] font-bold text-center tracking-wider'>Other News</h1>
+      {newsOther.map((item, key) => (
+                <NewsCard
+                key={item.key}
+                image = {item.image_id}
+                slug = {item.slug}
+                id={item.id}
+                title={item.title}
+                category = {"News"}
+                published_on={formatToLocalTime(item.published_on)}
+                />
+              ))}
+      <Footer/>
       </div>   
 
     
