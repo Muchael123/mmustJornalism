@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../Component/Navbar'
 import BlogCard from '../Component/BlogCard';
 import MainCatNews from '../Component/Category/MainCatNews';
+import Footer from '../Component/Footer';
 
 function Sports  () {
   const id = 3;
@@ -40,7 +41,6 @@ function Sports  () {
           <MainCatNews
             id={newsData.id}
             title={newsData.title}
-             category = {category}
             slug={newsData.slug}
             published_on={formatToLocalTime(newsData.published_on)}
             image={newsData.image_id}
@@ -48,6 +48,7 @@ function Sports  () {
             category = {'Sports'}
           />
         </div>
+        <Footer />
       </div>  
   
   )

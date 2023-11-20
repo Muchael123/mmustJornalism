@@ -33,23 +33,12 @@ function News  () {
   };
 
   return (
-    <div className='overflow-x-hidden'>
-     <div className='relative mb-24'>
-      <Navbar/>
-     
-    </div>
-    <h1 className='w-screen mt-20 flex text-2xl font-bold  justify-center'>News</h1>
-        <div className='p-5 flex flex-row w-[100vw] '>   
-          <MainCatNews
-            id={newsData.id}
-            title={newsData.title}
-            slug={newsData.slug}
-            published_on={formatToLocalTime(newsData.published_on)}
-            image={newsData.image_id}
-            otherNews = {newsOther}
-            category = {'News'}
-          />
-        </div>
+    <div className='flex flex-col justify-between'>
+      <Navbar />
+      <div className=''>
+        <h1> hello world</h1>
+      </div>
+      {/* <Footer/> */}
       </div>   
 
     

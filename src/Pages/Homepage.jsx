@@ -9,7 +9,6 @@ import Heading from '../Component/homePage/Heading';
 import { motion } from 'framer-motion';
 
 function Homepage() {
-  const [latestCatNews, setLatestCatNews] = useState([]);
   const [newsData, setNewsData] = useState([]);
   const [latestData, setLatestData] = useState([]);
   const [businessData, setBusinessData] = useState([]);
@@ -49,7 +48,7 @@ function Homepage() {
         // Fetch business data
         const businessResponse = await fetch('https://mmust-jowa.onrender.com/api/v1/user/business');
         const businessData = await businessResponse.json();
-        setBusinessData(businessData.slice(0, 1));
+        setBusinessData(businessData.slice(0, 3));
         
 
         // Fetch more business data
@@ -158,7 +157,7 @@ function Homepage() {
           image={item.image_id}
           />
         ))}</div>
-        <Footer />
+        {/* <Footer /> */}
     </div> 
 
     

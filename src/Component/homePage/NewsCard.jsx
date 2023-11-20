@@ -25,16 +25,16 @@ function NewsCard (props){
             {title}
           </Link>
       </h1>
-      <p className='py-3 px-3'>{slug}
+      <p className='py-3 px-3 text-[13px]'>{slug}
        <Typewriter 
                words = {[`${slug}`]}
                loop = {1}
                delaySpeed={500}
                cursorBlinking = {false}
-               typeSpeed={10}
+               typeSpeed={5}
                />
       </p>
-      <p className='inline text-right text-gray-600 px-6 pt-7'>
+      <p className='inline text-right text-gray-600 px-6 py-7 text-[10px]'>
       <Typewriter 
                words = {[`${published_on}`]}
                loop = {1}
