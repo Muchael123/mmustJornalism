@@ -36,7 +36,7 @@ function News  () {
     <div className='flex flex-col justify-between'>
       <Navbar />
       <div className=''>
-        <h1> hello world</h1>
+        <h1></h1>
       </div>
       {/* <Footer/> */}
       </div>   

@@ -152,6 +152,7 @@ function Homepage() {
           key={item.id}
           id={item.id}
           title={item.title}
+          category = {"News"}
           slug={item.slug}
           published_on={formatToLocalTime(item.published_on)}
           image={item.image_id}
