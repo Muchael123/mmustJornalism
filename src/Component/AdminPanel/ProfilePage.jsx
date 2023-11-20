@@ -122,12 +122,12 @@ const ProfilePage = () => {
       <div className='px-4 mx-auto sm:max-w-xl md:max-w-full lg:w-fit md:px-24  absolute mt-5 lg:py-16 w-full py-4    rounded shadow-xl '>
         <div>
           <h3 className='text-xl font-bold text-gray-500 border-b pb-4 mt-0'>Account Information</h3>
-          <div className='mt-4 py-3 '>
+          <div className='mt-4 py-3  '>
             <p className='text-gray-400'>Profile picture change</p>
             <div className='flex items-center gap-4'>
-              <img className="w-20 h-20 rounded-full p-1 " src={selectedImage || `/src/images/profile.png`} alt="" width="384" height="512" />
+              <img className="w-20 z-0 h-20 rounded-full p-1 " src={selectedImage || `/src/images/profile.png`} alt="" width="384" height="512" />
               <div className='gap-6 flex text-sm'>
-                <label className="bg-slate-200 w-fit px-4 py-1.5 rounded-sm cursor-pointer">
+                <label className="bg-slate-200 w-fit px-4 py-1.5 rounded-sm cursor-pointer z-0 ">
                   <p>Edit</p>
                   <input
                     type="file"
