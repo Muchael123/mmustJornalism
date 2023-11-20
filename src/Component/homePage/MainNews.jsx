@@ -18,8 +18,8 @@ function MainNews (props){
   <div>
    
     <div
-    className='flex md:flex-row flex-col  max-[475px]:flex-col max-[475px]:w-11/12 bg-slate-100 hover:bg-slate-100   w-9/12  justify-start rounded-lg  md:h-[360px]  h-fit snap-mandatory snap-center
-    max-[475px]:h-[420px] max-[475px] md:gap-5 md:mx-2  mt-10 py-5  shadow-lg hover:shadow-2xl transition-all duration-5 00 ease-in-out  px-2 max-[475px]:py-2 '>
+    className='flex md:flex-row flex-col  max-[475px]:flex-col max-[475px]:w-11/12 bg-slate-100 hover:bg-slate-100   w-9/12  rounded-lg  md:h-[360px]  h-fit snap-mandatory snap-center
+    max-[475px]:h-[420px] max-[475px] md:gap-5 mx-auto  ml-10 my-12  shadow-lg hover:shadow-2xl transition-all duration-5 00 ease-in-out  px-2 max-[475px]:py-2 '>
         <motion.div
         initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -28,7 +28,8 @@ function MainNews (props){
             duration: 1,
           }}
          className=' w-full max-[475px]:w-full max-[475px]:h-1/2 gap-2'>
-           <img className=' md:rounded-lg rounded-md w-full md:h-80 h-[90%] max-[475px]  object-cover mb-4' src={image} alt="Latest News..." /></motion.div>
+           <img className=' md:rounded-lg rounded-md w-full md:h-80 h-[90%] max-[475px]  object-cover mb-4' src={image} alt="Latest News..." />
+           </motion.div>
         <motion.div
         initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}

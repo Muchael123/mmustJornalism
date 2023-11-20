@@ -158,7 +158,7 @@ function Homepage() {
           image={item.image_id}
           />
         ))}</div>
-        {/* <Footer /> */}
+        <Footer />
     </div> 
 
     
