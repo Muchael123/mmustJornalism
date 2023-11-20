@@ -44,7 +44,7 @@ The JOSA Journalism Blog Website is a project initiated by the Journalism Studen
 
 
 ## Screenshots
-![ Website at Development Stage](https://github.com/Muchael123/mmustJornalism/blob/main/MMUST%20JOSA%201.png)
+![ Website at Development Stage](public/screenshot1.jpg)
 
 
 ## Setup
