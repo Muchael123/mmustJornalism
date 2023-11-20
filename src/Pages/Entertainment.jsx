@@ -4,8 +4,8 @@ import BlogCard from '../Component/BlogCard';
 import MainCatNews from '../Component/Category/MainCatNews';
 
 function Entertainment  () {
-  const id = 3;
   const [newsData, setNewsData] = useState([]);
+  const category = 'Entertainment';
   const [newsOther, setNewsOther] = useState([]);
 
  useEffect(() => {
@@ -21,7 +21,7 @@ function Entertainment  () {
       }
     })
     .catch((error) => console.error('Error fetching news data:', error));
-}, [id]);
+}, []);
 
  const formatToLocalTime = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false, };
@@ -34,12 +34,13 @@ function Entertainment  () {
         <Navbar/>
       
       </div>
-      <h1 className='w-screen mt-20 flex text-2xl font-bold  justify-center'>News</h1>
+      <h1 className='w-screen mt-20 flex text-xl md:text-2xl font-bold  justify-center'>Latest Entertainment News</h1>
           <div className='p-5 flex flex-row w-[100vw] '>   
             <MainCatNews
               id={newsData.id}
               title={newsData.title}
               slug={newsData.slug}
+               category = {category}
               published_on={formatToLocalTime(newsData.published_on)}
               image={newsData.image_id}
               otherNews = {newsOther}

@@ -6,6 +6,7 @@ import MainCatNews from '../Component/Category/MainCatNews';
 function Business  () {
   const id = 3;
   const [newsData, setNewsData] = useState([]);
+  const category = 'Business'
   const [newsOther, setNewsOther] = useState([]);
 
  useEffect(() => {
@@ -40,9 +41,11 @@ function Business  () {
                   id={newsData.id}
                   title={newsData.title}
                   slug={newsData.slug}
+                   category = {category}
                   published_on={formatToLocalTime(newsData.published_on)}
                   image={newsData.image_id}
                   otherNews = {newsOther}
+                  category = {'Business'}
                 />
               </div>
             </div>  

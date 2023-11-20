@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 function AdminBlogs(props) {
   const image = props.image;
+  const id =props.id;
+  const category=props.category;
+  const url = `/Blog/News/${id}`;
   const title = props.title;
   const published_on = props.published_on;
   const total_comments = props.total_comments;
@@ -36,6 +40,7 @@ function AdminBlogs(props) {
   };
   console.log(props.id);
   return (
+    <Link to={url}>
     <>
       <Toaster />
       <div className="  col-span-3 shadow-md bg-white    py-2.5 ">
@@ -94,6 +99,7 @@ function AdminBlogs(props) {
         </ul>
       </div>
     </>
+    </Link>
   );
 }
 

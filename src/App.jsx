@@ -31,6 +31,7 @@ class App extends React.Component {
           <Route path="/CreateBlog" element={<CreateBlog />} />
           <Route path="/Blog/:id" element={<Blog />} />
           <Route path="/PreviewBlog" element={<PreviewBlog />} />
+          <Route path="/Blog/:category/:id" element={<Blog />} />
         </Routes>
       </Router>
     );

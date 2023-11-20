@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function AdminNewsCard(props) {
-  const { title, image, slug, published_on, author, id } = props;
-  const url = `/Blog/${id}`;
+  const { title, image, slug, published_on, author, id,category} = props;
+  const url = `/Blog/${category}/${id}`;
 
   // const slug = props.slug
   return (
