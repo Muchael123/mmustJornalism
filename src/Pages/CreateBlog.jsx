@@ -6,7 +6,6 @@ import { useFormData } from "../../hooks/useFormData";
 
 const CreateBlog = () => {
   const navigate = useNavigate();
-  console.log(navigate)
   const { formData, updateFormData } = useFormData();
   const [filePreview, setFilePreview] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -247,7 +246,11 @@ const CreateBlog = () => {
               <button
                 type="button"
                 onClick={() => {
-              navigate("/PreviewBlog", { state: { formData } });
+                  navigate("/PreviewBlog", {
+                    state: {
+                      formData,
+                    },
+                  });
                 }}
                 className=" rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >

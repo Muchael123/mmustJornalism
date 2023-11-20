@@ -14,7 +14,7 @@ import Business from "./Pages/Business";
 import Sports from "./Pages/Sports";
 import CreateBlog from "./Pages/CreateBlog";
 import PreviewBlog from "./Pages/PreviewBlog";
-
+import CB from "./Pages/CB";
 class App extends React.Component {
   render() {
     return (
@@ -32,6 +32,7 @@ class App extends React.Component {
           <Route path="/Blog/:id" element={<Blog />} />
           <Route path="/PreviewBlog" element={<PreviewBlog />} />
           <Route path="/Blog/:category/:id" element={<Blog />} />
+          <Route path="/CB" element={<CB/>} />
         </Routes>
       </Router>
     );

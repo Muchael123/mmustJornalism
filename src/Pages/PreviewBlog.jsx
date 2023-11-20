@@ -1,11 +1,13 @@
 import React from "react";
-import { useLocation, useNavigate,  } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function PreviewBlog() {
   const location = useLocation();
   const navigate = useNavigate();
-//   const history = useHistory();
+  //   const history = useHistory();
   const formData = location.state.formData;
+
+  console.log(location.state.setSelectedItem);
   const imageUrl = formData.image && URL.createObjectURL(formData.image);
 
   return (
@@ -31,11 +33,11 @@ function PreviewBlog() {
       <button
         type="button"
         onClick={() => {
-         window.location
+          navigate("/CB");
         }}
         className=" rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       >
-        PREVIEW
+        back to publish
       </button>
     </div>
   );
