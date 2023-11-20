@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useRef } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const CreateBlog = () => {
   const [img, setImg] = useState();
@@ -83,9 +84,16 @@ const CreateBlog = () => {
       // });
 
       if (response?.ok) {
+        toast.success("Blog post created successfully");
         console.log("Blog post created successfully");
         // console.log(formDataWithId);
-
+        setFormData({
+          title: "",
+          slug: "",
+          body: "",
+          image: setFilePreview({}),
+          category: "News",
+        });
         // Assuming the server returns the URL of the uploaded image
         const imageResponse = await response.json();
         // const imageUrl = imageResponse.image_path;
@@ -94,9 +102,11 @@ const CreateBlog = () => {
         console.log(imageResponse);
         setImg(imageResponse.image_path);
       } else {
+        toast.error("Failed to create blog post");
         console.error("Failed to create blog post");
       }
     } catch (error) {
+      toast.error("An error occurred");
       console.error("An error occurred:", error);
     }
   };
@@ -154,6 +164,7 @@ const CreateBlog = () => {
   console.log(formData);
   return (
     <>
+      <Toaster />
       <div className="">
         {/* create new blog */}
         <form

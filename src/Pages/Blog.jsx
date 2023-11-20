@@ -7,25 +7,23 @@ import { useParams } from 'react-router-dom';
 import Footer from '../Component/Footer';
 
 function Blog() {
-  const log  = console.log;
-  const { id } = useParams(); // Destructure id from useParams
+  const { id, category } = useParams(); // Destructure id from useParams
   const [newsData, setNewsData] = useState({});
 
   useEffect(() => {
-    const apiUrl = `https://mmust-jowa.onrender.com/api/v1/user/News/${id}`;
+    const apiUrl = ` https://mmust-jowa.onrender.com/api/v1/user/${category}/${id }`;
 
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
         if (typeof data === 'object' && !Array.isArray(data)) {
           setNewsData(data);
-          log(data);
         } else {
           console.error('API response is not an object:', data);
         }
       })
-      .catch((error) => console.error('Error fetching news data:', error));
-  }, [id]);
+      .catch((error) => console.error(`Error fetching ${category} data:`, error));
+  }, [id,category]);
 
   return (
     <div>
@@ -36,12 +34,13 @@ function Blog() {
             {/* Check if newsData has data before rendering */}
             {Object.keys(newsData).length > 0 && (
               <Content className='flex-3'
-                key={newsData.id}
+                key={id}
+                id={newsData.id}
                 title={newsData.title}
                 body={newsData.body}
                 author={newsData.author}
                 published_on={newsData.published_on}
-                image={newsData.image}
+                image={newsData.image}                
               />
               
             )}

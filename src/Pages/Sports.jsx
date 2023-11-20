@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../Component/Navbar'
 import BlogCard from '../Component/BlogCard';
 import MainCatNews from '../Component/Category/MainCatNews';
+import Footer from '../Component/Footer';
 
 function Sports  () {
   const id = 3;
+  const category = 'Sports';
   const [newsData, setNewsData] = useState([]);
   const [newsOther, setNewsOther] = useState([]);
 
@@ -43,8 +45,10 @@ function Sports  () {
             published_on={formatToLocalTime(newsData.published_on)}
             image={newsData.image_id}
             otherNews = {newsOther}
+            category = {'Sports'}
           />
         </div>
+        <Footer />
       </div>  
   
   )
