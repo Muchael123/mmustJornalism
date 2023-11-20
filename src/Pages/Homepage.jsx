@@ -96,6 +96,7 @@ function Homepage() {
           id={item.id}
           title={item.title}
           slug={item.slug}
+          category = {"News"}
           published_on={formatToLocalTime(item.published_on)}
           image={item.image_id}
           />
@@ -106,6 +107,7 @@ function Homepage() {
         {businessData.map((item, key) => (
           <NewsCard
           key={item.id}
+          category = {"Business"}
           id={item.id}
           title={item.title}
           slug={item.slug}
@@ -120,6 +122,7 @@ function Homepage() {
           <NewsCard
           key={item.id}
           id={item.id}
+          category = {"Entetainment"}
           title={item.title}
           slug={item.slug}
           published_on={formatToLocalTime(item.published_on)}
@@ -135,6 +138,7 @@ function Homepage() {
           key={item.id}
           id={item.id}
           title={item.title}
+          category = {"Sports"}
           slug={item.slug}
           published_on={formatToLocalTime(item.published_on)}
           image={item.image_id}

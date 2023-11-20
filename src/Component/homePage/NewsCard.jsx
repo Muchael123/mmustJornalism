@@ -6,11 +6,13 @@ function NewsCard (props){
    
   const title = props.title;
   const image = props.image;
+  console.log(props);
    const slug = props.slug;
+   const category = props.category;
    const published_on = props.published_on;
-   const id = 3;
+   const id = props.id;
 
-  const url = `/Blog/${id}`; // Use id in the URL
+  const url = `/Blog/${category}/${id}`;  // Use id in the URL
   localStorage.setItem('id', props.key);
     // const slug = props.slug
   return (
@@ -19,8 +21,8 @@ function NewsCard (props){
         <img src={image} alt="the image" className='w-[100%] obj max-h-[250px]' />
       </div>
         <div className='flex flex-col px-6 divide-y-2'>
-          <h1 className='text-gray-800 text-[24px] font-mono font-bold pt-4'><Link className='hover:text-orange-500'>{title}
-          
+          <h1 className='text-gray-800 text-[24px] font-mono font-bold pt-4'><Link  to={url} className='hover:text-orange-500'>
+            {title}
           </Link>
       </h1>
       <p className='py-3 px-3'>{slug}

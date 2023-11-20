@@ -51,8 +51,10 @@ const AdminBusiness = () => {
           id={item.id}
           title={item.title}
           slug={item.slug}
+          total_comments={item.total_comments}
           published_on={formatToLocalTime(item.published_on)}
           image={item.image_id}
+          category={'Business'}
           />
         ))}
      </div>  

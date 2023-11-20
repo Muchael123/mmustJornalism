@@ -31,7 +31,7 @@ class App extends React.Component {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signin" element={<RegistrationForm />} />
           <Route path="/CreateBlog" element={<CreateBlog />} />
-          <Route path="/Blog/:id" element={<Blog />} />
+          <Route path="/Blog/:category/:id" element={<Blog />} />
         </Routes>
       </Router>
     );
