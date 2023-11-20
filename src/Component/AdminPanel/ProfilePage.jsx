@@ -15,6 +15,7 @@ const ProfilePage = () => {
   });
 
   const [selectedImage, setSelectedImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
 
   useEffect(() => {
     if (selectedImage) {
@@ -73,6 +74,7 @@ const ProfilePage = () => {
   
       reader.onloadend = () => {
         setSelectedImage(reader.result);
+        setImagePreview(reader.result);
       };
   
       reader.readAsDataURL(file);
@@ -110,6 +112,7 @@ const ProfilePage = () => {
       console.log('Updated data:', updatedData);
       setProfileData(updatedData);
       setIsEditing(false);
+      setImagePreview(null);
       console.log('updated profile');
     } catch (error) {
       console.error(error);
@@ -129,7 +132,7 @@ const ProfilePage = () => {
           <div className='mt-4 py-3  '>
             <p className='text-gray-400'>Profile picture change</p>
             <div className='flex items-center gap-4'>
-              <img className="w-20 z-0 h-20 rounded-full p-1 " src={profileData.image_id || `/src/images/profile.png`} alt="" width="384" height="512" />
+              <img className="w-20 z-0 h-20 rounded-full p-1 object-cover " src={imagePreview || profileData.image_id || `/src/images/profile.png`} alt="" width="384" height="512" />
               <div className='gap-6 flex text-sm'>
                 <label className="bg-slate-200 w-fit px-4 py-1.5 rounded-sm cursor-pointer z-0 ">
                   <p>Edit</p>
