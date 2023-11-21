@@ -3,9 +3,10 @@ import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 function AdminBlogs(props) {
+  const maxwidth = "";
   const image = props.image;
-  const id =props.id;
-  const category=props.category;
+  const id = props.id;
+  const category = props.category;
   const url = `/Blog/News/${id}`;
   const title = props.title;
   const published_on = props.published_on;
@@ -40,36 +41,45 @@ function AdminBlogs(props) {
   };
   console.log(props.id);
   return (
-    <Link to={url}>
     <>
       <Toaster />
       <div className="  col-span-3 shadow-md bg-white    py-2.5 ">
-        <ul className="grid shadow-md bg-white  border-solid ml-2 py-2.5 px-2 grid-cols-4 gap-10">
+        <ul className="grid shadow-md bg-white  border-solid ml-2 py-2.5 px-2 grid-cols-4 gap-10  ">
           <li>
             <div className="flex items-center justify-start">
-              <img className="w-7/12" src={image} alt="" />
+              <img
+                className="w-12/12 md:w-6/12 rounded-[8px] object-cover"
+                src={image}
+                alt=""
+              />
             </div>
           </li>
-          <li>{title} </li>
+          <li>
+            <p className="w-full font-bold text-lg truncate sm:overflow-ellipsis md:overflow-ellipsis lg:overflow-ellipsis xl:overflow-ellipsis ">
+              {title}{" "}
+            </p>
+            <p className="mt-[20px]">{published_on} </p>
+          </li>
           <ul className="flex gap-16 justify-between ml-4 ">
-            <li>{published_on} </li>
-            <li className="ml-20">{total_comments} </li>
+            <li className="mr-[30px] md:ml-[100px]">{total_comments} </li>
           </ul>
-          <ul className="flex gap-4 justify-end mr-10">
+          <ul className="flex gap-4 justify-end ml-10 md:ml-0 px-4">
             <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 1024 1024"
-              >
-                <path
-                  fill="currentColor"
-                  d="M512 160c320 0 512 352 512 352S832 864 512 864S0 512 0 512s192-352 512-352zm0 64c-225.28 0-384.128 208.064-436.8 288c52.608 79.872 211.456 288 436.8 288c225.28 0 384.128-208.064 436.8-288c-52.608-79.872-211.456-288-436.8-288zm0 64a224 224 0 1 1 0 448a224 224 0 0 1 0-448zm0 64a160.192 160.192 0 0 0-160 160c0 88.192 71.744 160 160 160s160-71.808 160-160s-71.744-160-160-160z"
-                />
-              </svg>
+              <a href={url}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 1024 1024"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M512 160c320 0 512 352 512 352S832 864 512 864S0 512 0 512s192-352 512-352zm0 64c-225.28 0-384.128 208.064-436.8 288c52.608 79.872 211.456 288 436.8 288c225.28 0 384.128-208.064 436.8-288c-52.608-79.872-211.456-288-436.8-288zm0 64a224 224 0 1 1 0 448a224 224 0 0 1 0-448zm0 64a160.192 160.192 0 0 0-160 160c0 88.192 71.744 160 160 160s160-71.808 160-160s-71.744-160-160-160z"
+                  />
+                </svg>
+              </a>
             </li>
-            <li>
+            <li className="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -82,7 +92,7 @@ function AdminBlogs(props) {
                 />
               </svg>
             </li>
-            <li onClick={deleteBlog} className="text-red-500">
+            <li onClick={deleteBlog} className="text-red-500 cursor-pointer md:ml-[30px] hover:text-red-900 font-extrabold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -99,7 +109,6 @@ function AdminBlogs(props) {
         </ul>
       </div>
     </>
-    </Link>
   );
 }
 
