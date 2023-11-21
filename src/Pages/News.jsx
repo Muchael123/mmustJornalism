@@ -87,7 +87,7 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/news')
         ))}
       </div>
 
-      {/* <Footer/> */}
+      <Footer/>
       </div>   
 
     
