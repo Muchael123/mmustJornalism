@@ -36,7 +36,7 @@ function Content(props) {
        
       </div>
     </div>
-    <div className="pl-2  px-6 bg-red-300">
+    <div className="pl-2  px-6 ">
       <img className="w-full max-w-[700px] rounded-md bg-gray-900 object-cover shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] mb-10" src={image} alt="News image"/>
     </div>
 
