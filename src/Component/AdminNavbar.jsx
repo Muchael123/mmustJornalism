@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
-import logo from "../../src/images/logo.png";
+import logo from "/images/logo.png";
 const AdminNavbar = () => {
   const name = localStorage.getItem("User");
   const firstName = name ? name.split(" ")[0] : "";
@@ -9,9 +9,9 @@ const AdminNavbar = () => {
     <div className="w-full text-white flex  flex-row bg-gradient-to-r from-indigo-500 via-purple-700 to-pink-500  items-center fixed top-0  mb-5 md:mb-7.5 md:px-20 z-50">
       <div className="flex">
         <img
-          className="w-20 h-20 object-cover   mr-32  cursor-pointer"
-          src="../../src/images/logo.png"
-          alt="img"
+          className="w-20 h-20 object-cover cursor-pointer"
+          src={logo}
+          alt=""
         />
 
         <div className="flex text-2xl font-bold justify-between items-center">
