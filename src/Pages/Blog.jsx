@@ -29,24 +29,25 @@ function Blog() {
   return (
     <div>
       <Navbar />
-      <div className="overflow-hidden bg-white px-2 py-24 sm:py-32 lg:px-0">
-        <div className="flex pl-8 ml-24">
-          <div className='flex justify-between'>
+      <div className="overflow-hidden  px-2 py-24 sm:py-32 lg:px-0 bg-[#f5f5f5]">
+        <div className="flex pl-8 ml-24 flex-row">
+          <div className='flex justify-even'>
             {/* Check if newsData has data before rendering */}
             {Object.keys(newsData).length > 0 && (
-              <Content className='flex-3'
+              <Content className='flex-4'
                 key={id}
                 id={newsData.id}
                 title={newsData.title}
                 body={newsData.body}
                 author={newsData.author}
+                author_image = {newsData.author_image}
                 published_on={newsData.published_on}
                 image={newsData.image}                
               />
               
             )}
             </div>
-            <SidePanel flex-1/>
+            <SidePanel />
           
         </div>
         

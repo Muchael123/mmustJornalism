@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 // const notify = () => toast("Here is your toast.");
 function LoginForm() {
-  const [formData, setFormData] = useState({
+  const [ formData, setFormData] = useState({
     email: "",
     password: "",
   });

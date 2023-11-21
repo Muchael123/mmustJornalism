@@ -51,6 +51,7 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/news')
           title={newsData.title}
           slug={newsData.slug}
           category = {"News"}
+          author_image = {newsData.author_image}
           published_on={formatToLocalTime(newsData.published_on)}
           image={newsData.image_id}
           />

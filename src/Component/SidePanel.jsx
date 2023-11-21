@@ -2,12 +2,7 @@ import React from 'react'
 
 const SidePanel = () => {
   return (
-    <>
-         
-      <div >
-        <div>
-
-        
+        <div className='flex-2'>
      <div className='min-h-[50px]'></div>
       <ul className='mt-5'>
         <h5 className='mb-1 text-xl bold font-semibold text-gray-400'>LATEST POST</h5>
@@ -74,9 +69,7 @@ const SidePanel = () => {
 
       </ul>
       </div>
-      </div>
-    
-    </>
+  
   )
 }
 
