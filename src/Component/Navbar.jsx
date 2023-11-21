@@ -24,7 +24,7 @@ const Navbar = () => {
         <Link to="/">
           <img
             className="w-20 h-20 object-cover cursor-pointer"
-            src="/src/images/logo.png"
+            src="/images/logo.png"
             alt=""
           />
         </Link>
@@ -43,6 +43,7 @@ const Navbar = () => {
           <li className="active:text-purple-600 hover:text-purple-600">
             <Link to="/News">News</Link>
           </li>
+          
           <li className="active:text-purple-600 hover:text-purple-600">
             <Link to="/Sports">Sports</Link>
           </li>
@@ -51,6 +52,7 @@ const Navbar = () => {
           </li>
           <li className="active:text-purple-600 hover:text-purple-600">
             <Link to="/Entertainment">Entertainment</Link>
+
           </li>
         </ul>
         <div

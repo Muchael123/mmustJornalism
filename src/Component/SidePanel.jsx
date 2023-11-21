@@ -1,76 +1,78 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Typewriter } from 'react-simple-typewriter';
 
-const SidePanel = () => {
+
+const SidePanel = (props) => {
+  const [newsData, setNewsData] = useState([]);
+  const [newsCat, setNewsCat] = useState([]);
+
+  useEffect(() => {
+    const apiUrl = 'https://mmust-jowa.onrender.com/api/v1/user/blog/latest';
+
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        // Ensure data is an object with categories
+        console.log("from data", data);
+
+        // Extracting ids while retaining category information
+        const extractedData = Object.keys(data).map(category => ({ ...data[category], category }));
+        setNewsData(extractedData);
+
+        const extractedCategories = Object.keys(data);
+        setNewsCat(extractedCategories);
+      })
+      .catch((error) => console.error('Error fetching data:', error));
+  }, []);
+
+  // Rest of your component logic...
+
+
+
+  const formatToLocalTime = (dateString) => {
+    const options = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: false,
+    };
+    return new Date(dateString).toLocaleString(undefined, options);
+  };
+
   return (
-        <div className='flex-2'>
-     <div className='min-h-[50px]'></div>
-      <ul className='mt-5'>
-        <h5 className='mb-1 text-xl bold font-semibold text-gray-400'>LATEST POST</h5>
-        <div className="flex flex-col justify-center w-9/12">
-          <div className="flex">
-            <div className="mr-4 ">
-              <div className="flex items-center justify-center  mb-3 bg-indigo-50">
-              <img className='w-full rounded-md' src="/src/images/news.jpeg" alt="" />
-
-              </div>
-            </div>
-            <div className=''>
-              <h6 className="mb-2  w-5/9 font-semibold leading-5">
-                They urge you to put down
-              </h6>
-              <p className="mb-3 text-xs font-semibold tracking-wide uppercase">
-              <span className="text-gray-600"> 28 Dec 2020 -</span>
-
-              traveling
-            </p>
-              <hr className="w-full my-6 border-gray-300" />
-            </div>
-          </div>
+    <div className='flex-2'>
+      <div className='min-h-[50px]'></div>
+      {newsData.map((item, index) => (
+  <div key={index} className="flex">
+    <div className="mr-1 min-w-[55px]">
+      
+    </div>
+    <div className=''>
+      <Link to={`/blog/${item.category}/${item.id}`} onClick={() => window.location.reload()}>
+        <h6 className="mb-2 w-5/9 font-semibold leading-5 hover:text-purple-700">
+          <Typewriter 
+               words = {[`${item.title}`]}
+               loop = {1}
+               delaySpeed={500}
+               cursorBlinking = {false}
+               typeSpeed={10}
+               />
           
-          <div className="flex">
-            <div className="mr-4">
-              <div className="flex items-center justify-center  mb-3 rounded-full bg-indigo-50">
-              <img className='w-full' src="/src/images/news.jpeg" alt="" />
+        </h6>
+      </Link>
+      <p className="mb-3 text-xs font-semibold tracking-wide uppercase">
+        <span className="text-gray-600">{item.published_on}</span>
+      </p>
+      <hr className="w-full my-6 border-gray-300" />
+    </div>
+  </div>
+))}
 
-              </div>
-            </div>
-            <div>
-              <h6 className="mb-2 font-semibold leading-5">
-                They urge you to put down
-              </h6>
-              <p className="mb-3 text-xs font-semibold tracking-wide uppercase">
-              <span className="text-gray-600"> 28 Dec 2020 -</span>
+    </div>
+  );
+};
 
-              traveling
-            </p>
-              <hr className="w-full my-6 border-gray-300" />
-            </div>
-          </div>
-          <div className="flex">
-            <div className="mr-4">
-              <div className="flex items-center justify-center mb-3 rounded-full bg-indigo-50">
-              <img className='w-full' src="/src/images/news.jpeg" alt="" />
-
-              </div>
-            </div>
-            <div>
-              <h6 className="mb-2 font-semibold leading-5">
-                They urge you to put down
-              </h6>
-              <p className="mb-3 text-xs font-semibold tracking-wide uppercase">
-              <span className="text-gray-600"> 28 Dec 2020 -</span>
-
-              traveling
-            </p>
-              <hr className="w-full my-6 border-gray-300" />
-            </div>
-          </div>
-          </div>
-
-      </ul>
-      </div>
-  
-  )
-}
-
-export default SidePanel
+export default SidePanel;
