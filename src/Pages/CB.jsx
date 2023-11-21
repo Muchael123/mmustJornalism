@@ -20,8 +20,8 @@ const routeConfig = {
   Entertainment: AdminEntertainment,
 };
 
-function Admin() {
-  const [selectedItem, setSelectedItem] = useState("Dashboard");
+function CB() {
+  const [selectedItem, setSelectedItem] = useState("Add Blog");
   const [authenticated, setAuthenticated] = useState(true);
   const [open, setOpen] = useState(false);
 
@@ -70,4 +70,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default CB;

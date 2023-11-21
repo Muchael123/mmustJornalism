@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.smooth{
-    /* background: #000 !important; */
-    transition: all 0.5s ease-in-out ;
+.smooth {
+  /* background: #000 !important; */
+  transition: all 0.5s ease-in-out;
+  z-index: 1000;
 }
 ::-webkit-scrollbar {
   width: 5px;
