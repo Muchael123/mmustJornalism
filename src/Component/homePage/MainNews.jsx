@@ -39,7 +39,7 @@ function MainNews (props){
           }}
         className='flex flex-col md:w-1/2 w-full max-[475px]:w-full max-w-[475px] gap-2'>
            <Link to={url}>
-            <h1 className='font-bold text-2xl hover:text-orange-500 w-full  flex r cursor-pointer decoration-gray-400 justify-left  hover:underline'>{title}</h1></Link>
+            <h1 className='font-bold text-2xl hover:text-purple-700 w-full  flex r cursor-pointer decoration-gray-400 justify-left  hover:underline'>{title}</h1></Link>
             <div className='border-none  px-1 text-black '>
              <Typewriter 
                words = {[`${slug}`]}

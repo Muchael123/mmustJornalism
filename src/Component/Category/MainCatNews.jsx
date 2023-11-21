@@ -25,7 +25,7 @@ function MainCatNews(props) {
        </div>
       
       <div>
-        <h1 className='max-w-1/2 font-bold '><Link to={url} className='hover:text-orange-500'>{title}</Link></h1>
+        <h1 className='max-w-1/2 font-bold '><Link to={url} className='hover:text-purple-700'>{title}</Link></h1>
         <p>{body}</p>
         <p className='font-light tracking-wide p-8 text-[12px] text-right'>{published_on}</p>
       </div>

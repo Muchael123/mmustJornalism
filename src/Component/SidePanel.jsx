@@ -8,21 +8,14 @@ const SidePanel = () => {
         <div>
 
         
-      <ul className=''>
-        <h5 className='mb-1 text-xl bold font-semibold text-gray-400'>CATEGORIES</h5>
-        <li className='text-gray-400 hover:cursor-pointer hover:underline hover:decoration-blue-400'> News  </li><hr className="w-full my-2 border-gray-300" />
-        <li className='text-gray-400 hover:cursor-pointer hover:underline hover:decoration-blue-400'>Sports</li><hr className="w-full my-2 border-gray-300" />
-        <li className='text-gray-400 hover:cursor-pointer hover:underline hover:decoration-blue-400'>Business</li><hr className="w-full my-2 border-gray-300" />
-        <li className='text-gray-400 hover:cursor-pointer hover:underline hover:decoration-blue-400'>Entertaiment</li> <hr className="w-full my-2 border-gray-300" />
-
-      </ul>
+     <div className='min-h-[50px]'></div>
       <ul className='mt-5'>
         <h5 className='mb-1 text-xl bold font-semibold text-gray-400'>LATEST POST</h5>
         <div className="flex flex-col justify-center w-9/12">
           <div className="flex">
             <div className="mr-4 ">
-              <div className="flex items-center justify-center  mb-3 rounded-full bg-indigo-50">
-              <img className='w-full' src="/src/images/news.jpeg" alt="" />
+              <div className="flex items-center justify-center  mb-3 bg-indigo-50">
+              <img className='w-full rounded-md' src="/src/images/news.jpeg" alt="" />
 
               </div>
             </div>
@@ -38,6 +31,7 @@ const SidePanel = () => {
               <hr className="w-full my-6 border-gray-300" />
             </div>
           </div>
+          
           <div className="flex">
             <div className="mr-4">
               <div className="flex items-center justify-center  mb-3 rounded-full bg-indigo-50">

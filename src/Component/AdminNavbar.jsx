@@ -6,7 +6,7 @@ const AdminNavbar = () => {
   const name = localStorage.getItem("User");
   const firstName = name ? name.split(" ")[0] : "";
   return (
-    <div className="w-full text-white flex  flex-row bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  items-center fixed top-0  mb-5 md:mb-7.5 md:px-20 z-50">
+    <div className="w-full text-white flex  flex-row bg-gradient-to-r from-indigo-500 via-purple-700 to-pink-500  items-center fixed top-0  mb-5 md:mb-7.5 md:px-20 z-50">
       <div className="flex">
         <img
           className="w-20 h-20 object-cover   mr-32  cursor-pointer"

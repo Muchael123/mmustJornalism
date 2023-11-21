@@ -18,7 +18,7 @@ const Navbar = () => {
         ease: 'linear',
         duration: 0.6,
       }}
-      className="w-full text-white flex flex-row bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 justify-between items-center fixed top-0 left-0  md:px-20 lg:px-40 max-[768px]:px-10 z-50"
+      className="w-full text-white flex flex-row bg-gradient-to-r from-indigo-500 via-purple-700 to-pink-500 justify-between items-center fixed top-0 left-0  md:px-20 lg:px-40 max-[768px]:px-10 z-50"
     >
       <div className="z-50">
         <Link to="/">

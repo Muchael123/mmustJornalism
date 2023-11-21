@@ -10,7 +10,7 @@ function OtherCatNews(props) {
   return (
     <div className='md:flex w-5/6  flex-1  flex-col hidden items-center '>
         <ul className='border-t-2 border-b-2 text-left'>
-            <li className='py-2'><Link className='font-bold hover:text-orange-500' to={url}>{title}</Link>
+            <li className='py-2'><Link className='font-bold hover:text-purple-700' to={url}>{title}</Link>
             <p className='font-light text-[10px] text-right'>{published_on}</p>
             </li>
         </ul>

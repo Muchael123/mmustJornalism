@@ -121,7 +121,7 @@ function RegistrationForm() {
           autoComplete='false'
         />
       </div>
-      <button className='bg-gradient-to-r  from-indigo-500 via-purple-500 to-pink-500 p-2 rounded-3xl text-white mt-2' type="submit">Register</button>
+      <button className='bg-gradient-to-r  from-indigo-500 via-purple-700 to-pink-500 p-2 rounded-3xl text-white mt-2' type="submit">Register</button>
       <div className='flex w-full justify-between px-2 text-xs'>
         <p>Already have an account?</p>
         <Link to='/login'><p className='text-blue-700 hover:underline cursor-pointer duration-200'>Sign In</p></Link>

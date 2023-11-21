@@ -13,7 +13,6 @@ function Content(props) {
     const category = props.category
   return (
     <div>
-        <Navbar/>
  <div className="" key={id}>
  <div className="col-span-2 pl-7 lg:pl-3">
     <div className="lg:row-start-1 lg:mx-auto  lg:w-full">
@@ -38,7 +37,7 @@ function Content(props) {
       </div>
     </div>
     <div className="pl-2  pr-6">
-      <img className="w-[80%] max-w-none rounded-md bg-gray-900 object-cover shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] mb-10" src={image} alt="News image"/>
+      <img className="w-[80%] max-w-[700px] rounded-md bg-gray-900 object-cover shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] mb-10" src={image} alt="News image"/>
     </div>
 
     <div className="lg:row-start-2 lg:mx-auto lg:w-full lg:max-w-7xl lg:gap-x-8 lg:px-8">
