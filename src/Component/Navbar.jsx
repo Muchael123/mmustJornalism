@@ -55,7 +55,7 @@ const Navbar = () => {
 
           </li>
            <li className="active:text-purple-600 hover:text-purple-600">
-            <Link to="/Admin">Admin</Link>
+            <Link to="/login">Admin</Link>
           </li>
         </ul>
         <div
