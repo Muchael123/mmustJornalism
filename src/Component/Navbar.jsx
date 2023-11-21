@@ -43,9 +43,7 @@ const Navbar = () => {
           <li className="active:text-purple-600 hover:text-purple-600">
             <Link to="/News">News</Link>
           </li>
-           <li className="active:text-purple-600 hover:text-purple-600">
-            <Link to="/Admin">News</Link>
-          </li>
+          
           <li className="active:text-purple-600 hover:text-purple-600">
             <Link to="/Sports">Sports</Link>
           </li>
@@ -54,6 +52,10 @@ const Navbar = () => {
           </li>
           <li className="active:text-purple-600 hover:text-purple-600">
             <Link to="/Entertainment">Entertainment</Link>
+
+          </li>
+           <li className="active:text-purple-600 hover:text-purple-600">
+            <Link to="/Admin">Admin</Link>
           </li>
         </ul>
         <div
