@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
-
+import logo from "../../src/logo.png";
 const AdminNavbar = () => {
   const name = localStorage.getItem("User");
   const firstName = name ? name.split(" ")[0] : "";
@@ -10,8 +10,8 @@ const AdminNavbar = () => {
       <div className="flex">
         <img
           className="w-20 h-20 object-cover   mr-32  cursor-pointer"
-          src="../images/logo.png"
-          alt=""
+          src={logo}
+          alt="img"
         />
 
         <div className="flex text-2xl font-bold justify-between items-center">
