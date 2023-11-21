@@ -10,7 +10,7 @@ const AdminNavbar = () => {
       <div className="flex">
         <img
           className="w-20 h-20 object-cover   mr-32  cursor-pointer"
-          src="/src/images/logo.png"
+          src="../images/logo.png"
           alt=""
         />
 
