@@ -23,7 +23,6 @@ function LoginForm() {
         }
       );
 
-      console.log(response);
       if (response.status === 200) {
         toast.success("Login successful", {
           id: notification,
@@ -31,17 +30,11 @@ function LoginForm() {
 
         // Login was successful
         const data = await response.json();
-        console.log(data);
-        console.log(data);
 
         const access_token = data.success.access_token;
         const user = data.success.User;
 
-        console.log(access_token);
-        console.log(user);
-
-        console.log(access_token);
-        console.log(user);
+  
 
         localStorage.setItem("accessToken", access_token);
         localStorage.setItem("User", user);

@@ -18,7 +18,6 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/entertainment')
     .then((response) => response.json())
     .then((data) => {
         const valuesArray = Object.values(data);
-        console.log(Array.isArray(valuesArray));
         setNewsOther(valuesArray.slice(3));
         setSideNews(valuesArray.slice(1, 3));
         if (valuesArray && valuesArray.length > 0) {
@@ -29,7 +28,6 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/entertainment')
         console.error('Error fetching news data:', error);
     });
 }, []);
-  console.log("other news:",newsOther);
  
 
   const formatToLocalTime = (dateString) => {

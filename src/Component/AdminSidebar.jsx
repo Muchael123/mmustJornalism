@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
-
+import toast, { Toaster } from "react-hot-toast";
+import { RiLoginBoxFill } from "react-icons/ri";
 const AdminSidebar = ({ onItemClick, open }) => {
   const name = localStorage.getItem("User");
   const firstName = name ? name.split(" ")[0] : "";
@@ -8,6 +9,16 @@ const AdminSidebar = ({ onItemClick, open }) => {
     if (onItemClick) {
       onItemClick(item);
     }
+  };
+  const handleLogOut = () => {
+    const notification = toast.loading("Logging out...");
+    console.log("log out");
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("User");
+    toast.success("Logout successful", {
+      id: notification,
+    });
+    window.location.href = "/Login";
   };
   const [isOpen, setIsOpen] = useState(false);
 
@@ -17,8 +28,9 @@ const AdminSidebar = ({ onItemClick, open }) => {
 
   return (
     <>
+      <Toaster />
       <div
-        className={`bg-blue-300 md:fixed w-7/12 md:w-2/12  h-full absolute ${
+        className={`bg-blue-300 fixed w-7/12 md:w-2/12  h-screen  ${
           open ? "left-0 smooth" : "left-[-100%]"
         } md:left-0 smooth `}
       >
@@ -112,6 +124,18 @@ const AdminSidebar = ({ onItemClick, open }) => {
             Add Blog
           </li>
         </ul>
+        <button
+          onClick={handleLogOut}
+          className="md:hidden flex mr-2 md:ml-4 md:mr-[-20px]   outline-none border-none bg-blue-500 px-10 py-2 rounded-lg hover:bg-blue-600 transition-all ease-in-out duration-300 mt-[50px] ml-[20px]"
+        >
+          <p
+            className="flex items-center text-[14px] text-white font-bold gap-1"
+            onClick={handleLogOut}
+          >
+            <span className="text-sm"> Logout </span>
+            <RiLoginBoxFill />
+          </p>
+        </button>
       </div>
     </>
   );

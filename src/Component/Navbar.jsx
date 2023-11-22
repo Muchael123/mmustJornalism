@@ -54,9 +54,6 @@ const Navbar = () => {
             <Link to="/Entertainment">Entertainment</Link>
 
           </li>
-           <li className="active:text-purple-600 hover:text-purple-600">
-            <Link to="/login">Admin</Link>
-          </li>
         </ul>
         <div
           className={`min-[768px]:hidden cursor-pointer z-50`}

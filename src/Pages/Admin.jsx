@@ -41,13 +41,15 @@ function Admin() {
 
   const handleSideBar = () => {
     setOpen(!open);
-    console.log(open);
   };
 
   return authenticated ? (
     <div className="w-full overflow-x-hidden flex items-center">
       <div className="relative">
-        <AdminNavbar onclick={handleSideBar} />
+        <AdminNavbar
+          onItemClick={handleSidebarItemClick}
+          onclick={handleSideBar}
+        />
       </div>
 
       <div className="flex mt-[80px] w-screen">

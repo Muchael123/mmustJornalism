@@ -3,16 +3,19 @@ import React, { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 
 const ProfilePage = () => {
+  const [img, setImg] = useState();
+
   const [isEditing, setIsEditing] = useState(false);
   
   const [profileData, setProfileData] = useState({
     contact: '',
-    image_id: '',
+    image: '',
     first_name: '',
     last_name: '',
   });
 
   const [selectedImage, setSelectedImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
 
   useEffect(() => {
     if (selectedImage) {
@@ -35,11 +38,19 @@ const ProfilePage = () => {
         if (!response.ok) {
           throw new Error('Failed to fetch profile data');
         }
-
-        const data = await response.json();
-        data.image_id = data.image_id || '';
-        console.log('Fetched data:', data); 
-        return data;
+         // Assuming the server returns the URL of the uploaded image
+         const responseData = await response.json();
+         console.log('Fetched data:', responseData);
+         
+         // Assuming the server returns the URL of the uploaded image
+         const imageUrl = responseData.image_path;
+         console.log(imageUrl);
+         setImg(imageUrl);
+     
+         // Set initial profile data
+         setProfileData(responseData);
+     
+         return responseData;
        
       } catch (error) {
         console.error(error);
@@ -63,6 +74,7 @@ const ProfilePage = () => {
   
       reader.onloadend = () => {
         setSelectedImage(reader.result);
+        setImagePreview(reader.result);
       };
   
       reader.readAsDataURL(file);
@@ -75,44 +87,39 @@ const ProfilePage = () => {
   const handleSaveClick = async () => {
     try {
       console.log('Profile data before update:', profileData);
-
-      const base64Image = selectedImage ? selectedImage.split(',')[1] : null;
-
-      setProfileData((prevData) => ({ ...prevData, image_id: base64Image }));
-
+  
+      const requestBody = {
+        contact: profileData.contact,
+        first_name: profileData.first_name,
+        last_name: profileData.last_name,
+        image: selectedImage, // You might need to adjust this depending on how the server expects the image data
+      };
+  
       const response = await fetch('https://mmust-jowa.onrender.com/api/v1/admin/update/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
         },
-        body: JSON.stringify({
-          contact: profileData.contact,
-          image_id: profileData.image_id,
-          first_name: profileData.first_name,
-          last_name: profileData.last_name,
-        }),
-        
-      }
-      
-      ) ;
-      
-
+        body: JSON.stringify(requestBody),
+      });
+  
       if (!response.ok) {
         throw new Error('Failed to update profile data');
       }
-
-
-
+  
       const updatedData = await fetchData();
       console.log('Updated data:', updatedData);
       setProfileData(updatedData);
       setIsEditing(false);
-      console.log('updated profile')
+      setImagePreview(null);
+      console.log('updated profile');
     } catch (error) {
       console.error(error);
     }
   };
+  
+  
 
 
   return (
@@ -122,12 +129,12 @@ const ProfilePage = () => {
       <div className='px-4 mx-auto sm:max-w-xl md:max-w-full lg:w-fit md:px-24  absolute mt-5 lg:py-16 w-full py-4    rounded shadow-xl '>
         <div>
           <h3 className='text-xl font-bold text-gray-500 border-b pb-4 mt-0'>Account Information</h3>
-          <div className='mt-4 py-3 '>
+          <div className='mt-4 py-3  '>
             <p className='text-gray-400'>Profile picture change</p>
             <div className='flex items-center gap-4'>
-              <img className="w-20 h-20 rounded-full p-1 " src={selectedImage || `/src/images/profile.png`} alt="" width="384" height="512" />
+              <img className="w-20 z-0 h-20 rounded-full p-1 object-cover " src={imagePreview || profileData.image_id || `/src/images/profile.png`} alt="" width="384" height="512" />
               <div className='gap-6 flex text-sm'>
-                <label className="bg-slate-200 w-fit px-4 py-1.5 rounded-sm cursor-pointer">
+                <label className="bg-slate-200 w-fit px-4 py-1.5 rounded-sm cursor-pointer z-0 ">
                   <p>Edit</p>
                   <input
                     type="file"

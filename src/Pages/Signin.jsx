@@ -26,7 +26,7 @@ function RegistrationForm() {
       if (response.status === 201) {
         // Registration was successful, you can redirect the user to the login page
         // Replace 'login-page' with the actual URL of your login page
-        console.log('Signed up successfully')
+       
         window.location.href = '/Admin';
         
       } else if (response.status === 400) {
@@ -35,7 +35,7 @@ function RegistrationForm() {
       }  else if (response.status === 200) {
         // Handle errors (e.g., display an error message to the user)
         console.error('Registration failed');
-        console.log(response)
+      
 
       } else {
         // Handle other status codes as needed

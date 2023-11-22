@@ -39,6 +39,7 @@ const CreateBlog = () => {
   };
 
   const handleSubmit = async (event) => {
+    const notification = toast.loading("posting your blog...");
     event.preventDefault();
 
     if (!isAuthenticated) {
@@ -62,7 +63,9 @@ const CreateBlog = () => {
       );
 
       if (response?.ok) {
-        toast.success("Blog post created successfully");
+        toast.success("Blog post created successfully", {
+          id: notification,
+        });
         setFilePreview(null);
         updateFormData({
           title: "",
@@ -72,11 +75,15 @@ const CreateBlog = () => {
           category: "News",
         });
       } else {
-        toast.error("Failed to create blog post");
+        toast.error("Failed to create blog post", {
+          id: notification,
+        });
         console.error("Failed to create blog post");
       }
     } catch (error) {
-      toast.error("An error occurred");
+      toast.error("An error occurred", {
+        id: notification,
+      });
       console.error("An error occurred:", error);
     }
   };
@@ -96,11 +103,11 @@ const CreateBlog = () => {
 
     updateFormData({ [name]: type === "file" ? files[0] : value });
   };
-  console.log(formData);
+
   return (
     <>
       <Toaster />
-      <div className="">
+      <div className="bg-red-500 w-full">
         {/* create new blog */}
         <form
           className="w-full flex items-center justify-center flex-col  mt-2 gap-9  md:grid md:grid-cols-3 max-w-2l bg-white-100  px-4 py-10 mb-10 md:mx-auto sm:text-left  md:mb-12 "
@@ -246,11 +253,19 @@ const CreateBlog = () => {
               <button
                 type="button"
                 onClick={() => {
-                  navigate("/PreviewBlog", {
-                    state: {
-                      formData,
-                    },
-                  });
+                  const noti = toast.loading(
+                    "Naviating to preview, your fields will be saved as draft..."
+                  );
+                  setTimeout(() => {
+                    navigate("/PreviewBlog", {
+                      state: {
+                        formData,
+                      },
+                    });
+                    toast.success("previewed successfully...", {
+                      id: noti,
+                    });
+                  }, 2000);
                 }}
                 className=" rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >

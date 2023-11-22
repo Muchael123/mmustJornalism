@@ -11,6 +11,11 @@ function Blog() {
   const { id, category } = useParams(); // Destructure id from useParams
   const [newsData, setNewsData] = useState({});
 
+  const formatToLocalTime = (dateString) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false,  };
+    return new Date(dateString).toLocaleString(undefined, options);
+  };
+
   useEffect(() => {
     const apiUrl = ` https://mmust-jowa.onrender.com/api/v1/user/${category}/${id }`;
 
@@ -24,34 +29,38 @@ function Blog() {
         }
       })
       .catch((error) => console.error(`Error fetching ${category} data:`, error));
-  }, [id,category]);
-  console.log(newsData);
+  }, []);
+
 
   return (
     <div>
       <Navbar />
-      <div className="overflow-hidden  px-2 py-24 sm:py-32 lg:px-0 bg-[#f5f5f5]">
-        <div className="flex pl-8 ml-24 flex-row">
-          <div className='flex justify-even'>
+      <div
+            
+       className="px-2 py-24 flex flex-col md:flex-row  lg:px-6 ">
+        <div className="md:px-5 flex-2 bg-[#f5f5f5] max-w-screen p-8 md:ml-24 m-2   w-fit px-4">
+          <div className=' justify-even'>
             {/* Check if newsData has data before rendering */}
             {Object.keys(newsData).length > 0 && (
-              <Content className='flex-4'
+              <Content className=''
                 key={id}
                 id={newsData.id}
                 title={newsData.title}
                 body={newsData.body}
                 author={newsData.author}
                 author_image = {newsData.author_image}
-                published_on={newsData.published_on}
+                published_on={formatToLocalTime(newsData.published_on)}
                 image={newsData.image}                
               />
               
             )}
             </div>
-            <SidePanel />
-          
+
+            
         </div>
-        
+        <div className='bg-[#f5f5f5] md:block flex-1'>
+              <SidePanel />
+           </div>
       </div>
       <Comments category={category} image_id={id}/>
       <Footer />
