@@ -18,13 +18,13 @@ const Navbar = () => {
         ease: 'linear',
         duration: 0.6,
       }}
-      className="w-full text-white flex flex-row bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 justify-between items-center fixed top-0 left-0 mb-10 md:px-20 lg:px-40 max-[768px]:px-10 z-50"
+      className="w-full text-white flex flex-row bg-gradient-to-r from-indigo-500 via-purple-700 to-pink-500 justify-between items-center fixed top-0 left-0  md:px-20 lg:px-40 max-[768px]:px-10 z-50"
     >
       <div className="z-50">
         <Link to="/">
           <img
             className="w-20 h-20 object-cover cursor-pointer"
-            src="/src/images/logo.png"
+            src="/images/logo.png"
             alt=""
           />
         </Link>
@@ -43,6 +43,7 @@ const Navbar = () => {
           <li className="active:text-purple-600 hover:text-purple-600">
             <Link to="/News">News</Link>
           </li>
+          
           <li className="active:text-purple-600 hover:text-purple-600">
             <Link to="/Sports">Sports</Link>
           </li>
@@ -51,6 +52,7 @@ const Navbar = () => {
           </li>
           <li className="active:text-purple-600 hover:text-purple-600">
             <Link to="/Entertainment">Entertainment</Link>
+
           </li>
         </ul>
         <div

@@ -23,34 +23,40 @@ function Blog() {
         }
       })
       .catch((error) => console.error(`Error fetching ${category} data:`, error));
-  }, [id,category]);
+  }, []);
+  console.log(newsData);
 
   return (
     <div>
       <Navbar />
-      <div className="overflow-hidden bg-white px-2 py-24 sm:py-32 lg:px-0">
-        <div className="flex pl-8 ml-24">
-          <div className='flex justify-between'>
+      <div
+            
+       className="px-2 py-24 flex flex-row  lg:px-6 ">
+        <div className="md:px-5 flex-2 bg-[#f5f5f5] max-w-screen p-8 md:ml-24 m-2   w-fit px-4">
+          <div className=' justify-even'>
             {/* Check if newsData has data before rendering */}
             {Object.keys(newsData).length > 0 && (
-              <Content className='flex-3'
+              <Content className=''
                 key={id}
                 id={newsData.id}
                 title={newsData.title}
                 body={newsData.body}
                 author={newsData.author}
+                author_image = {newsData.author_image}
                 published_on={newsData.published_on}
                 image={newsData.image}                
               />
               
             )}
             </div>
-            <SidePanel flex-1/>
-          
+
+            
         </div>
-        
+        <div className='hidden bg-[#f5f5f5] md:block flex-1'>
+              <SidePanel />
+           </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

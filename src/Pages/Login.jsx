@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 // const notify = () => toast("Here is your toast.");
 function LoginForm() {
-  const [formData, setFormData] = useState({
+  const [ formData, setFormData] = useState({
     email: "",
     password: "",
   });
@@ -123,7 +123,7 @@ function LoginForm() {
           </div>
 
           <button
-            className="bg-gradient-to-r  from-indigo-500 via-purple-500 to-pink-500 p-2 rounded-3xl text-white mt-2"
+            className="bg-gradient-to-r  from-indigo-500 via-purple-700 to-pink-500 p-2 rounded-3xl text-white mt-2"
             type="submit"
           >
             Sign In

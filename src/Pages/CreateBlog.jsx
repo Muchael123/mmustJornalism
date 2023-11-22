@@ -1,28 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import { useFormData } from "../../hooks/useFormData";
 
 const CreateBlog = () => {
-  const [img, setImg] = useState();
-  const [formData, setFormData] = useState({
-    title: "",
-    slug: "",
-    body: "",
-    image: {},
-    category: "News", // Default category
-  });
-  const scrollRef = useRef();
+  const navigate = useNavigate();
+  const { formData, updateFormData } = useFormData();
   const [filePreview, setFilePreview] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    // Check user authentication status when the component mounts
     checkUserAuthentication();
   }, []);
 
   const checkUserAuthentication = async () => {
     try {
-      // Check if the user is authenticated based on the API response
       const response = await fetch(
         "https://mmust-jowa.onrender.com/api/auth/login/check",
         {
@@ -46,24 +39,16 @@ const CreateBlog = () => {
   };
 
   const handleSubmit = async (event) => {
+    const notification = toast.loading("posting your blog...");
     event.preventDefault();
 
-    // Check if the user is authenticated before submitting the blog
     if (!isAuthenticated) {
       console.error("User not authenticated. Unable to create a blog.");
-
       return (window.location.href = "/login");
     }
 
     try {
-      // Generate a unique identifier for the file
-      const fileId = generateUniqueId();
-
-      // Append the file id to the form data
-      const formDataWithId = {
-        ...formData,
-        image: filePreview,
-      };
+      const formDataWithId = { ...formData, image: filePreview };
 
       const response = await fetch(
         "https://mmust-jowa.onrender.com/api/v1/admin/createblog",
@@ -73,72 +58,39 @@ const CreateBlog = () => {
             "Content-type": "application/json",
             Authorization: "Bearer " + localStorage.getItem("accessToken"),
           },
-          body: JSON.stringify(formDataWithId), // You need to convert your JSON data to FormData
+          body: JSON.stringify(formDataWithId),
         }
       );
-      // .then((res) => {
-      //   console.log(res);
-      // })
-      // .catch((err) => {
-      //   console.log(err);
-      // });
 
       if (response?.ok) {
-        toast.success("Blog post created successfully");
-        console.log("Blog post created successfully");
-        // console.log(formDataWithId);
-        setFormData({
+        toast.success("Blog post created successfully", {
+          id: notification,
+        });
+        setFilePreview(null);
+        updateFormData({
           title: "",
           slug: "",
           body: "",
-          image: setFilePreview({}),
+          image: null,
           category: "News",
         });
-        // Assuming the server returns the URL of the uploaded image
-        const imageResponse = await response.json();
-        // const imageUrl = imageResponse.image_path;
-
-        // Use the imageUrl to display the image
-        console.log(imageResponse);
-        setImg(imageResponse.image_path);
       } else {
-        toast.error("Failed to create blog post");
+        toast.error("Failed to create blog post", {
+          id: notification,
+        });
         console.error("Failed to create blog post");
       }
     } catch (error) {
-      toast.error("An error occurred");
+      toast.error("An error occurred", {
+        id: notification,
+      });
       console.error("An error occurred:", error);
     }
-  };
-  const generateUniqueId = () => {
-    // Implement a function to generate a unique identifier (e.g., UUID)
-    // You can use libraries like `uuid` for this purpose.
-    // For simplicity, let's use a basic example.
-    return (
-      Math.random().toString(36).substring(2, 15) +
-      Math.random().toString(36).substring(2, 15)
-    );
-  };
-
-  // Function to convert JSON data to FormData
-  const formDataToFormData = (data) => {
-    const formData = new FormData();
-
-    for (const key in data) {
-      if (data[key] instanceof File) {
-        formData.append(key, data[key], data[key].name);
-      } else {
-        formData.append(key, data[key]);
-      }
-    }
-
-    return formData;
   };
 
   const handleChange = (event) => {
     const { name, value, type, files } = event.target;
 
-    // For file input
     if (type === "file" && files && files.length > 0) {
       const reader = new FileReader();
 
@@ -147,19 +99,9 @@ const CreateBlog = () => {
       };
 
       reader.readAsDataURL(files[0]);
-
-      // Do not set the file directly to state, it will be handled by FormData
-
-      setFormData({
-        ...formData,
-        [name]: files[0], // This line is not needed
-      });
-    } else {
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
     }
+
+    updateFormData({ [name]: type === "file" ? files[0] : value });
   };
   console.log(formData);
   return (
@@ -169,7 +111,7 @@ const CreateBlog = () => {
         {/* create new blog */}
         <form
           className="w-full flex items-center justify-center flex-col  mt-2 gap-9  md:grid md:grid-cols-3 max-w-2l bg-white-100  px-4 py-10 mb-10 md:mx-auto sm:text-left  md:mb-12 "
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
           encType="multipart/form-data"
           method="post"
         >
@@ -303,17 +245,36 @@ const CreateBlog = () => {
             <div className="flex flex-col">
               <button
                 type="submit"
+                onClick={handleSubmit}
                 className="mb-3 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 PUBLISH
               </button>
-              <button className=" rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              <button
+                type="button"
+                onClick={() => {
+                  const noti = toast.loading(
+                    "Naviating to preview, your fields will be saved as draft..."
+                  );
+                  setTimeout(() => {
+                    navigate("/PreviewBlog", {
+                      state: {
+                        formData,
+                      },
+                    });
+                    toast.success("previewed successfully...", {
+                      id: noti,
+                    });
+                  }, 2000);
+                }}
+                className=" rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
                 PREVIEW
               </button>
             </div>
           </div>
         </form>
-        <img src={img} alt="" />
+        {/* <img src={img} alt="" /> */}
       </div>
     </>
   );

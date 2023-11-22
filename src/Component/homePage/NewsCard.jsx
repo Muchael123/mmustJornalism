@@ -21,7 +21,7 @@ function NewsCard (props){
         <img src={image} alt="the image" className='w-[100%] obj max-h-[250px]' />
       </div>
         <div className='flex flex-col px-6 divide-y-2'>
-          <h1 className='text-gray-800 text-[24px] font-mono font-bold pt-4'><Link  to={url} className='hover:text-orange-500'>
+          <h1 className='text-gray-800 text-[24px] font-mono font-bold pt-4'><Link  to={url} className='hover:text-purple-500'>
             {title}
           </Link>
       </h1>

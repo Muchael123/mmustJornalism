@@ -20,8 +20,8 @@ const routeConfig = {
   Entertainment: AdminEntertainment,
 };
 
-function Admin() {
-  const [selectedItem, setSelectedItem] = useState("Dashboard");
+function CB() {
+  const [selectedItem, setSelectedItem] = useState("Add Blog");
   const [authenticated, setAuthenticated] = useState(true);
   const [open, setOpen] = useState(false);
 
@@ -47,10 +47,7 @@ function Admin() {
   return authenticated ? (
     <div className="w-full overflow-x-hidden flex items-center">
       <div className="relative">
-        <AdminNavbar
-          onItemClick={handleSidebarItemClick}
-          onclick={handleSideBar}
-        />
+        <AdminNavbar onclick={handleSideBar} />
       </div>
 
       <div className="flex mt-[80px] w-screen">
@@ -73,4 +70,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default CB;
