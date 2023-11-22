@@ -53,14 +53,7 @@ const SidePanel = (props) => {
     <div className=''>
       <Link to={`/blog/${item.category}/${item.id}`} onClick={() => window.location.reload()}>
         <h6 className="mb-2 w-5/9 font-semibold leading-5 hover:text-purple-700">
-          <Typewriter 
-               words = {[`${item.title}`]}
-               loop = {1}
-               delaySpeed={500}
-               cursorBlinking = {false}
-               typeSpeed={10}
-               />
-          
+          {item.title}
         </h6>
       </Link>
       <p className="mb-3 text-xs font-semibold tracking-wide uppercase">

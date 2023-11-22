@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from 'framer-motion';
 import { IoMdTime } from "react-icons/io";
+import { Typewriter } from "react-simple-typewriter";
 
 function Content(props) {
   const id = props.id;
@@ -31,10 +32,20 @@ function Content(props) {
             </a>
             <div className='alignt-center flex flex-col gap-1 font-mono text-left'>
             <p className="flex mt-3 justify-between divide-x gap-1  font-medium leading-4 text-gray-600"><IoMdTime /> 
-            <span className='text-[10px] font-light bg'>{published_on}</span></p>
+            
+            <span className='text-[10px] font-light bg'>
+            <Typewriter 
+               words = {[`${published_on}`]}
+               loop = {1}
+               delaySpeed={500}
+               cursorBlinking = {false}
+               typeSpeed={80}
+               />
+          
+            </span></p>
             
             <p className="mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase sm:text-left">
-            By {author}
+            By  {author}
             </p>
             </div>
           </div>
@@ -45,13 +56,13 @@ function Content(props) {
     </div>
     <div className="pl-2  px-6 ">
       <motion.img
-      initial = {{x: -50, opacity:0}}
-            animate = {{x: 0, opacity:1}}
+      initial = {{y: 200, opacity:0}}
+            animate = {{y: 0, opacity:1}}
             transition={{
                   ease: 'linear',
                   duration: 1.5,
                 }}
-      className="w-full max-w-[700px] rounded-md bg-gray-900 object-cover shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] mb-10" src={image} alt="News image"/>
+      className="w-full max-w-[700px]  max-h-[600px] rounded-md bg-gray-900 object-cover shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] mb-10" src={image} alt="News image"/>
     </div>
 
     <div className="lg:row-start-2 lg:mx-auto lg:w-full lg:max-w-7xl lg:gap-x-8 lg:px-8">
