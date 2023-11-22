@@ -10,6 +10,11 @@ function Blog() {
   const { id, category } = useParams(); // Destructure id from useParams
   const [newsData, setNewsData] = useState({});
 
+  const formatToLocalTime = (dateString) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false,  };
+    return new Date(dateString).toLocaleString(undefined, options);
+  };
+
   useEffect(() => {
     const apiUrl = ` https://mmust-jowa.onrender.com/api/v1/user/${category}/${id }`;
 
@@ -43,7 +48,7 @@ function Blog() {
                 body={newsData.body}
                 author={newsData.author}
                 author_image = {newsData.author_image}
-                published_on={newsData.published_on}
+                published_on={formatToLocalTime(newsData.published_on)}
                 image={newsData.image}                
               />
               
