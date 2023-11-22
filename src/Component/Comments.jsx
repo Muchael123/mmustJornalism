@@ -27,6 +27,7 @@ const Comments = ({category,image_id}) => {
                 const responseData = await response.json();
                 console.log('Comment submitted successfully:', responseData);
                 setIsAnonymous(true)
+                setContent('')
                 console.log(responsedata)
                 console.log("comment is",content)
                } else {
