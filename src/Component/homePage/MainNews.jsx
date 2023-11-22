@@ -17,8 +17,8 @@ function MainNews (props){
   <div>
    
     <div
-    className='flex md:flex-row flex-col  max-[475px]:flex-col max-[475px]:w-11/12 bg-slate-100 hover:bg-slate-100   w-9/12  rounded-lg  md:h-[360px]  h-fit snap-mandatory snap-center
-    max-[475px]:h-[420px] max-[475px] md:gap-5 mx-auto  ml-10 my-12  shadow-lg hover:shadow-2xl transition-all duration-5 00 ease-in-out  px-2 max-[475px]:py-2 '>
+    className='flex    md:flex-row flex-col  max-[475px]:flex-col max-[475px]:w-11/12 bg-slate-100 hover:bg-slate-100   w-9/12  rounded-lg  md:h-[360px]  h-fit snap-mandatory snap-center
+    max-[475px]:h-[420px] max-[475px] md:gap-5 mx-auto   my-12  shadow-lg hover:shadow-2xl transition-all duration-5 00 ease-in-out  px-2 max-[475px]:py-2   '>
         <motion.div
         initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
