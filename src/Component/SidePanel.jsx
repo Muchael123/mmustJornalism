@@ -51,7 +51,7 @@ const SidePanel = (props) => {
       
     </div>
     <div className=''>
-      <Link to={`/blog/${item.category}/${item.id}`} onClick={() => window.location.reload()}>
+      <Link to={`/blog/${item.category}/${item.id}`} onClick={() => window.location.href = `/blog/${item.category}/${item.id}`}>
         <h6 className="mb-2 w-5/9 font-semibold leading-5 hover:text-purple-700">
           {item.title}
         </h6>
