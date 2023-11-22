@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useFormData } from "../../hooks/useFormData";
 
 const CreateBlog = () => {
+  const navigate = useNavigate();
   const { formData, updateFormData } = useFormData();
   const [filePreview, setFilePreview] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
