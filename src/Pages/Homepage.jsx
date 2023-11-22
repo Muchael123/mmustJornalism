@@ -101,7 +101,7 @@ function Homepage() {
           />
         ))}
          <Heading title = {"Business News"} category = "business"/>
-      <div className='flex justify-even my-5 flex-col md:flex-row snap-mandatory snap-center'>
+      <div className='flex justify-even my-5 flex-col md:flex-row  snap-mandatory snap-center  max-[767px]:mx-4'>
         {/* <Businesss News /> */}
         {businessData.map((item, key) => (
           <NewsCard

@@ -43,13 +43,11 @@ const SidePanel = (props) => {
   };
 
   return (
-    <div className='flex-2'>
+    <div className='flex-2 px-10'>
       <div className='min-h-[50px]'></div>
       {newsData.map((item, index) => (
   <div key={index} className="flex">
-    <div className="mr-1 min-w-[55px]">
-      
-    </div>
+    
     <div className=''>
       <Link to={`/blog/${item.category}/${item.id}`} onClick={() => window.location.href = `/blog/${item.category}/${item.id}`}>
         <h6 className="mb-2 w-5/9 font-semibold leading-5 hover:text-purple-700">

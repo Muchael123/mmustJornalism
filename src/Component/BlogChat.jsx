@@ -14,7 +14,7 @@ function Content(props) {
   return (
     <div>
  <div className="" key={id}>
- <div className="col-span-2 pl-7 lg:pl-3 max-w-[700px]">
+ <div className="col-span-2  max-w-[700px]">
     <div className="lg:row-start-1 lg:mx-auto  lg:w-full">
       <div className="lg:pr-1">
         <div className="w-full">
