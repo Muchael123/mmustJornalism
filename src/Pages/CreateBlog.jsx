@@ -106,7 +106,7 @@ const CreateBlog = () => {
   return (
     <>
       <Toaster />
-      <div className="w-full">
+      <div className=" w-full">
         {/* create new blog */}
         <form
           className="w-full flex items-center justify-center flex-col  mt-2 gap-9  md:grid md:grid-cols-3 max-w-2l bg-white-100  px-4 py-10 mb-10 md:mx-auto sm:text-left  md:mb-12 "
