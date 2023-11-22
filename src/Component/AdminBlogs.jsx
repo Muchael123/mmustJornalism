@@ -58,7 +58,9 @@ function AdminBlogs(props) {
             <p className="w-full font-bold text-lg truncate sm:overflow-ellipsis md:overflow-ellipsis lg:overflow-ellipsis xl:overflow-ellipsis ">
               {title}{" "}
             </p>
-            <p className="mt-[20px]">{published_on} </p>
+            <p className="mt-[20px] text-[12px] font-semibold md:text-lg w-full md:font-normal">
+              {published_on}{" "}
+            </p>
           </li>
           <ul className="flex gap-16 justify-between ml-4 ">
             <li className="mr-[30px] md:ml-[100px]">{total_comments} </li>
@@ -92,7 +94,10 @@ function AdminBlogs(props) {
                 />
               </svg>
             </li>
-            <li onClick={deleteBlog} className="text-red-500 cursor-pointer md:ml-[30px] hover:text-red-900 font-extrabold">
+            <li
+              onClick={deleteBlog}
+              className="text-red-500 cursor-pointer md:ml-[30px] hover:text-red-900 font-extrabold"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
