@@ -5,6 +5,7 @@ import SidePanel from '../Component/SidePanel';
 import Content from '../Component/BlogChat';
 import { useParams } from 'react-router-dom';
 import Footer from '../Component/Footer';
+import Comments from '../Component/Comments';
 
 function Blog() {
   const { id, category } = useParams(); // Destructure id from useParams
@@ -61,6 +62,7 @@ function Blog() {
               <SidePanel />
            </div>
       </div>
+      <Comments category={category} image_id={id}/>
       <Footer />
     </div>
   );
