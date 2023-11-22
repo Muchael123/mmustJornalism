@@ -155,9 +155,9 @@ function Dashboard  ()  {
           <li>IMAGE</li>
           <li>HEADLINE</li>
           <ul className='hidden lg:flex gap-24 justify-between ml-4 '>
-          <li>DATE</li>
+          {/* <li>DATE</li> */}
           <li className='ml-12' >COMMENTS</li>
-          <li>VIEWS</li>
+          <li className='ml-[100px]'>VIEWS</li>
           </ul>
         </ul> 
          </div>
