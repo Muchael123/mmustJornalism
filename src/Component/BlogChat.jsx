@@ -65,7 +65,7 @@ function Content(props) {
       className="w-full max-w-[700px]  max-h-[600px] rounded-md bg-gray-900 object-cover shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] mb-10" src={image} alt="News image"/>
     </div>
 
-    <div className="lg:row-start-2 lg:mx-auto lg:w-full lg:max-w-7xl lg:gap-x-8 lg:px-8">
+    <div className="lg:row-start-2 lg:mx-auto lg:w-full lg:max-w-7xl lg:gap-x-8 ">
       <div className="lg:pr-4">
         <div className="text-base leading-7 text-gray-700">
         {body}

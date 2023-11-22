@@ -39,7 +39,7 @@ const Comments = ({category,image_id}) => {
     };
 
     return (
-        <div className='ml-32'>
+        <div className='px-10 min-[768px]:px-24'>
           <h1 className='w-1/3 uppercase font-bold text-xl  my-5 '>LEAVE A COMMENT</h1>
             <label>
                 {/* Comment: */}
