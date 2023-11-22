@@ -10,7 +10,6 @@ function MainNews (props){
     const title = props.title;
     const slug = props.slug;
     const id = props.id
-    console.log("Maich",id);
     const url = `/Blog/${category}/${id}`;
     const published_on = props.published_on
 

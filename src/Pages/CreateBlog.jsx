@@ -103,7 +103,7 @@ const CreateBlog = () => {
 
     updateFormData({ [name]: type === "file" ? files[0] : value });
   };
-  console.log(formData);
+
   return (
     <>
       <Toaster />

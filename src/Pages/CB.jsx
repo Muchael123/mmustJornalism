@@ -41,7 +41,6 @@ function CB() {
 
   const handleSideBar = () => {
     setOpen(!open);
-    console.log(open);
   };
 
   return authenticated ? (

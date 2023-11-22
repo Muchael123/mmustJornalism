@@ -24,14 +24,14 @@ function Blog() {
       })
       .catch((error) => console.error(`Error fetching ${category} data:`, error));
   }, []);
-  console.log(newsData);
+
 
   return (
     <div>
       <Navbar />
       <div
             
-       className="px-2 py-24 flex flex-row  lg:px-6 ">
+       className="px-2 py-24 flex flex-col md:flex-row  lg:px-6 ">
         <div className="md:px-5 flex-2 bg-[#f5f5f5] max-w-screen p-8 md:ml-24 m-2   w-fit px-4">
           <div className=' justify-even'>
             {/* Check if newsData has data before rendering */}
@@ -52,7 +52,7 @@ function Blog() {
 
             
         </div>
-        <div className='hidden bg-[#f5f5f5] md:block flex-1'>
+        <div className='bg-[#f5f5f5] md:block flex-1'>
               <SidePanel />
            </div>
       </div>

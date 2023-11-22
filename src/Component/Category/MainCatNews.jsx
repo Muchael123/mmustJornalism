@@ -10,7 +10,6 @@ import MainNews from '../homePage/MainNews';
 
 function MainCatNews(props) {
     const id = props.id;
-    console.log("id is from MainCat", id)
     const category = props.category;
     const title = props.title;
     const body = props.slug;

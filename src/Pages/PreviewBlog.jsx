@@ -7,7 +7,6 @@ function PreviewBlog() {
   //   const history = useHistory();
   const formData = location.state.formData;
 
-  console.log(location.state.setSelectedItem);
   const imageUrl = formData.image && URL.createObjectURL(formData.image);
 
   return (

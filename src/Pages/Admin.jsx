@@ -41,7 +41,6 @@ function Admin() {
 
   const handleSideBar = () => {
     setOpen(!open);
-    console.log(open);
   };
 
   return authenticated ? (

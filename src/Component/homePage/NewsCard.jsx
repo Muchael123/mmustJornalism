@@ -6,7 +6,6 @@ function NewsCard (props){
    
   const title = props.title;
   const image = props.image;
-  console.log(props);
    const slug = props.slug;
    const category = props.category;
    const published_on = props.published_on;
