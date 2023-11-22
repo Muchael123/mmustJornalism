@@ -45,7 +45,7 @@ function AdminBlogs(props) {
       <Toaster />
       <div className="  col-span-3 shadow-md bg-white    py-2.5 ">
         <ul className="grid shadow-md bg-white  border-solid ml-2 py-2.5 px-2 grid-cols-4 gap-10  ">
-          <li className="flex items-center justify-start  w-[100px] h-[100px] md:w-[150px] md:h-[100px] object-cover">
+          <li className="flex items-center justify-start bg-red-500 w-[100px] h-[100px] md:w-[150px] md:h-[100px] object-cover">
             <img
               className="w-full h-full rounded-[8px] object-cover "
               src={image}
