@@ -17,8 +17,8 @@ const AdminNavbar = ({ onclick, onItemClick }) => {
     window.location.href = "/Login";
   };
   return (
-    <div className="w-full text-white flex  flex-row bg-gradient-to-r from-indigo-500 via-purple-700 to-pink-500  items-center fixed top-0   md:px-20  justify-between z-[9999]">
-      <div className="z-[9999] flex items-center  w-full justify-around md:justify-center pl-9">
+    <div className="w-full text-white flex  flex-row bg-gradient-to-r from-indigo-500 via-purple-700 to-pink-500  items-center fixed top-0   px-20  justify-between z-[9999]">
+      <div className="z-[9999] flex items-center  w-full justify-around md:justify-center">
         <img
           className="w-20 h-20 object-cover cursor-pointer"
           src="/images/logo.png"
