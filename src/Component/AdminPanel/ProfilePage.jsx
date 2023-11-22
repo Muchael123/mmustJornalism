@@ -110,6 +110,7 @@ const ProfilePage = () => {
   
       const updatedData = await fetchData();
       console.log('Updated data:', updatedData);
+      localStorage.setItem("User",profileData.first_name);
       setProfileData(updatedData);
       setIsEditing(false);
       setImagePreview(null);
@@ -123,7 +124,7 @@ const ProfilePage = () => {
 
 
   return (
-    <div className='  -ml-8 min-[640px]:ml-0 '>
+    <div className='   min-[640px]:ml-0 '>
 
 
       <div className='px-4 mx-auto sm:max-w-xl md:max-w-full lg:w-fit md:px-24  absolute mt-5 lg:py-16 w-full py-4    rounded shadow-xl '>
