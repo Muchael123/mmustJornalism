@@ -37,8 +37,8 @@ function Blog() {
       <Navbar />
       <div
             
-       className="px-2 py-24 flex flex-col md:flex-row  lg:px-6 ">
-        <div className="md:px-5 flex-2 bg-[#f5f5f5] max-w-screen p-8 md:ml-24 m-2   w-fit px-4">
+       className=" py-24 flex flex-col md:flex-row   ">
+        <div className="md:px-5 flex-2 bg-[#f5f5f5] max-w-screen p-8  m-2   w-fit px-4">
           <div className=' justify-even'>
             {/* Check if newsData has data before rendering */}
             {Object.keys(newsData).length > 0 && (
