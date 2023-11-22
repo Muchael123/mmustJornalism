@@ -45,20 +45,21 @@ function AdminBlogs(props) {
       <Toaster />
       <div className="  col-span-3 shadow-md bg-white    py-2.5 ">
         <ul className="grid shadow-md bg-white  border-solid ml-2 py-2.5 px-2 grid-cols-4 gap-10  ">
-          <li>
-            <div className="flex items-center justify-start">
-              <img
-                className="w-12/12 md:w-6/12 rounded-[8px] object-cover"
-                src={image}
-                alt=""
-              />
-            </div>
+          <li className="flex items-center justify-start  w-[100px] h-[100px] md:w-[150px] md:h-[100px] object-cover">
+            <img
+              className="w-full h-full rounded-[8px] object-cover "
+              src={image}
+              alt=""
+            />
           </li>
+
           <li>
             <p className="w-full font-bold text-lg truncate sm:overflow-ellipsis md:overflow-ellipsis lg:overflow-ellipsis xl:overflow-ellipsis ">
               {title}{" "}
             </p>
-            <p className="mt-[20px]">{published_on} </p>
+            <p className="mt-[20px] text-[12px] font-semibold md:text-lg w-full md:font-normal">
+              {published_on}{" "}
+            </p>
           </li>
           <ul className="flex gap-16 justify-between ml-4 ">
             <li className="mr-[30px] md:ml-[100px]">{total_comments} </li>
@@ -92,7 +93,10 @@ function AdminBlogs(props) {
                 />
               </svg>
             </li>
-            <li onClick={deleteBlog} className="text-red-500 cursor-pointer md:ml-[30px] hover:text-red-900 font-extrabold">
+            <li
+              onClick={deleteBlog}
+              className="text-red-500 cursor-pointer md:ml-[30px] hover:text-red-900 font-extrabold"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

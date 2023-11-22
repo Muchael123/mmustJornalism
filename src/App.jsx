@@ -15,6 +15,7 @@ import Sports from "./Pages/Sports";
 import CreateBlog from "./Pages/CreateBlog";
 import PreviewBlog from "./Pages/PreviewBlog";
 import CB from "./Pages/CB";
+import Comments from "./Component/Comments";
 class App extends React.Component {
   render() {
     return (
