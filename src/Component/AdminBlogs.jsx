@@ -44,8 +44,8 @@ function AdminBlogs(props) {
     <>
       <Toaster />
       <div className="  col-span-3 shadow-md bg-white    py-2.5 ">
-        <ul className="grid shadow-md bg-white  border-solid ml-2 py-2.5 px-2 grid-cols-4 gap-10  ">
-          <li className="flex items-center justify-start  w-[100px] h-[100px] md:w-[150px] md:h-[100px] object-cover">
+        <ul className="grid shadow-md bg-white  border-solid ml-2 py-2.5 px-2 grid-cols-4 gap-10 relative ">
+          <li className="flex items-center justify-start  w-[80px] h-[100px] md:w-[150px] md:h-[100px] object-cover mr-5">
             <img
               className="w-full h-full rounded-[8px] object-cover "
               src={image}
@@ -53,18 +53,19 @@ function AdminBlogs(props) {
             />
           </li>
 
-          <li>
+          <li className="ml-4 ">
             <p className="w-full font-bold text-lg truncate sm:overflow-ellipsis md:overflow-ellipsis lg:overflow-ellipsis xl:overflow-ellipsis ">
               {title}{" "}
             </p>
-            <p className="mt-[20px] text-[12px] font-semibold md:text-lg w-full md:font-normal">
+            <p className="mt-[20px] text-[12px] font-semibold md:text-lg w-full md:font-normal text-lg truncate sm:overflow-ellipsis md:overflow-ellipsis lg:overflow-ellipsis xl:overflow-ellipsis">
               {published_on}{" "}
             </p>
           </li>
+
           <ul className="flex gap-16 justify-between ml-4 ">
             <li className="mr-[30px] md:ml-[100px]">{total_comments} </li>
           </ul>
-          <ul className="flex gap-4 justify-end ml-10 md:ml-0 px-4">
+          <ul className="flex gap-5 justify-end ml-10 md:ml-0 px-4 absolute md:relative right-2 top-[5px] flex-col md:flex-row">
             <li>
               <a href={url}>
                 <svg
