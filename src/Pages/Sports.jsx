@@ -18,7 +18,8 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/sports')
     .then((response) => response.json())
     .then((data) => {
         const valuesArray = Object.values(data);
-        setNewsOther(valuesArray.slice(3));
+
+        setNewsOther(valuesArray.slice(4));
         setSideNews(valuesArray.slice(1, 3));
         if (valuesArray && valuesArray.length > 0) {
             setNewsData(valuesArray[0]);
@@ -28,7 +29,7 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/sports')
         console.error('Error fetching news data:', error);
     });
 }, []);
- 
+
  
 
   const formatToLocalTime = (dateString) => {
@@ -39,7 +40,7 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/sports')
   return (
     <div className='flex flex-col'>
       <Navbar />
-      <h1 className='my-12 py-12 text-[24px] font-bold text-center tracking-wider'>Main Sports News</h1>
+      <h1 className='my-12 py-12 text-[24px] font-bold text-center tracking-wider'>Main News</h1>
       <div className='flex '>
       <div>
          <div className='flex justify-center  flex-row px-7 divide-x- gap-12'> 
@@ -48,7 +49,8 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/sports')
           id={newsData.id}
           title={newsData.title}
           slug={newsData.slug}
-          category = {"Sports"}
+          category = {"News"}
+          author_image = {newsData.author_image}
           published_on={formatToLocalTime(newsData.published_on)}
           image={newsData.image_id}
           />
@@ -59,7 +61,7 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/sports')
                 key={item.key}
                 id={item.id}
                 title={item.title}
-                category = {"Sports"}
+                category = {"News"}
                 published_on={formatToLocalTime(item.published_on)}
                 />
               ))}
@@ -68,18 +70,22 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/sports')
       </div>
        
       </div>
-      <h1 className='my-12 py-12 text-[24px] font-bold text-center tracking-wider'>Other Sports News</h1>
-      {newsOther.map((item, key) => (
-                <NewsCard
-                key={item.key}
-                image = {item.image_id}
-                slug = {item.slug}
-                id={item.id}
-                title={item.title}
-                category = {"Sports"}
-                published_on={formatToLocalTime(item.published_on)}
-                />
-              ))}
+      <h1 className='my-12 py-12 text-[24px] font-bold text-center tracking-wider'>Other News</h1>
+     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 justify-center items-top md:gap-5 lg:gap-6">
+        {newsOther.map((item, key) => (
+          <NewsCard
+            key={key}
+            id={item.id}
+            title={item.title}
+            slug = {item.slug}
+            image = {item.image_id}
+            category={"News"}
+            published_on={formatToLocalTime(item.published_on)}
+          />
+          
+        ))}
+      </div>
+
       <Footer/>
       </div>   
 
