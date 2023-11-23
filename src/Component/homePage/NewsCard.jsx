@@ -16,7 +16,7 @@ function NewsCard (props){
     // const slug = props.slug
   return (
     <div className='shadow-md  flex-1 flex flex-col h-fit  m-7  bg-slate-100 border-gray-300 border-2 rounded-lg'>
-      <div className='p-2 rounder-lg  bg-red-100'>
+      <div className='p-2 rounder-lg'>
         <img src={image} alt="the image" className='w-[100%] object-cover max-h-[250px]' />
       </div>
         <div className='flex flex-col px-6 divide-y-2'>
