@@ -1,11 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div className="bg-gray-900 mt-7">
-      <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-        <div className="grid row-gap-10 lg:grid-cols-6">
+    <div className="bg-gray-900 mt-7 pb-5">
+      <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+        <div className="grid row-gap-10 lg:grid-cols-6 ">
           <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-3">
             <div>
               <p className="font-medium tracking-wide text-gray-300">
@@ -95,7 +95,7 @@ export default function Footer() {
               <p className="font-medium tracking-wide text-gray-300">
                 Social Media
               </p>
-              {/* <span class="text-base font-bold tracking-wide text-gray-900">Social</span> */}
+
               <div className="flex items-center mt-1 space-x-3">
                 <a
                   href="/"
@@ -188,16 +188,7 @@ export default function Footer() {
                 value="Send Email"
                 className="mt-5 inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 border-2 cursor-pointer hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
               />
-              {/* <button
-            type="submit"
-            class="mt-5 inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:border-2 bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none "
-          >
-            Send Message
-          </button> */}
             </form>
-            {/* <p class="mt-4 text-sm text-gray-500">
-          Bacon ipsum dolor amet short ribs pig sausage prosciuto chicken spare ribs salami.
-        </p> */}
           </div>
         </div>
       </div>
