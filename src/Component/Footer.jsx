@@ -101,7 +101,7 @@ export default function Footer() {
                   href="/"
                   className="text-gray-500 transition-colors duration-300 hover:text-purple-500"
                 >
-                  <Link to="/Admin" target="_blank">
+                  <Link to="/Admin">
                     <svg
                       viewBox="0 0 24 24"
                       fill="currentColor"
