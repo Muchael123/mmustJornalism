@@ -6,7 +6,7 @@ import OtherCatNews from '../Component/Category/OtherCatNews.jsx';
 import NewsCard from '../Component/homePage/NewsCard.jsx';
 
 
-function News  () {
+function Entertainment  () {
  
   const [newsData, setNewsData] = useState([]);
   const [sideNews, setSideNews] = useState([]);
@@ -40,7 +40,7 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/entertainment')
   return (
     <div className='flex flex-col'>
       <Navbar />
-      <h1 className='my-12 py-12 text-[24px] font-bold text-center tracking-wider'>Main News</h1>
+      <h1 className='my-12 py-12 text-[24px] font-bold text-center tracking-wider'>Main Entertainment News</h1>
       <div className='flex '>
       <div>
          <div className='flex justify-center  flex-row px-7 divide-x- gap-12'> 
@@ -49,7 +49,7 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/entertainment')
           id={newsData.id}
           title={newsData.title}
           slug={newsData.slug}
-          category = {"News"}
+          category = {"Entertainment"}
           author_image = {newsData.author_image}
           published_on={formatToLocalTime(newsData.published_on)}
           image={newsData.image_id}
@@ -61,7 +61,7 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/entertainment')
                 key={item.key}
                 id={item.id}
                 title={item.title}
-                category = {"News"}
+                category = {"Entertainment"}
                 published_on={formatToLocalTime(item.published_on)}
                 />
               ))}
@@ -79,7 +79,7 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/entertainment')
             title={item.title}
             slug = {item.slug}
             image = {item.image_id}
-            category={"News"}
+            category={"Entertainment"}
             published_on={formatToLocalTime(item.published_on)}
           />
           
@@ -95,4 +95,4 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/entertainment')
   )
 }
 
-export default News
+export default Entertainment
