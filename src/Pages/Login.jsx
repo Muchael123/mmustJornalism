@@ -47,7 +47,11 @@ function LoginForm() {
         // Replace 'protected-page' with the actual URL of the protected page
         window.location.href = "/Admin";
       } else if (response.status === 401) {
-        window.location.href = "/Admin";
+        // window.location.href = "/Admin";
+         toast.error("Login failed, invalid credentials", {
+           id: notification,
+         });
+         console.error("Login failed");
       } else if (response.status === 401) {
         // Handle authentication failure (e.g., display an error message)
         toast.error("Login failed, invalid credentials", {

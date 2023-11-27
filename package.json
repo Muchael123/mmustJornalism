@@ -1,7 +1,8 @@
 {
-  "name": "new",
+  "name": "mmustjosadigital",
+  "homepage": "https://mmustjosadigital.com",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -19,6 +20,7 @@
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",
+    "react-phone-number-input": "^3.3.7",
     "react-router-dom": "^6.18.0",
     "react-simple-typewriter": "^5.0.1"
   },
