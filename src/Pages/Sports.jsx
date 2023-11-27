@@ -49,7 +49,7 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/sports')
           id={newsData.id}
           title={newsData.title}
           slug={newsData.slug}
-          category = {"News"}
+          category = {"Business"}
           author_image = {newsData.author_image}
           published_on={formatToLocalTime(newsData.published_on)}
           image={newsData.image_id}
@@ -61,7 +61,7 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/sports')
                 key={item.key}
                 id={item.id}
                 title={item.title}
-                category = {"News"}
+                category = {"Business"}
                 published_on={formatToLocalTime(item.published_on)}
                 />
               ))}
