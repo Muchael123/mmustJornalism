@@ -23,7 +23,7 @@ jobs:
         npm run build
     
     - name: 📂 Sync files
-      uses: BinaryBrigade/FTP-Deploy-Action@v4.3.4
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
