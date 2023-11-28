@@ -87,11 +87,11 @@ function Homepage() {
     <div className=" overflow-x-hidden">
       <Helmet>
         <meta charset="UTF-8" />
-        <meta name="description" content="Mmust Journalism" />
+        <meta name="description" content="MMUST JOSA DIGITAL" />
         <meta name="author" content="MMUST JOSA" />
         <link rel="icon" type="image/svg+xml" href="/images/logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Mmust Journalism</title>
+        <title>MMUST JOSA DIGITAL</title>
         <script
           type="module"
           crossorigin
