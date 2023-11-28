@@ -1,16 +1,18 @@
-import React from 'react'
+import React from "react";
 import Lottie from "lottie-react";
 import Loader from "../../public/Loader.json";
 const LoadingSpinner = () => {
   return (
-
-    <div className="w-screen h-screen items-center justify-center flex bg-slate-200">
+    <div className="w-screen h-screen items-center justify-center flex flex-col bg-slate-300">
+      <h1 className="font-extrabold text-[25px] text-gray-500">MMUST JOSA</h1>
       <div style={{ width: "400px", height: "400px" }}>
         <Lottie animationData={Loader} loop={true} />
       </div>
-
+      <p className="text-gray-500 text-sm">
+        Hung on let's fetch latest hot news for you🤗🤗
+      </p>
     </div>
   );
-}
+};
 
-export default LoadingSpinner
+export default LoadingSpinner;
