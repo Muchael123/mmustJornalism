@@ -31,6 +31,7 @@ const CreateBlog = () => {
         setIsAuthenticated(true);
       } else {
         setIsAuthenticated(false);
+        window.location.href = "/login";
       }
     } catch (error) {
       console.error("An error occurred while checking authentication:", error);

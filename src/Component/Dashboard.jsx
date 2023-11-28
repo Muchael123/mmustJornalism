@@ -25,13 +25,15 @@ function Dashboard  ()  {
         setLatestNews(data);
       } catch (error) {
         console.error('Error fetching latest news:', error);
+         if (error == "Error: HTTP error! Status: 401") {
+           window.location.href = "/login";
+         }
       }
     };
 
     fetchLatestNews();
   }, []);
 
-  console.log(latestNews)
 
   const formatToLocalTime = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false, };
