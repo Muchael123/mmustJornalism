@@ -163,28 +163,27 @@ export default function Footer() {
             <form
               className="block mt-4 "
               method="post"
-              action="mailto:example@gmail.com"
+              action="mailto:josammust@gmail.com"
               encType="multipart/form-data"
             >
               {/* <form > */}
               <input
                 placeholder="Name"
-                required=""
+                required={true}
                 type="text"
                 className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
               />
               <input
                 placeholder="Email"
-                required=""
+                required={true}
                 type="email"
                 className="flex-grow w-full mt-5 h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
               />
               <input
                 placeholder="Message"
-                required=""
+                required={true}
                 type="textarea"
-                rows="10"
-                cols="30"
+                height={100}
                 className="flex-grow w-full mt-5 h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
               />
               <input

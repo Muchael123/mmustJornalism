@@ -9,7 +9,7 @@ const LoadingSpinner = () => {
         <Lottie animationData={Loader} loop={true} />
       </div>
       <p className="text-gray-500 text-sm">
-        Hung on let's fetch latest hot news for you🤗🤗
+       Loading...
       </p>
     </div>
   );
