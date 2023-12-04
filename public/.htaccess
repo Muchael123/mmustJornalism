@@ -9,3 +9,5 @@
   RewriteRule . /index.html [L]
 
 </IfModule>
+
+Options -Indexes

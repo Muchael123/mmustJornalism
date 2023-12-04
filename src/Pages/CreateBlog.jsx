@@ -31,10 +31,14 @@ const CreateBlog = () => {
         setIsAuthenticated(true);
       } else {
         setIsAuthenticated(false);
+        window.location.href = "/login";
       }
     } catch (error) {
       console.error("An error occurred while checking authentication:", error);
       setIsAuthenticated(false);
+      if (error == "Error: HTTP error! Status: 401") {
+        window.location.href = "/login";
+      }
     }
   };
 

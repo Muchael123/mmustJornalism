@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div className="bg-gray-900 mt-7 pb-5">
+    <footer className="bg-gray-900 mt-7 pb-5">
       <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
         <div className="grid row-gap-10 lg:grid-cols-6 ">
           <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-3">
@@ -75,11 +75,11 @@ export default function Footer() {
                   <p className="text-gray-500">
                     E-mail:
                     <a
-                      href="mailto:example@gmail.com"
+                      href="mailto:josammust@gmail.com"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
                       {" "}
-                      example@gmail.com
+                      josammust@gmail.com
                     </a>
                   </p>
                 </li>
@@ -109,13 +109,17 @@ export default function Footer() {
                   href="/"
                   className="text-gray-500 transition-colors duration-300 hover:text-purple-500"
                 >
-                  <Link to="/Admin">
+                  <Link
+                    to="https://instagram.com/mmust_josa?igshid=OGY3MTU3OGY1Mw=="
+                    target="_blank"
+                  >
                     <svg
-                      viewBox="0 0 24 24"
+                      viewBox="0 0 30 30"
                       fill="currentColor"
-                      className="h-5"
+                      className="h-6"
                     >
-                      <path d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z"></path>
+                      <circle cx="15" cy="15" r="4"></circle>
+                      <path d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z"></path>
                     </svg>
                   </Link>
                 </a>
@@ -128,12 +132,12 @@ export default function Footer() {
                     target="_blank"
                   >
                     <svg
-                      viewBox="0 0 30 30"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 576 512"
                       fill="currentColor"
                       className="h-6"
                     >
-                      <circle cx="15" cy="15" r="4"></circle>
-                      <path d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z"></path>
+                      <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
                     </svg>
                   </Link>
                 </a>
@@ -156,7 +160,7 @@ export default function Footer() {
                 </a>
               </div>
               <p className="mt-4 text-sm text-gray-500">
-                Connect with us through our Social media accounts.
+                MMUST JOSA DIGITAL NEWS, Connect with us through our Social media accounts.
               </p>
             </div>
           </div>
@@ -167,28 +171,27 @@ export default function Footer() {
             <form
               className="block mt-4 "
               method="post"
-              action="mailto:example@gmail.com"
+              action="mailto:josammust@gmail.com"
               encType="multipart/form-data"
             >
               {/* <form > */}
               <input
                 placeholder="Name"
-                required=""
+                required={true}
                 type="text"
                 className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
               />
               <input
                 placeholder="Email"
-                required=""
+                required={true}
                 type="email"
                 className="flex-grow w-full mt-5 h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
               />
               <input
                 placeholder="Message"
-                required=""
+                required={true}
                 type="textarea"
-                rows="10"
-                cols="30"
+                height={100}
                 className="flex-grow w-full mt-5 h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
               />
               <input
@@ -200,6 +203,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
