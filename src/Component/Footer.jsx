@@ -44,6 +44,14 @@ export default function Footer() {
                     Entertainment
                   </a>
                 </li>
+                                <li>
+                  <a
+                    href="/Admin"
+                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                  >
+                    Admin
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
