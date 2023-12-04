@@ -125,14 +125,14 @@ function LoginForm() {
           >
             Sign In
           </button>
-          <div className="flex w-full justify-between px-2 text-xs">
+          {/* <div className="flex w-full justify-between px-2 text-xs">
             <p>Don't have an account?</p>
             <Link to="/signin">
               <p className="text-blue-700 hover:underline cursor-pointer duration-200">
                 Sign Up
               </p>
             </Link>
-          </div>
+          </div> */}
         </form>
       </div>
     </>
