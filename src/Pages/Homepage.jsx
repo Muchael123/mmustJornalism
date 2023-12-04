@@ -8,6 +8,7 @@ import LoadingSpinner from "../Component/LoadingSpinner";
 import Heading from "../Component/homePage/Heading";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
+import toast, { Toaster } from "react-hot-toast";
 function Homepage() {
   const [newsData, setNewsData] = useState([]);
   const [latestData, setLatestData] = useState([]);
@@ -64,6 +65,7 @@ function Homepage() {
 
         setLoading(true); // Set loading to false when data is fetched
       } catch (error) {
+        toast.error("Error fetching data...");
         console.error("Error fetching data:", error);
         setLoading(true); // Set loading to false even if there's an error
       }
@@ -85,6 +87,7 @@ function Homepage() {
   };
   return loading ? (
     <div className=" overflow-x-hidden">
+      <Toaster />
       <Helmet>
         <meta charset="UTF-8" />
         <meta name="description" content="MMUST JOSA DIGITAL NEWS" />
@@ -112,7 +115,7 @@ function Homepage() {
         }}
       >
         <h1 className="w-screen bg- mt-20 flex text-2xl font-bold justify-center text-[26px] justify-left -mb-8 underline decoration-gray-400">
-          Main News
+          Top News
         </h1>
       </motion.div>
 

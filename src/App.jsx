@@ -28,12 +28,12 @@ class App extends React.Component {
           <Route path="/Business" element={<Business />} />
           <Route path="/Entertainment" element={<Entertainment />} />
           <Route path="/login" element={<LoginForm />} />
-          <Route path="/signin" element={<RegistrationForm />} />
+          {/* <Route path="/signin" element={<RegistrationForm />} /> */}
           <Route path="/CreateBlog" element={<CreateBlog />} />
           <Route path="/Blog/:id" element={<Blog />} />
           <Route path="/PreviewBlog" element={<PreviewBlog />} />
           <Route path="/Blog/:category/:id" element={<Blog />} />
-          <Route path="/CB" element={<CB/>} />
+          <Route path="/CB" element={<CB />} />
         </Routes>
       </Router>
     );
