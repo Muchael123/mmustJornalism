@@ -39,10 +39,8 @@ const Comments = ({ category, image_id }) => {
   };
 
   return (
-    <div className="px-10  ">
-      <h1 className="w-1/3 uppercase font-bold text-xl  my-5 ">
-        LEAVE A COMMENT
-      </h1>
+    <div className="px-10  w-[100%]">
+      <h1 className=" uppercase font-bold text-xl  my-5 ">LEAVE A COMMENT</h1>
       <label>
         {/* Comment: */}
         <textarea
@@ -51,7 +49,7 @@ const Comments = ({ category, image_id }) => {
           rows="4"
           cols="50"
           placeholder="Your Comment"
-          className="pl-2  resize-none border-2"
+          className="pl-2  resize-none border-2 w-full outline-none "
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
