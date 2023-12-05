@@ -96,7 +96,7 @@ function LoginForm() {
           onSubmit={handleSubmit}
         >
           <img
-            src="../../public/images/logo.png"
+            src="/images/logo.png"
             alt=""
             className="w-[150px] h-[150px] absolute top-0 translate-x-[50%] object-cover"
           />
