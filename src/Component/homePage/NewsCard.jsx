@@ -15,7 +15,7 @@ function NewsCard (props){
   localStorage.setItem('id', props.key);
     // const slug = props.slug
   return (
-    <div className='shadow-md  flex-1 flex flex-col h-fit  m-7  bg-slate-100 border-gray-300 border-2 rounded-lg'>
+    <div className='shadow-md  flex-1 flex flex-col h-fit  m-7  bg-slate-100 border-gray-300 border-2 rounded-lg max-w-[400px]'>
       <div className='p-2 rounder-lg'>
         <img src={image} alt="the image" className='w-[100%] object-cover max-h-[250px]' />
       </div>
