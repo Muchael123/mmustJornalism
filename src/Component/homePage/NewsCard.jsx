@@ -29,7 +29,6 @@ function NewsCard(props) {
           </Link>
         </h1>
         <p className="py-3 px-3 text-[13px]">
-          {slug}
           <Typewriter
             words={[`${slug}`]}
             loop={1}
