@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import { IoMdTime } from "react-icons/io";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -12,9 +12,9 @@ function Content(props) {
   const author = props.author;
   const author_image = props.author_image;
   return (
-    <div>
-      <div className="" key={id}>
-        <div className="col-span-2  max-w-[700px]">
+    <div className="flex flex-col   px-5 ">
+      <div className=" md:flex-3" key={id}>
+        <div className="col-span-2  max-w-[700px] ">
           <div className="lg:row-start-1 lg:mx-auto  lg:w-full">
             <div className="lg:pr-1">
               <div className="w-full">
