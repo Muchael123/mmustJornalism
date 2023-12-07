@@ -25,6 +25,7 @@ function Homepage() {
         const latestResponse = await fetch(
           "https://mmust-jowa.onrender.com/api/v1/user/news"
         );
+        setLoading(true);
         const latestData = await latestResponse.json();
         setLatestData(latestData.slice(0, 1));
 
@@ -63,7 +64,7 @@ function Homepage() {
         const moreBusinessData = await moreBusinessResponse.json();
         setMoreBusinessData(moreBusinessData.slice(0, 3));
 
-        setLoading(true); // Set loading to false when data is fetched
+        // Set loading to false when data is fetched
       } catch (error) {
         toast.error("Error fetching data...");
         console.error("Error fetching data:", error);
