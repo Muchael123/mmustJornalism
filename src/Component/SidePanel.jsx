@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTruncate } from "../../hooks/useTruncate";
 const SidePanel = (props) => {
   const [newsData, setNewsData] = useState([]);
   const [newsCat, setNewsCat] = useState([]);
@@ -54,7 +55,7 @@ const SidePanel = (props) => {
               }
             >
               <h6 className="mb-2 w-5/9 font-semibold leading-5 hover:text-purple-700">
-                {item.title}
+                {useTruncate(item.title, 100)}
               </h6>
             </Link>
             <p className="mb-3 text-xs font-semibold tracking-wide uppercase">

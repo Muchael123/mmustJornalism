@@ -3,19 +3,17 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 mt-7 pb-5">
+    <footer className="bg-gradient-to-r from-indigo-500 via-purple-700 to-pink-500 mt-7 pb-5 text-white">
       <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
         <div className="grid row-gap-10 lg:grid-cols-6 ">
           <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-3">
             <div>
-              <p className="font-medium tracking-wide text-gray-300">
-                Quicklinks
-              </p>
-              <ul className="mt-2 space-y-2">
+              <p className="font-bold tracking-wide ">Quicklinks</p>
+              <ul className="mt-2 space-y-2 ">
                 <li>
                   <a
                     href="/News"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                    className=" transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     News
                   </a>
@@ -23,7 +21,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="/Sports"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                    className=" transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Sports
                   </a>
@@ -31,7 +29,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="/Business"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                    className=" transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Business
                   </a>
@@ -39,15 +37,15 @@ export default function Footer() {
                 <li>
                   <a
                     href="/Entertainment"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                    className=" transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Entertainment
                   </a>
                 </li>
-                                <li>
+                <li>
                   <a
                     href="/Admin"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                    className=" transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Admin
                   </a>
@@ -55,16 +53,16 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <p className="font-medium tracking-wide text-gray-300">
+              <p className="font-bold tracking-wide ">
                 Contacts
               </p>
               <ul className="mt-2 space-y-2">
                 <li>
-                  <p className="text-gray-500">
+                  <p className="">
                     Phone No:
                     <a
                       href="tel:850-123-5021"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                      className=" transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
                       {" "}
                       850-123-5021
@@ -72,11 +70,11 @@ export default function Footer() {
                   </p>
                 </li>
                 <li>
-                  <p className="text-gray-500">
+                  <p className="">
                     E-mail:
                     <a
                       href="mailto:josammust@gmail.com"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                      className=" transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
                       {" "}
                       josammust@gmail.com
@@ -84,12 +82,12 @@ export default function Footer() {
                   </p>
                 </li>
                 <li>
-                  <p className="text-gray-500">
+                  <p className="">
                     Address:
                     <a
                       href="https://maps.app.goo.gl/xMzxeS7bvosvekHv6"
                       target="_blank"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                      className=" transition-colors duration-300 hover:text-deep-purple-accent-200"
                       rel="noreferrer"
                     >
                       {" "}
@@ -100,14 +98,14 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <p className="font-medium tracking-wide text-gray-300">
+              <p className="font-bold tracking-wide ">
                 Social Media
               </p>
 
               <div className="flex items-center mt-1 space-x-3">
                 <a
                   href="/"
-                  className="text-gray-500 transition-colors duration-300 hover:text-purple-500"
+                  className=" transition-colors duration-300 hover:text-purple-500"
                 >
                   <Link
                     to="https://instagram.com/mmust_josa?igshid=OGY3MTU3OGY1Mw=="
@@ -125,7 +123,7 @@ export default function Footer() {
                 </a>
                 <a
                   href="/"
-                  className="text-gray-500 transition-colors duration-300 hover:text-purple-500"
+                  className=" transition-colors duration-300 hover:text-purple-500"
                 >
                   <Link
                     to="https://youtube.com/@MMUSTJOURNALISMSTUDENTSASSOCIA?si=G7xSxci9J2zWtcDN"
@@ -143,7 +141,7 @@ export default function Footer() {
                 </a>
                 <a
                   href="/"
-                  className="text-gray-500 transition-colors duration-300 hover:text-purple-500"
+                  className="transition-colors duration-300 hover:text-purple-500"
                 >
                   <Link
                     to="https://www.facebook.com/profile.php?id=100086633626518"
@@ -159,13 +157,14 @@ export default function Footer() {
                   </Link>
                 </a>
               </div>
-              <p className="mt-4 text-sm text-gray-500">
-                MMUST JOSA DIGITAL NEWS, Connect with us through our Social media accounts.
+              <p className="mt-4 text-sm ">
+                MMUST JOSA DIGITAL NEWS, Connect with us through our Social
+                media accounts.
               </p>
             </div>
           </div>
           <div className="mx-10 md:max-w-md lg:col-span-2">
-            <span className="text-base font-medium tracking-wide text-gray-300">
+            <span className="text-base font-bold tracking-wide ">
               Message Us
             </span>
             <form
