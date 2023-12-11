@@ -13,7 +13,7 @@ function MainNews (props){
     const id = props.id
     const url = `/Blog/${category}/${id}`;
     const published_on = props.published_on;
-    const slug = useTruncate(props.slug, 100)
+    const slug = useTruncate(props.slug, 200)
 
   return (
     <Link to={url}>
