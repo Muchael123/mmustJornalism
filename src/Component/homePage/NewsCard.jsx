@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
+import { useTruncate } from "../../../hooks/useTruncate";
 
 function NewsCard(props) {
-  const title = props.title;
+  const title = useTruncate(props.title, 100);
   const image = props.image;
 
   const category = props.category;
