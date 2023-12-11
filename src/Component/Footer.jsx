@@ -44,7 +44,7 @@ export default function Footer() {
                     Entertainment
                   </a>
                 </li>
-                                <li>
+                <li>
                   <a
                     href="/Admin"
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
@@ -160,7 +160,8 @@ export default function Footer() {
                 </a>
               </div>
               <p className="mt-4 text-sm text-gray-500">
-                MMUST JOSA DIGITAL NEWS, Connect with us through our Social media accounts.
+                MMUST JOSA DIGITAL NEWS, Connect with us through our Social
+                media accounts.
               </p>
             </div>
           </div>
@@ -171,7 +172,7 @@ export default function Footer() {
             <form
               className="block mt-4 "
               method="post"
-              action="mailto:josammust@gmail.com"
+              action="mailto:https://josammust@gmail.com"
               encType="multipart/form-data"
             >
               {/* <form > */}
