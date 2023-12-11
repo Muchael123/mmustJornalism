@@ -14,54 +14,61 @@ function MainNews (props){
     const published_on = props.published_on
 
   return (
-  <div>
-   
-    <div
-    className='flex    md:flex-row flex-col  max-[475px]:flex-col max-[475px]:w-11/12 bg-slate-100 hover:bg-slate-100   w-9/12  rounded-lg  md:h-[420px]  h-fit snap-mandatory snap-center
-    max-[475px]:h-[420px] max-[475px] md:gap-5 mx-auto py-2  my-12  shadow-lg hover:shadow-2xl transition-all duration-5 00 ease-in-out  px-2 max-[475px]:py-2   '>
+    <Link to={url}>
+      <div className="group hover:scale-105 transition-all duration-200 ease-in-out grid lg:grid-cols-2 lg:gap-4 bg-slate-100 hover:bg-slate-100     rounded-lg  mt-12 p-3">
         <motion.div
-        initial={{ x: -50, opacity: 0 }}
+          initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
-            ease: 'linear',
+            ease: "linear",
             duration: 1,
           }}
-         className=' w-full max-[475px]:w-full max-[475px]:h-1/2 gap-2'>
-           <img className=' md:rounded-lg rounded-md w-full md:h-80 h-[90%] max-[475px]  object-cover mb-4' src={image} alt="Latest News..." />
-           </motion.div>
+          className=" w-full  gap-2"
+        >
+          <img
+            className=" md:rounded-lg rounded-md w-full h-full max-[475px]  object-cover mb-4"
+            src={image}
+            alt="Latest News..."
+          />
+        </motion.div>
         <motion.div
-        initial={{ x: 50, opacity: 0 }}
+          initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
-            ease: 'linear',
+            ease: "linear",
             duration: 1,
           }}
-        className='flex flex-col md:w-1/2 w-full max-[475px]:w-full max-w-[475px] gap-2'>
-           <Link to={url}>
-            <h1 className='font-bold text-2xl hover:text-purple-700 w-full  flex r cursor-pointer decoration-gray-400 justify-left  '>{title}</h1></Link>
-            <div className='border-none  px-1 text-black '>
-             <Typewriter 
-               words = {[`${slug}`]}
-               loop = {1}
-               delaySpeed={500}
-               cursorBlinking = {false}
-               typeSpeed={10}
-               />
-              </div>
-            <h1 className='font-light text-[12px]  text-right -bottom-12 pr-3'>
-               <Typewriter 
-               words = {[`${published_on}`]}
-               loop = {1}
-               delaySpeed={500}
-               cursorBlinking = {false}
-               typeSpeed={80}
-               />
-            </h1>
-           </motion.div>
-    </div>
-    
-  </div>
-  )
+          className="flex flex-col"
+        >
+          <div className='flex-1'>
+            
+              <h1 className="font-bold text-2xl group-hover:text-purple-700 w-full  flex r cursor-pointer decoration-gray-400 justify-left  ">
+                {title}
+              </h1>
+            
+            <div className="border-none  px-1 text-black ">
+              <Typewriter
+                words={[`${slug}`]}
+                loop={1}
+                delaySpeed={500}
+                cursorBlinking={false}
+                typeSpeed={10}
+              />
+            </div>
+          </div>
+          <h1 className="font-light text-[12px]  text-right -bottom-12 pr-3">
+            <Typewriter
+              words={[`${published_on}`]}
+              loop={1}
+              delaySpeed={500}
+              cursorBlinking={false}
+              typeSpeed={80}
+            />
+          </h1>
+        </motion.div>
+      </div>
+    </Link>
+  );
 }
 
 export default MainNews

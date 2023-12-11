@@ -6,8 +6,6 @@ const Comments = ({ category, image_id }) => {
   const [isAnonymous, setIsAnonymous] = useState(false);
   // const [Category, image_id] = useParams();
 
-  console.log("category is", category);
-  console.log("image id is", image_id);
 
   const handleSubmit = async () => {
     // const id = 123; // Replace with your actual category ID
@@ -25,11 +23,9 @@ const Comments = ({ category, image_id }) => {
 
       if (response.ok) {
         const responseData = await response.json();
-        console.log("Comment submitted successfully:", responseData);
+      
         setIsAnonymous(true);
         setContent("");
-        console.log(responsedata);
-        console.log("comment is", content);
       } else {
         console.error("Error submitting comment:", response.statusText);
       }

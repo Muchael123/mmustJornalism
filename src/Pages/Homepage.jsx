@@ -88,109 +88,114 @@ function Homepage() {
   };
   return loading ? (
     <div className=" overflow-x-hidden">
-      <Toaster />
-      <Helmet>
-        <meta charset="UTF-8" />
-        <meta name="description" content="MMUST JOSA DIGITAL NEWS" />
-        <meta name="author" content="MMUST JOSA" />
-        <link rel="icon" type="image/svg+xml" href="/images/logo.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>MMUST JOSA DIGITAL</title>
-        <script
-          type="module"
-          crossorigin
-          src="/assets/index-e6276024.js"
-        ></script>
-        <link rel="stylesheet" href="/assets/index-8819064a.css" />
-      </Helmet>
-      <div className="relative mb-24">
-        <Navbar />
-      </div>
+      <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-20 lg:px-40 lg:py-12">
+        <Toaster />
+        <Helmet>
+          <meta charset="UTF-8" />
+          <meta name="description" content="MMUST JOSA DIGITAL NEWS" />
+          <meta name="author" content="MMUST JOSA" />
+          <link rel="icon" type="image/svg+xml" href="/images/logo.png" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <title>MMUST JOSA DIGITAL</title>
+          <script
+            type="module"
+            crossorigin
+            src="/assets/index-e6276024.js"
+          ></script>
+          <link rel="stylesheet" href="/assets/index-8819064a.css" />
+        </Helmet>
+        <div className="relative mb-24">
+          <Navbar />
+        </div>
 
-      <motion.div
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{
-          ease: "linear",
-          duration: 1,
-        }}
-      >
-        <h1 className="w-screen bg- mt-20 flex text-2xl font-bold justify-center text-[26px] justify-left -mb-8 underline decoration-gray-400">
-          Top News
-        </h1>
-      </motion.div>
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            ease: "linear",
+            duration: 1,
+          }}
+        >
+          <h1 className="mt-20 flex text-2xl font-bold text-[26px] justify-left -mb-8 underline decoration-gray-400">
+            Top News
+          </h1>
+        </motion.div>
 
-      {latestData.map((item, key) => (
-        <MainNews
-          key={item.id}
-          id={item.id}
-          title={item.title}
-          slug={item.slug}
-          category={"News"}
-          published_on={formatToLocalTime(item.published_on)}
-          image={item.image_id}
-        />
-      ))}
-      <Heading title={"Business News"} category="business" />
-      <div className="flex justify-even my-5 flex-col md:flex-row  snap-mandatory snap-center  max-[767px]:mx-4">
-        {/* <Businesss News /> */}
-        {businessData.map((item, key) => (
-          <NewsCard
+        {latestData.map((item, key) => (
+          <MainNews
             key={item.id}
-            category={"Business"}
             id={item.id}
             title={item.title}
             slug={item.slug}
-            published_on={formatToLocalTime(item.published_on)}
-            image={item.image_id}
-          />
-        ))}{" "}
-      </div>
-      {/* Entertainment News */}
-      <Heading title={"Entertainment News"} category="entertainment" />
-      <div className="flex justify-even my-5 flex-col md:flex-row snap-mandatory snap-center">
-        {entertainmentData.map((item, key) => (
-          <NewsCard
-            key={item.id}
-            id={item.id}
-            category={"Entetainment"}
-            title={item.title}
-            slug={item.slug}
-            published_on={formatToLocalTime(item.published_on)}
-            image={item.image_id}
-          />
-        ))}{" "}
-      </div>
-      {/* SportsNews */}
-      <Heading title={"Sport News"} category="sports" />
-      <div className="flex justify-even my-5 flex-col md:flex-row snap-mandatory snap-center">
-        {sportsData.map((item, key) => (
-          <NewsCard
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            category={"Sports"}
-            slug={item.slug}
-            published_on={formatToLocalTime(item.published_on)}
-            image={item.image_id}
-          />
-        ))}
-      </div>
-      {/* News */}
-
-      <Heading title={"Other News"} category="news" />
-      <div className="flex justify-even my-5 flex-col md:flex-row snap-mandatory snap-center">
-        {newsData.map((item, key) => (
-          <NewsCard
-            key={item.id}
-            id={item.id}
-            title={item.title}
             category={"News"}
-            slug={item.slug}
             published_on={formatToLocalTime(item.published_on)}
             image={item.image_id}
           />
         ))}
+        <Heading title={"Business News"} category="business" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* <Businesss News /> */}
+          {businessData.map((item, key) => (
+            <NewsCard
+              key={item.id}
+              category={"Business"}
+              id={item.id}
+              title={item.title}
+              slug={item.slug}
+              published_on={formatToLocalTime(item.published_on)}
+              image={item.image_id}
+            />
+          ))}{" "}
+        </div>
+        {/* Entertainment News */}
+        <Heading title={"Entertainment News"} category="entertainment" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {entertainmentData.map((item, key) => (
+            <NewsCard
+              key={item.id}
+              id={item.id}
+              category={"Entetainment"}
+              title={item.title}
+              slug={item.slug}
+              published_on={formatToLocalTime(item.published_on)}
+              image={item.image_id}
+            />
+          ))}{" "}
+        </div>
+        {/* SportsNews */}
+        <Heading title={"Sport News"} category="sports" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {sportsData.map((item, key) => (
+            <NewsCard
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              category={"Sports"}
+              slug={item.slug}
+              published_on={formatToLocalTime(item.published_on)}
+              image={item.image_id}
+            />
+          ))}
+        </div>
+        {/* News */}
+
+        <Heading title={"Other News"} category="news" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {newsData.map((item, key) => (
+            <NewsCard
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              category={"News"}
+              slug={item.slug}
+              published_on={formatToLocalTime(item.published_on)}
+              image={item.image_id}
+            />
+          ))}
+        </div>
       </div>
       <Footer />
     </div>
