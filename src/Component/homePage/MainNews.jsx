@@ -2,16 +2,18 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
+import { useTruncate } from '../../../hooks/useTruncate';
 
 function MainNews (props){
    
     const image = props.image;
     const category= props.category;
     const title = props.title;
-    const slug = props.slug;
+    
     const id = props.id
     const url = `/Blog/${category}/${id}`;
-    const published_on = props.published_on
+    const published_on = props.published_on;
+    const slug = useTruncate(props.slug, 100)
 
   return (
     <Link to={url}>
