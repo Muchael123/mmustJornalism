@@ -40,11 +40,11 @@ const ProfilePage = () => {
         }
          // Assuming the server returns the URL of the uploaded image
          const responseData = await response.json();
-         console.log('Fetched data:', responseData);
+         
          
          // Assuming the server returns the URL of the uploaded image
          const imageUrl = responseData.image_path;
-         console.log(imageUrl);
+         
          setImg(imageUrl);
      
          // Set initial profile data
@@ -86,7 +86,7 @@ const ProfilePage = () => {
 
   const handleSaveClick = async () => {
     try {
-      console.log('Profile data before update:', profileData);
+     
   
       const requestBody = {
         contact: profileData.contact,
@@ -109,12 +109,12 @@ const ProfilePage = () => {
       }
   
       const updatedData = await fetchData();
-      console.log('Updated data:', updatedData);
+      
       localStorage.setItem("User",profileData.first_name);
       setProfileData(updatedData);
       setIsEditing(false);
       setImagePreview(null);
-      console.log('updated profile');
+    
     } catch (error) {
       console.error(error);
     }

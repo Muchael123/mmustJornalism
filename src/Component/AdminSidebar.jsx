@@ -12,7 +12,7 @@ const AdminSidebar = ({ onItemClick, open }) => {
   };
   const handleLogOut = () => {
     const notification = toast.loading("Logging out...");
-    console.log("log out");
+   
     localStorage.removeItem("accessToken");
     localStorage.removeItem("User");
     toast.success("Logout successful", {

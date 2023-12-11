@@ -11,7 +11,7 @@ const AdminNavbar = ({ onclick, onItemClick }) => {
     }
   };
   const handleLogOut = () => {
-    console.log("log out");
+   
     localStorage.removeItem("accessToken");
     localStorage.removeItem("User");
     window.location.href = "/Login";
