@@ -44,7 +44,7 @@ function Dashboard() {
         }
 
         const totalComments = await commentsResponse.json();
-        console.log(totalComments);
+      
         setTotalComments(totalComments);
 
         const blogsResponse = await fetch(
@@ -64,7 +64,7 @@ function Dashboard() {
 
         const blogsData = await blogsResponse.json();
         setTotalBlogs(blogsData);
-        console.log(blogsData);
+        
       } catch (error) {
         console.error("Error fetching latest news:", error);
         if (error == "Error: HTTP error! Status: 401") {
@@ -76,7 +76,7 @@ function Dashboard() {
     fetchLatestNews();
   }, []);
 
-  console.log(latestNews);
+
 
   const formatToLocalTime = (dateString) => {
     const options = {
@@ -180,7 +180,7 @@ function Dashboard() {
 
       <div className="relative col-span-3  lg:py-0.5 py-2.5 z-[4]">
         {latestNews.map((item) => (
-          // console.log(item.id),
+        
           <AdminBlogs
             key={item.id}
             title={item.title}

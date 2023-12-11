@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="z-50">
         <Link to="/">
           <img
-            className="w-20 h-20 object-cover cursor-pointer"
+            className="w-16 object-cover cursor-pointer"
             src="/images/logo.png"
             alt=""
           />

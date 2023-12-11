@@ -13,7 +13,7 @@ function AdminBlogs(props) {
   const total_comments = props.total_comments;
 
   const deleteBlog = async () => {
-    console.log(props.id);
+   
     try {
       const response = await fetch(
         `https://mmust-jowa.onrender.com/api/v1/admin/news/latest/delete/${props.id}`,
@@ -39,7 +39,7 @@ function AdminBlogs(props) {
       console.error("Error fetching data:", error);
     }
   };
-  console.log(props.id);
+ 
   return (
     <>
       <Toaster />

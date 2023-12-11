@@ -45,7 +45,7 @@ const CreateBlog = () => {
       });
 
       if (response.ok) {
-        console.log('Blog post created successfully');
+        
       } else {
         console.error('Failed to create blog post');
       }
