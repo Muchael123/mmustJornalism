@@ -157,7 +157,9 @@ export default function Footer() {
                   </Link>
                 </a>
               </div>
+
               <p className="mt-4 text-sm ">
+
                 MMUST JOSA DIGITAL NEWS, Connect with us through our Social
                 media accounts.
               </p>
@@ -170,7 +172,7 @@ export default function Footer() {
             <form
               className="block mt-4 "
               method="post"
-              action="mailto:josammust@gmail.com"
+              action="mailto:https://josammust@gmail.com"
               encType="multipart/form-data"
             >
               {/* <form > */}

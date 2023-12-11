@@ -157,7 +157,7 @@ function Homepage() {
             <NewsCard
               key={item.id}
               id={item.id}
-              category={"Entetainment"}
+              category={"Entertainment"}
               title={item.title}
               slug={item.slug}
               published_on={formatToLocalTime(item.published_on)}
