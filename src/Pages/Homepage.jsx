@@ -147,13 +147,13 @@ function Homepage() {
         ))}{" "}
       </div>
       {/* Entertainment News */}
-      <Heading title={"Entertainment News"} category="entertainment" />
+      <Heading title={"Entertainment News"} category="Entertainment" />
       <div className="flex justify-even my-5 flex-col md:flex-row snap-mandatory snap-center">
         {entertainmentData.map((item, key) => (
           <NewsCard
             key={item.id}
             id={item.id}
-            category={"Entetainment"}
+            category={"Entertainment"}
             title={item.title}
             slug={item.slug}
             published_on={formatToLocalTime(item.published_on)}
