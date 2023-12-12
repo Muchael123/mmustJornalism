@@ -28,7 +28,7 @@ function MainNews (props){
           className=" w-full  gap-2"
         >
           <img
-            className=" md:rounded-lg rounded-md w-full h-full max-[475px]  object-cover mb-4"
+            className=" md:rounded-lg rounded-md w-full h-full max-h-[285px]  object-cover mb-4"
             src={image}
             alt="Latest News..."
           />
