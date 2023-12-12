@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
+  const [message, setMessage] = useState("");
   return (
     <footer className="bg-gradient-to-r from-indigo-500 via-purple-700 to-pink-500 mt-7 pb-5 text-white">
       <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
@@ -163,7 +164,7 @@ export default function Footer() {
             <form
               className="block mt-4 "
               method="post"
-              action="mailto:https://josammust@gmail.com"
+              action={`mailto:josammust@gmail.com?subject=Message from MMUST JOSA DIGITAL NEWS&body=${message},`}
               encType="multipart/form-data"
             >
               {/* <form > */}
@@ -181,6 +182,8 @@ export default function Footer() {
               />
               <input
                 placeholder="Message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 required={true}
                 type="textarea"
                 height={100}
