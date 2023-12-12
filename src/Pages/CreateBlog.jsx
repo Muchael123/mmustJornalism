@@ -55,7 +55,9 @@ const CreateBlog = () => {
       const formDataWithId = { ...formData, image: filePreview };
 
       const response = await fetch(
-        "https://mmust-jowa.onrender.com/api/v1/admin/createblog",
+        // "https://mmust-jowa.onrender.com/api/v1/admin/createblog",
+        "https://9ef2-197-248-176-94.ngrok-free.app/api/v1/admin/createblog",
+
         {
           method: "POST",
           headers: {

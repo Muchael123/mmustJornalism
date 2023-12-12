@@ -16,6 +16,7 @@ import CreateBlog from "./Pages/CreateBlog";
 import PreviewBlog from "./Pages/PreviewBlog";
 import CB from "./Pages/CB";
 import Comments from "./Component/Comments";
+import EditBlog from "./Pages/EditBlog";
 class App extends React.Component {
   render() {
     return (
@@ -34,6 +35,7 @@ class App extends React.Component {
           <Route path="/PreviewBlog" element={<PreviewBlog />} />
           <Route path="/Blog/:category/:id" element={<Blog />} />
           <Route path="/CB" element={<CB />} />
+          <Route path="/EditBlog" element={<EditBlog />} />
         </Routes>
       </Router>
     );
