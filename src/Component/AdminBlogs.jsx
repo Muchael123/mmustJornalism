@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import { useFormData } from "../../hooks/useFormData";
 function AdminBlogs(props) {
+   const { formData, updateFormData } = useFormData();
+   const navigate = useNavigate();
   const maxwidth = "";
   const image = props.image;
   const id = props.id;
@@ -13,7 +16,6 @@ function AdminBlogs(props) {
   const total_comments = props.total_comments;
 
   const deleteBlog = async () => {
-   
     try {
       const response = await fetch(
         `https://mmust-jowa.onrender.com/api/v1/admin/news/latest/delete/${props.id}`,
@@ -39,7 +41,14 @@ function AdminBlogs(props) {
       console.error("Error fetching data:", error);
     }
   };
- 
+  const editBlog = () => {
+    navigate("/EditBlog", {
+      state: {
+        formData,
+      },
+    });
+  };
+
   return (
     <>
       <Toaster />
@@ -81,7 +90,7 @@ function AdminBlogs(props) {
                 </svg>
               </a>
             </li>
-            <li className="">
+            <li className="bg-red-500 cursor-pointer" onClick={editBlog}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

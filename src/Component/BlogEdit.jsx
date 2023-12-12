@@ -87,6 +87,9 @@ const CreateBlog = () => {
         console.error("Failed to create blog post");
       }
     } catch (error) {
+      // if () {
+
+      // }
       toast.error("An error occurred", {
         id: notification,
       });
@@ -117,9 +120,7 @@ const CreateBlog = () => {
         {/* create new blog */}
         <form
           className="w-full flex items-center justify-center flex-col  mt-2 gap-9  md:grid md:grid-cols-3 max-w-2l bg-white-100  px-4 py-10 mb-10 md:mx-auto sm:text-left  md:mb-12 "
-          // onSubmit={handleSubmit}
-          encType="multipart/form-data"
-          method="post"
+          onSubmit={handleSubmit}
         >
           {/* ... your existing form fields ... */}
 
@@ -138,6 +139,7 @@ const CreateBlog = () => {
                       id="title"
                       onChange={handleChange}
                       value={formData.title}
+                      required={true}
                       className="block  text-2xl font-bold uppercase w-full border-2 py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 placeholder:normal-case placeholder:font-normal  sm:text-sm sm:leading-6 rounded-md"
                       placeholder="Enter Title"
                     />
@@ -157,6 +159,7 @@ const CreateBlog = () => {
                     id="slug"
                     onChange={handleChange}
                     value={formData.slug}
+                    required={true}
                     className="block  text-2xl font-bold uppercase w-full border-2 py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 placeholder:normal-case placeholder:font-normal  sm:text-sm sm:leading-6 rounded-md"
                     placeholder="Enter description"
                   />
@@ -178,6 +181,7 @@ const CreateBlog = () => {
                   rows={4}
                   onChange={handleChange}
                   value={formData.body}
+                  required={true}
                   className="resize-none border-2 block w-full h-fixed rounded-md py-1.5 text-gray-900 shadow-sm  placeholder:text-gray-400 focus:ring-2  sm:text-sm sm:leading-6"
                 />
               </div>
@@ -195,6 +199,7 @@ const CreateBlog = () => {
                 <select
                   id="category"
                   name="category"
+                  required={true}
                   autoComplete="category"
                   value={formData.category}
                   onChange={handleChange}
@@ -233,6 +238,7 @@ const CreateBlog = () => {
                         onChange={handleChange}
                         name="image"
                         type="file"
+                        required={true}
                         // value={formData.image_id}
                         className="sr-only"
                       />
@@ -249,15 +255,15 @@ const CreateBlog = () => {
 
           <div className="w-2/4">
             <div className="flex flex-col">
+              <input
+                type="submit"
+                value="UPDATE BLOG"
+                // onClick={handleSubmit}
+                className="mb-3 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              />
+
               <button
                 type="submit"
-                onClick={handleSubmit}
-                className="mb-3 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Update Blog
-              </button>
-              <button
-                type="button"
                 onClick={() => {
                   const noti = toast.loading(
                     "Naviating to preview, your fields will be saved as draft..."
@@ -275,12 +281,11 @@ const CreateBlog = () => {
                 }}
                 className=" rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                PREVIEW
+                PREVIEW UPDATE
               </button>
             </div>
           </div>
         </form>
-        {/* <img src={img} alt="" /> */}
       </div>
     </>
   );
