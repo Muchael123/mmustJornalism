@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
+  const [message, setMessage] = useState("");
+  const [name, setName] = useState("");
   return (
     <footer className="bg-gradient-to-r from-indigo-500 via-purple-700 to-pink-500 mt-7 pb-5 text-white">
       <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
@@ -163,12 +165,14 @@ export default function Footer() {
             <form
               className="block mt-4 "
               method="post"
-              action="mailto:https://josammust@gmail.com"
+              action={`mailto:josammust@gmail.com?subject=Message from ${name}&body=${message},`}
               encType="multipart/form-data"
             >
               {/* <form > */}
               <input
                 placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 required={true}
                 type="text"
                 className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white text-gray-800 border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
@@ -181,6 +185,8 @@ export default function Footer() {
               />
               <input
                 placeholder="Message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 required={true}
                 type="textarea"
                 height={100}
