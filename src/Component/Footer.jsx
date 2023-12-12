@@ -169,7 +169,7 @@ export default function Footer() {
             <form
               className="block mt-4 "
               method="post"
-              action="mailto:josammust@gmail.com"
+              action="mailto:https://josammust@gmail.com"
               encType="multipart/form-data"
             >
               {/* <form > */}
