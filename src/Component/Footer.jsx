@@ -158,8 +158,7 @@ export default function Footer() {
                 </a>
               </div>
               <p className="mt-4 text-sm ">
-                MMUST JOSA DIGITAL NEWS, Connect with us through our Social
-                media accounts.
+                MMUST JOSA DIGITAL NEWS.
               </p>
             </div>
           </div>
