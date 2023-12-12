@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    window.open(
+      `mailto:josammust@gmail.com?subject=Message from ${name}&body=${message}`
+    );
+  };
   return (
     <footer className="bg-gradient-to-r from-indigo-500 via-purple-700 to-pink-500 mt-7 pb-5 text-white">
       <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
@@ -164,9 +172,10 @@ export default function Footer() {
             </span>
             <form
               className="block mt-4 "
-              method="post"
-              action={`mailto:josammust@gmail.com?subject=Message from ${name}&body=${message},`}
-              encType="multipart/form-data"
+              onSubmit={handleSubmit}
+              // method="post"
+              // action={`mailto:https://josammust@gmail.com?subject=Message from ${name}&body=${message}`}
+              // encType="multipart/form-data"
             >
               {/* <form > */}
               <input
