@@ -38,61 +38,58 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/business')
   };
 
   return (
-    <div className='flex flex-col'>
+    <div className="flex flex-col">
       <Navbar />
-      <h1 className='my-12 py-12 text-[24px] font-bold text-center tracking-wider'>Main Business News</h1>
-      <div className='flex '>
-      <div>
-         <div className='flex justify-center  flex-row px-7 divide-x- gap-12'> 
-            
-          <MainCatNews
-          id={newsData.id}
-          title={newsData.title}
-          slug={newsData.slug}
-          category = {"Business"}
-          author_image = {newsData.author_image}
-          published_on={formatToLocalTime(newsData.published_on)}
-          image={newsData.image_id}
-          />
-            
-            <div className='p-4 justify-center  rounded-lg border-gray-300 bg-slate-100 hidden md:block'>
+      <h1 className="my-12 py-12 text-[24px] font-bold text-center tracking-wider">
+        Main Business News
+      </h1>
+      <div className="flex ">
+        <div>
+          <div className="flex justify-center  flex-row px-7 divide-x- gap-12">
+            <MainCatNews
+              id={newsData.id}
+              title={newsData.title}
+              slug={newsData.slug}
+              category={"Business"}
+              author_image={newsData.author_image}
+              published_on={formatToLocalTime(newsData.published_on)}
+              image={newsData.image_id}
+            />
+
+            <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-20 lg:px-40 lg:py-12">
               {sideNews.map((item, key) => (
                 <OtherCatNews
-                key={item.key}
-                id={item.id}
-                title={item.title}
-                category = {"Business"}
-                published_on={formatToLocalTime(item.published_on)}
+                  key={item.key}
+                  id={item.id}
+                  title={item.title}
+                  category={"Business"}
+                  published_on={formatToLocalTime(item.published_on)}
                 />
               ))}
-              </div>
+            </div>
           </div>
+        </div>
       </div>
-       
-      </div>
-      <h1 className='my-12 py-12 text-[24px] font-bold text-center tracking-wider'>Other News</h1>
-     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 justify-center items-top md:gap-5 lg:gap-6">
+      <h1 className="my-12 py-12 text-[24px] font-bold text-center tracking-wider">
+        Other News
+      </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 justify-center items-top md:gap-5 lg:gap-6">
         {newsOther.map((item, key) => (
           <NewsCard
             key={key}
             id={item.id}
             title={item.title}
-            slug = {item.slug}
-            image = {item.image_id}
+            slug={item.slug}
+            image={item.image_id}
             category={"Business"}
             published_on={formatToLocalTime(item.published_on)}
           />
-          
         ))}
       </div>
 
-      <Footer/>
-      </div>   
-
-    
-    
-  
-  )
+      <Footer />
+    </div>
+  );
 }
 
 export default Business
