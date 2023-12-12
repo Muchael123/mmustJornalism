@@ -135,7 +135,6 @@ const CreateBlog = () => {
                     <input
                       type="text"
                       name="title"
-                      required={true}
                       id="title"
                       onChange={handleChange}
                       value={formData.title}
@@ -156,7 +155,6 @@ const CreateBlog = () => {
                     type="text"
                     name="slug"
                     id="slug"
-                    required={true}
                     onChange={handleChange}
                     value={formData.slug}
                     className="block  text-2xl font-bold uppercase w-full border-2 py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 placeholder:normal-case placeholder:font-normal  sm:text-sm sm:leading-6 rounded-md"
@@ -177,7 +175,6 @@ const CreateBlog = () => {
                 <textarea
                   id="about"
                   name="body"
-                  required={true}
                   rows={4}
                   onChange={handleChange}
                   value={formData.body}
@@ -198,7 +195,6 @@ const CreateBlog = () => {
                 <select
                   id="category"
                   name="category"
-                  required={true}
                   autoComplete="category"
                   value={formData.category}
                   onChange={handleChange}
@@ -233,7 +229,6 @@ const CreateBlog = () => {
                     >
                       <span>Upload a file</span>
                       <input
-                        required={true}
                         id="file-upload"
                         onChange={handleChange}
                         name="image"
@@ -259,7 +254,7 @@ const CreateBlog = () => {
                 onClick={handleSubmit}
                 className="mb-3 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                PUBLISH
+                Update Blog
               </button>
               <button
                 type="button"
