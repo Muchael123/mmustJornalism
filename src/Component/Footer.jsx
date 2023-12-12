@@ -53,9 +53,7 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <p className="font-bold tracking-wide ">
-                Contacts
-              </p>
+              <p className="font-bold tracking-wide ">Contacts</p>
               <ul className="mt-2 space-y-2">
                 <li>
                   <p className="">
@@ -98,9 +96,7 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <p className="font-bold tracking-wide ">
-                Social Media
-              </p>
+              <p className="font-bold tracking-wide ">Social Media</p>
 
               <div className="flex items-center mt-1 space-x-3">
                 <a
@@ -157,9 +153,7 @@ export default function Footer() {
                   </Link>
                 </a>
               </div>
-              <p className="mt-4 text-sm ">
-                MMUST JOSA DIGITAL NEWS.
-              </p>
+              <p className="mt-4 text-sm ">MMUST JOSA DIGITAL NEWS.</p>
             </div>
           </div>
           <div className="mx-10 md:max-w-md lg:col-span-2">
@@ -177,25 +171,25 @@ export default function Footer() {
                 placeholder="Name"
                 required={true}
                 type="text"
-                className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white text-gray-800 border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
               />
               <input
                 placeholder="Email"
                 required={true}
                 type="email"
-                className="flex-grow w-full mt-5 h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                className="flex-grow w-full mt-5 h-12 px-4 mb-3 transition duration-200 bg-white text-gray-800 border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
               />
               <input
                 placeholder="Message"
                 required={true}
                 type="textarea"
                 height={100}
-                className="flex-grow w-full mt-5 h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                className="flex-grow w-full mt-5 h-12 px-4 mb-3 transition duration-200 bg-white text-gray-800 border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
               />
               <input
                 type="submit"
                 value="Send Email"
-                className="mt-5 inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 border-2 cursor-pointer hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                className="mt-5 inline-flex items-center justify-center h-12 px-6 font-bold tracking-wide  transition duration-200 rounded shadow-md bg-deep-purple-accent-400 border-2 cursor-pointer hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
               />
             </form>
           </div>
