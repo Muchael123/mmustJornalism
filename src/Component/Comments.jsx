@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 const Comments = ({ category, image_id }) => {
   const [content, setContent] = useState("");
@@ -23,20 +24,24 @@ const Comments = ({ category, image_id }) => {
           const responseData = await response.json();
           setIsAnonymous(true);
           setContent("");
+          toast.success("Blog Successfull Posted 🚀🚀");
         } else {
           console.error("Error submitting comment:", response.statusText);
         }
       } catch (error) {
-        console.error("Error:", error.message);
+        toast.error("Error: Check intenet connection");
+        
       }
     } else {
-      alert("Please enter at least 6 characters without spaces.");
+      toast.error("Please enter at least 6 characters without spaces.");
+     
     }
   };
 
 
   return (
     <div className="px-10  w-[100%]">
+      <Toaster />
       <h1 className=" uppercase font-bold text-xl  my-5 ">LEAVE A COMMENT</h1>
       <label>
         {/* Comment: */}
@@ -49,7 +54,7 @@ const Comments = ({ category, image_id }) => {
           className="pl-2 resize-none border-2 w-full outline-none"
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          required 
+          required
         />
       </label>
       <br />
