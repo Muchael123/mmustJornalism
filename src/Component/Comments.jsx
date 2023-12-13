@@ -48,6 +48,7 @@ const Comments = ({ category, image_id }) => {
           className="pl-2  resize-none border-2 w-full outline-none "
           value={content}
           onChange={(e) => setContent(e.target.value)}
+          required
         />
       </label>
       <br />
