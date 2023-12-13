@@ -4,35 +4,36 @@ import { useParams } from "react-router-dom";
 const Comments = ({ category, image_id }) => {
   const [content, setContent] = useState("");
   const [isAnonymous, setIsAnonymous] = useState(false);
-  // const [Category, image_id] = useParams();
-
-
+  
   const handleSubmit = async () => {
-    // const id = 123; // Replace with your actual category ID
-    const url = ` https://mmust-jowa.onrender.com/api/v1/user/comment/${category}/${image_id}`;
-    // content = document.getElementById('textarea').value;
+    const contentWithoutSpaces = content.replace(/\s/g, "");
+    if (contentWithoutSpaces.length > 6) {
+      const url = ` https://mmust-jowa.onrender.com/api/v1/user/comment/${category}/${image_id}`;
 
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ content, is_anonymous: isAnonymous }),
-      });
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ content, is_anonymous: isAnonymous }),
+        });
 
-      if (response.ok) {
-        const responseData = await response.json();
-      
-        setIsAnonymous(true);
-        setContent("");
-      } else {
-        console.error("Error submitting comment:", response.statusText);
+        if (response.ok) {
+          const responseData = await response.json();
+          setIsAnonymous(true);
+          setContent("");
+        } else {
+          console.error("Error submitting comment:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Error:", error.message);
       }
-    } catch (error) {
-      console.error("Error:", error.message);
+    } else {
+      alert("Please enter at least 6 characters without spaces.");
     }
   };
+
 
   return (
     <div className="px-10  w-[100%]">
@@ -43,11 +44,12 @@ const Comments = ({ category, image_id }) => {
           id="textarea"
           name="textarea"
           rows="4"
-          cols="50"
+          cols="30"
           placeholder="Your Comment"
-          className="pl-2  resize-none border-2 w-full outline-none "
+          className="pl-2 resize-none border-2 w-full outline-none"
           value={content}
           onChange={(e) => setContent(e.target.value)}
+          required 
         />
       </label>
       <br />

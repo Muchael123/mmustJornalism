@@ -7,7 +7,6 @@ import Homepage from "./Pages/Homepage";
 import LoginForm from "./Pages/Login";
 import Admin from "./Pages/Admin";
 import Blog from "./Pages/Blog";
-import RegistrationForm from "./Pages/Signin";
 import News from "./Pages/News";
 import Entertainment from "./Pages/Entertainment";
 import Business from "./Pages/Business";
@@ -15,7 +14,6 @@ import Sports from "./Pages/Sports";
 import CreateBlog from "./Pages/CreateBlog";
 import PreviewBlog from "./Pages/PreviewBlog";
 import CB from "./Pages/CB";
-import Comments from "./Component/Comments";
 import EditBlog from "./Pages/EditBlog";
 class App extends React.Component {
   render() {
