@@ -48,7 +48,7 @@ function Homepage() {
           "https://mmust-jowa.onrender.com/api/v1/user/news"
         );
         const newsData = await newsResponse.json();
-        setNewsData(newsData.slice(1, 3));
+        setNewsData(newsData.slice(1, 4));
 
         // Fetch business data
         const businessResponse = await fetch(
