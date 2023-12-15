@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { IoMdTime } from "react-icons/io";
 import { Typewriter } from "react-simple-typewriter";
+import ViewComment from "./ViewComment";
 
 function Content(props) {
   const id = props.id;
@@ -90,6 +91,7 @@ function Content(props) {
           </div>
         </div>
       </div>
+     
     </div>
   );
 }

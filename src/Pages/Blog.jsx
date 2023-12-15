@@ -6,6 +6,7 @@ import Content from '../Component/BlogChat';
 import { useParams } from 'react-router-dom';
 import Footer from '../Component/Footer';
 import Comments from '../Component/Comments';
+import ViewComment from '../Component/ViewComment';
 
 function Blog() {
   const { id, category } = useParams(); // Destructure id from useParams
@@ -35,34 +36,35 @@ function Blog() {
   return (
     <div>
       <Navbar />
-      <div
-            
-       className=" py-24 flex flex-col md:flex-row   ">
+      <div className=" py-24 flex flex-col md:flex-row   ">
         <div className="md:px-5 flex-2 bg-[#f5f5f5] max-w-screen p-8  m-2    px-4">
-          <div className=' justify-even'>
+          <div className=" justify-even">
             {/* Check if newsData has data before rendering */}
             {Object.keys(newsData).length > 0 && (
-              <Content className=''
+              <Content
+                className=""
                 key={id}
                 id={newsData.id}
                 title={newsData.title}
                 body={newsData.body}
                 author={newsData.author}
-                author_image = {newsData.author_image}
+                author_image={newsData.author_image}
                 published_on={formatToLocalTime(newsData.published_on)}
-                image={newsData.image}                
+                image={newsData.image}
               />
-              
             )}
-            </div>
-
-            
+          </div>
         </div>
-        <div className='bg-[#f5f5f5] md:block flex-1'>
-              <SidePanel />
-           </div>
+        <div className="bg-[#f5f5f5] md:block flex-1">
+          <SidePanel />
+        </div>
       </div>
-      <Comments category={category} image_id={id}/>
+
+      <Comments category={category} image_id={id} />
+      {Object.keys(newsData).length > 0 && (
+        <ViewComment comments={newsData.comments} />
+      )}
+
       <Footer />
     </div>
   );
