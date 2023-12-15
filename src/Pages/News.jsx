@@ -13,24 +13,24 @@ function News  () {
   const [newsOther, setNewsOther] = useState([]);
 
  useEffect(() => {
-  // Fetch news data from the API
-fetch('https://mmust-jowa.onrender.com/api/v1/user/news')
-    .then((response) => response.json())
-    .then((data) => {
-        const valuesArray = Object.values(data);
+   // Fetch news data from the API
+   fetch("https://mmust-jowa.onrender.com/api/v1/user/news")
+     .then((response) => response.json())
+     .then((data) => {
+       const valuesArray = Object.values(data);
 
-        setNewsOther(valuesArray.slice(4));
-        setSideNews(valuesArray.slice(1, 3));
-        if (valuesArray && valuesArray.length > 0) {
-            setNewsData(valuesArray[0]);
-        }
-    })
-    .catch((error) => {
-        console.error('Error fetching news data:', error);
-    });
-}, []);
+       if (valuesArray && valuesArray.length >= 4) {
+         setNewsOther(valuesArray.slice(3)); // Adjust the slice to start from the fourth element
+         setSideNews(valuesArray.slice(1, 3));
+         setNewsData(valuesArray[0]);
+       }
+     })
+     .catch((error) => {
+       console.error("Error fetching news data:", error);
+     });
+ }, []);
 
- 
+ console.log(newsOther)
 
   const formatToLocalTime = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false, };
@@ -56,9 +56,9 @@ fetch('https://mmust-jowa.onrender.com/api/v1/user/news')
           />
             
             <div className='p-4 justify-center  rounded-lg border-gray-300 bg-slate-100 hidden md:block'>
-              {sideNews.map((item, key) => (
+              {sideNews.map((item, key) =>  (
                 <OtherCatNews
-                key={item.key}
+                key={key}
                 id={item.id}
                 title={item.title}
                 category = {"News"}
