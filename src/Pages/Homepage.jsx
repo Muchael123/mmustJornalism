@@ -16,7 +16,7 @@ function Homepage() {
   const [moreBusinessData, setMoreBusinessData] = useState([]);
   const [sportsData, setSportsData] = useState([]);
   const [entertainmentData, setEntertainmentData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +25,9 @@ function Homepage() {
         const latestResponse = await fetch(
           "https://mmust-jowa.onrender.com/api/v1/user/news"
         );
-        setLoading(true);
+        setLoading((prevState) => {
+          !prevState;
+        });
         const latestData = await latestResponse.json();
         setLatestData(latestData.slice(0, 1));
 
@@ -68,7 +70,9 @@ function Homepage() {
       } catch (error) {
         toast.error("Error fetching data...");
         console.error("Error fetching data:", error);
-        setLoading(true); // Set loading to false even if there's an error
+        setLoading((prevState) => {
+          !prevState;
+        }); // Set loading to false even if there's an error
       }
     };
 
@@ -86,7 +90,7 @@ function Homepage() {
     };
     return new Date(dateString).toLocaleString(undefined, options);
   };
-  return loading ? (
+  return !loading ? (
     <div className=" overflow-x-hidden">
       <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-20 lg:px-40 lg:py-12">
         <Toaster />
