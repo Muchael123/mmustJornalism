@@ -14,6 +14,7 @@ import BlogEdit from "../Component/BlogEdit";
 const routeConfig = {
   Dashboard,
   "Edit Blog": BlogEdit,
+  "Add Blog": CreateBlog,
   "Profile Settings": ProfilePage,
   News: AdminNews,
   Sports: AdminSports,

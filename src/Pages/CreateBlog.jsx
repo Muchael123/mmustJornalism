@@ -263,7 +263,7 @@ const CreateBlog = () => {
               />
 
               <button
-                type="submit"
+                type="button"
                 onClick={() => {
                   const noti = toast.loading(
                     "Naviating to preview, your fields will be saved as draft..."

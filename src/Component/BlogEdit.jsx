@@ -55,6 +55,7 @@ const CreateBlog = () => {
       const formDataWithId = { ...formData, image: filePreview };
 
       const response = await fetch(
+        //  https://mmust-jowa.onrender.com/api/v1/admin/blogs/update /category/<blog_id>
         "https://mmust-jowa.onrender.com/api/v1/admin/createblog",
         // "https://9ef2-197-248-176-94.ngrok-free.app/api/v1/admin/createblog",
 
@@ -258,7 +259,6 @@ const CreateBlog = () => {
               <input
                 type="submit"
                 value="UPDATE BLOG"
-                // onClick={handleSubmit}
                 className="mb-3 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               />
 
@@ -281,7 +281,7 @@ const CreateBlog = () => {
                 }}
                 className=" rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                PREVIEW UPDATE
+                PREVIEW BLOG
               </button>
             </div>
           </div>
